@@ -13,7 +13,7 @@ export const searchItem = async (item) => {
   try {
     const searchItem = await ReusableAxios(url, "get", headers, item);
     return searchItem;
-  } catch (error) {
+  } catch (error) { 
     console.log(error);
     return error;
   }
