@@ -29,7 +29,7 @@ export default function PostStatus({ currentUser }) {
 
   return (
     <div className="post-status-main">
-      <div className="user-details">
+      {/* <div className="user-details">
         <img
           src={
             currentUser?.data?.profileImage
@@ -42,12 +42,12 @@ export default function PostStatus({ currentUser }) {
           {console.log(currentUser)}
           {currentUser?.data?.name ? currentUser?.data?.name : "Default User"}
         </p>
-        {/* <p className="headline">{currentUser?.data.headline}</p> */}
-      </div>
+        <p className="headline">{currentUser?.data.headline}</p>
+       </div>  */}
       <div className="post-status">
         <img
           className="post-image"
-          src={currentUser?.data?.profileImage}
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
           alt="imageLink"
         />
         <button

@@ -66,7 +66,7 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
         <img
           alt="profile-image"
           className="profile-image"
-          src={posts?.author?.profileImage}
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         />
         <div>
           <p
@@ -83,13 +83,22 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
           <p className="timestamp">
             {timeStampConversionToDateAndTime(posts.createdAt)}
           </p>
-          <p>{posts.content}</p>
-          {posts.images !== null && posts.images.length > 0 ? (
-            <Carousel data={posts.images} />
-          ) : null}
+             
         </div>
       </div>
-
+          
+          <p className="status">{posts.content}</p>
+          {posts.images !== null && posts.images.length > 0 ? (
+             <img
+          onClick={() => setImageModal(true)}
+          src={posts.images}
+          className="post-image"
+          alt="post-image"
+              />
+            
+          ) : <></>}
+       
+ 
       <LikeButton
         posts={posts}
         handleFetchPostComments={handleFetchPostComments}

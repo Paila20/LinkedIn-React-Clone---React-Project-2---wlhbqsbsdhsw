@@ -83,20 +83,28 @@ const ModalComponent = ({
           >
             {posts?.content ? (
               <TextArea
+              className="modal-input"
                 defaultValue={posts.content}
                 placeholder="What do you want to talk about?"
               />
             ) : (
-              <TextArea placeholder="What do you want to talk about?" />
+              <TextArea className="modal-input" placeholder="What do you want to talk about?" />
             )}
           </Form.Item>
-          <Form.Item name="image">
+          {/* <Form.Item name="image"> */}
+          <label for="pic-upload">
+          <AiOutlinePicture size={35} className="picture-icon" />
+           </label>
+
             <input
-              type="file"
-              accept="image/*"
+              id="pic-upload"
+
+              type={"file"}
+              hidden
+              // accept="image/*"
               onChange={(event) => handleFileUpload(event)}
             />
-          </Form.Item>
+          {/* </Form.Item> */}
           {/* <FaRegImage
             color="#666666"
             style={{ transform: "scaleX(-1)" }}

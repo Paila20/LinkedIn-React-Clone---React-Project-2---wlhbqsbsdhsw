@@ -12,6 +12,9 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
   }
 
   .comment-input {

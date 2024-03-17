@@ -105,7 +105,7 @@ export default function Topbar({ currentUser }) {
       )}
       <img
         className="user-logo"
-        src={currentUser?.imageLink}
+        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
         alt="user"
         onClick={displayPopup}
       />

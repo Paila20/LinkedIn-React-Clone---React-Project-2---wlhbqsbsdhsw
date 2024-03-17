@@ -21,9 +21,9 @@ export default function RegisterComponent() {
       const register = await registerAPI(body);
       if (register.status === 200) {
         toast.success("Account Created!");
-        navigate("/home");
+        navigate("/");
       } else {
-        navigate("/home");
+        navigate("/");
         console.log(register);
       }
     } catch (err) {

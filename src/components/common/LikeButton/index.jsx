@@ -15,6 +15,7 @@ import {
 } from "../../../utils/user/post";
 import "./index.scss";
 import { toast } from "react-toastify";
+import { timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
 
 export default function LikeButton({
   posts,
@@ -123,7 +124,7 @@ export default function LikeButton({
                     {/* <p className="name">{comment.}</p> */}
                     <p className="comment">{comment.content}</p>
 
-                    <p className="timestamp">{comment.createdAt}</p>
+                    <p className="timestamp">{timeStampConversionToDateAndTime(comment.createdAt)}</p>
                     <BsTrash
                       size={20}
                       className="action-icon"
