@@ -97,12 +97,14 @@ const ModalComponent = ({
            </label>
 
             <input
+            
               id="pic-upload"
 
               type={"file"}
               hidden
+              
               // accept="image/*"
-              onChange={(event) => handleFileUpload(event)}
+              onChange={(event) => handleFileUpload(event.target.files[0],setImageUpload)}
             />
           {/* </Form.Item> */}
           {/* <FaRegImage

@@ -22,10 +22,10 @@ function App() {
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("userData")) || {};
     if (Object.keys(userData).length > 0) {
-      setAuthenticated(false);
+      setAuthenticated(true);
       setCurrentUser(userData);
     } else {
-      setAuthenticated(false);
+      setAuthenticated(true);
     }
   }, []);
 

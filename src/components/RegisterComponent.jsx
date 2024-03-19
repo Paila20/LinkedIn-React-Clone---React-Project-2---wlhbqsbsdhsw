@@ -22,10 +22,11 @@ export default function RegisterComponent() {
       if (register.status === 200) {
         toast.success("Account Created!");
         navigate("/");
-      } else {
-        navigate("/");
-        console.log(register);
       }
+      // } else {
+      //   navigate("/");
+      //   console.log(register);
+      // }
     } catch (err) {
       console.log(err);
       toast.error("Cannot Create your Account");

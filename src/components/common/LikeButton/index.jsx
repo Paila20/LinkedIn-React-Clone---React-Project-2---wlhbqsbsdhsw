@@ -32,7 +32,7 @@ export default function LikeButton({
 
     if (liked.status === 201) {
       console.log(liked);
-      setLiked(true);
+      setLiked(!liked);
     }
   };
 
@@ -68,7 +68,7 @@ export default function LikeButton({
       </div>
       <div className="like-comment">
         <div className="likes-comment-inner">
-          {posts.isLiked === true ? (
+          {/* {posts.isLiked === true ? (
             <BsFillHandThumbsUpFill size={30} color="#0a66c2" />
           ) : (
             <Button type="" onClick={handleLike}>
@@ -77,7 +77,16 @@ export default function LikeButton({
                 Like
               </span>
             </Button>
+          )} */}
+      
+        {liked ? (
+            <BsFillHandThumbsUpFill size={30} color="#0a66c2" />
+          ) : (
+            <BsHandThumbsUp size={30} />
           )}
+
+          <p className={liked ? "blue" : "black"}>Like</p>
+        
         </div>
         <div
           className="likes-comment-inner"
@@ -107,7 +116,7 @@ export default function LikeButton({
                     },
                   ]}
                 >
-                  <Input placeholder="Add a Comment" />
+                  <Input placeholder="Add a Comment" className="comment-input"/>
                 </Form.Item>
                 <Button type="" htmlType="submit" className="add-comment-btn">
                   Add Comment

@@ -2,6 +2,7 @@ import { ReusableAxios } from "../../components/CustomHook/ReusableAxios";
 
 const token = localStorage.getItem("userData");
 var tokenn = JSON.parse(token);
+console.log(tokenn["token"])
 
 export const createPost = async (body) => {
   const url = "https://academics.newtonschool.co/api/v1/linkedin/post/";
