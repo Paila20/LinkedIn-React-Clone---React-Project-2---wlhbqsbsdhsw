@@ -49,7 +49,8 @@ export const deletePost = async (id) => {
   }
 };
 export const fetchPost = async () => {
-  const url = "https://academics.newtonschool.co/api/v1/linkedin/post?limit=20";
+  const url =
+    "https://academics.newtonschool.co/api/v1/linkedin/post?limit=500";
 
   const headers = {
     projectID: "i1dieevrt9g1",
@@ -122,5 +123,3 @@ export const deleteComments = async (comment_id) => {
     return error;
   }
 };
-
-
