@@ -10,36 +10,23 @@ export default function RegisterComponent() {
   let navigate = useNavigate();
   const [credentails, setCredentials] = useState({});
   const register = async () => {
-    try {
-      const body =JSON.stringify({
-        name: credentails["name"],
-        email: credentails["email"],
-        password: credentails["password"],
-        appType: "linkedin",
-      });
-      const res = await registerAPI(body);
-      console.log(register)
-      if (res.status === success) {
-        toast.success("Account Created!");
-       
-        localStorage.setItem("token" ,JSON.stringify(res.data.token));
-        localStorage.setItem("user", JSON.stringify(res.data.user.name));
-        navigate("/");
-      }
+    const body = JSON.stringify({
+      name: credentails["name"],
+      email: credentails["email"],
+      password: credentails["password"],
+      appType: "linkedin",
+    });
+    const res = await registerAPI(body);
+    if (res.status === 201) {
+      toast.success("Account Created!");
 
-    else if(res.status === "fail" && res.message === "User already exists"){
-      alert(res.message);
-      setCredentials(credentails.name(""));
-      setCredentials(credentails.email(""));
-      setCredentials(credentails.password(""));
-
-     }
-    } catch (err) {
-      console.log(err);
-      
+      localStorage.setItem("token", JSON.stringify(res.data.token));
+      localStorage.setItem("user", JSON.stringify(res.data.user.name));
+      navigate("/");
+    } else {
+      toast.error("User already exists");
     }
   };
-
 
   return (
     <div className="login-wrapper">
@@ -77,7 +64,7 @@ export default function RegisterComponent() {
             placeholder="Password (6 or more characters)"
           />
         </div>
-        <button onClick={register} className="login-btn" >
+        <button onClick={register} className="login-btn">
           Agree & Join
         </button>
       </div>
