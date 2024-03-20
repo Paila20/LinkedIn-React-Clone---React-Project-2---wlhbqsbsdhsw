@@ -8,7 +8,8 @@ export default function ProfilePopup({ currentUser }) {
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("userData");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/login");
   };
 

@@ -9,29 +9,37 @@ import { toast } from "react-toastify";
 export default function RegisterComponent() {
   let navigate = useNavigate();
   const [credentails, setCredentials] = useState({});
-
   const register = async () => {
     try {
-      const body = {
+      const body =JSON.stringify({
         name: credentails["name"],
         email: credentails["email"],
         password: credentails["password"],
         appType: "linkedin",
-      };
-      const register = await registerAPI(body);
-      if (register.status === 200) {
+      });
+      const res = await registerAPI(body);
+      console.log(register)
+      if (res.status === success) {
         toast.success("Account Created!");
+       
+        localStorage.setItem("token" ,JSON.stringify(res.data.token));
+        localStorage.setItem("user", JSON.stringify(res.data.user.name));
         navigate("/");
       }
-      // } else {
-      //   navigate("/");
-      //   console.log(register);
-      // }
+
+    else if(res.status === "fail" && res.message === "User already exists"){
+      alert(res.message);
+      setCredentials(credentails.name(""));
+      setCredentials(credentails.email(""));
+      setCredentials(credentails.password(""));
+
+     }
     } catch (err) {
       console.log(err);
-      toast.error("Cannot Create your Account");
+      
     }
   };
+
 
   return (
     <div className="login-wrapper">
@@ -45,6 +53,7 @@ export default function RegisterComponent() {
             onChange={(event) =>
               setCredentials({ ...credentails, name: event.target.value })
             }
+            value={credentails.name}
             type="text"
             className="common-input"
             placeholder="Your Name"
@@ -53,6 +62,7 @@ export default function RegisterComponent() {
             onChange={(event) =>
               setCredentials({ ...credentails, email: event.target.value })
             }
+            value={credentails.email}
             type="email"
             className="common-input"
             placeholder="Email or phone number"
@@ -61,12 +71,13 @@ export default function RegisterComponent() {
             onChange={(event) =>
               setCredentials({ ...credentails, password: event.target.value })
             }
+            value={credentails.password}
             type="password"
             className="common-input"
             placeholder="Password (6 or more characters)"
           />
         </div>
-        <button onClick={register} className="login-btn">
+        <button onClick={register} className="login-btn" >
           Agree & Join
         </button>
       </div>
@@ -74,7 +85,7 @@ export default function RegisterComponent() {
       <div className="google-btn-container">
         <p className="go-to-signup">
           Already on LinkedIn?{" "}
-          <span className="join-now" onClick={() => navigate("/")}>
+          <span className="join-now" onClick={() => navigate("/login")}>
             Sign in
           </span>
         </p>

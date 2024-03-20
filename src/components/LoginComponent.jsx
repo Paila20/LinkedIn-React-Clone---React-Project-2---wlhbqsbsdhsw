@@ -8,27 +8,38 @@ import { getUsers } from "../utils/user/login";
 export default function LoginComponent() {
   let navigate = useNavigate();
   const [credentails, setCredentials] = useState({});
+
   const login = async () => {
+    
     try {
-      const body = {
+      const body = JSON.stringify({
         email: credentails["email"],
         password: credentails["password"],
         appType: "linkedin",
-      };
+      });
 
-      const gettingUsers = await getUsers(body);
-      if (gettingUsers.status === 200) {
+      const res = await getUsers(body);
+      if (res.status === success) {
         toast.success("Signed In to Linkedin!");
-        console.log(gettingUsers);
-        localStorage.setItem("userData", JSON.stringify(gettingUsers.data));
+        console.log(res);
+        localStorage.setItem("userData", JSON.stringify(res.data));
+        localStorage.setItem("token" , JSON.stringify(res.data.token)); 
+        localStorage.setItem("user", JSON.stringify(res.data.name));
         navigate("/");
-      } else {
-        toast.error("Please Check your Credentials");
       }
+      else if (res.status == "fail" && res.message == "Incorrect EmailId or Password") {
+        alert(res.message);
+        setCredentials(credentails.email(""));
+        setCredentials(credentails.password(""));
+        
+    }
     } catch (err) {
-      toast.error("Please Check your Credentials");
+      console.log(err);
+ 
     }
   };
+ 
+ 
 
   return (
     <div className="login-wrapper">
@@ -43,6 +54,7 @@ export default function LoginComponent() {
             onChange={(event) =>
               setCredentials({ ...credentails, email: event.target.value })
             }
+            value={credentails.email}
             type="email"
             className="common-input"
             placeholder="Email or Phone"
@@ -51,11 +63,13 @@ export default function LoginComponent() {
             onChange={(event) =>
               setCredentials({ ...credentails, password: event.target.value })
             }
+            value={credentails.password}
             type="password"
             className="common-input"
             placeholder="Password"
           />
         </div>
+        
         <button onClick={login} className="login-btn">
           Sign in
         </button>

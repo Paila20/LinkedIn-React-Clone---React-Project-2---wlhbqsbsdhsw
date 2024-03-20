@@ -61,7 +61,7 @@ export default function SearchUsers({ setIsSearch }) {
       {console.log(searchvalue.data)}
       {searchvalue && (
         <div className="search-result">
-          {/* {console.log(searchvalue.data)} */}
+  
           {searchvalue?.map((d, i) => {
             console.log(d);
             return (
