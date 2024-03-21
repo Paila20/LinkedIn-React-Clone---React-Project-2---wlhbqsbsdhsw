@@ -19,17 +19,18 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
-  // useEffect(() => {
-  //   const userData = JSON.parse(localStorage.getItem("userData")) || {};
-  //   if (Object.keys(userData).length > 0) {
-  //     setAuthenticated(true);
-  //     setCurrentUser(userData);
-  //   } else {
-  //     setAuthenticated(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("userData")) || {};
+    if (Object.keys(userData).length > 0) {
+      setAuthenticated(true);
+      setCurrentUser(userData);
+      console.log(currentUser)
+    } else {
+      setAuthenticated(true);
+    }
+  }, []);
 
-  // useEffect(() => {}, [currentUser]);
+  useEffect(() => {}, [currentUser]);
 
   return (
     <div>

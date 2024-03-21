@@ -9,36 +9,9 @@ import { toast } from "react-toastify";
 export default function RegisterComponent() {
   let navigate = useNavigate();
   const [credentails, setCredentials] = useState({ name: "", email: "", password: ""});
-  // const register = async () => {
-    
-  //     const body =JSON.stringify({
-  //       name: credentails["name"],
-  //       email: credentails["email"],
-  //       password: credentails["password"],
-  //       appType: "linkedin",
-  //     });
-  //     const res = await registerAPI(body);
-  //     console.log(register)
-  //     if (res.status === "success") {
-  //       toast.success("Account Created!");
-       
-  //       localStorage.setItem("token" ,JSON.stringify(res.token));
-  //       localStorage.setItem("user", JSON.stringify(res.data.name));
-  //       navigate("/");
-  //     }
-
-  //   else if(res.status === "fail" && res.message === "User already exists"){
-  //     alert(res.message);
-  //     setCredentials(credentails.name(""));
-  //     setCredentials(credentails.email(""));
-  //     setCredentials(credentails.password(""));
-
-  //    }
-   
-  // };
-
+  
   const register = async () => {
-    try {
+    
       const body =JSON.stringify({
         name: credentails["name"],
         email: credentails["email"],
@@ -47,25 +20,19 @@ export default function RegisterComponent() {
       });
       const res = await registerAPI(body);
       console.log(register)
-      if (res.status === success) {
+      if (res.status === 201) {
         toast.success("Account Created!");
        
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
         localStorage.setItem("user", JSON.stringify(res.data.user.name));
         navigate("/");
       }
-
-    else if(res.status === "fail" && res.message === "User already exists"){
-      alert(res.message);
-      setCredentials(credentails.name(""));
-      setCredentials(credentails.email(""));
-      setCredentials(credentails.password(""));
-
+      else{
+        toast.error("Incorrect Emailid or password");
+        setCredentials({ name: "", email: "", password: "" });
      }
-    } catch (err) {
-      console.log(err);
-      
-    }
+
+   
   };
 
 

@@ -9,8 +9,10 @@ import "./index.scss";
 import { deletePost, fetchComments } from "../../../utils/user/post";
 import ModalComponent from "../Modal";
 import { toast } from "react-toastify";
+import { BACKGROUND_COLORS } from "../../../utils/user/login";
 
 export default function PostsCard({ posts, currentUser, fetchingPosts }) {
+  // console.log(posts)
   let navigate = useNavigate();
 
   const [allUsers, setAllUsers] = useState([]);
@@ -62,12 +64,24 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
         ) : (
           <></>
         )}
-
+           { 
+        posts.author.profileImage?(
         <img
+          className="profile-image"
+          src={posts.author.profileImage}
+          alt="imageLink"
+        />
+        )
+        :
+        (
+        <h2 className= "profile-image" style={{backgroundColor: BACKGROUND_COLORS[(posts.author.name.charCodeAt(0))%BACKGROUND_COLORS.length]}}>{posts.author.name.charAt(0)}</h2>
+        )  
+      }
+        {/* <img
           alt="profile-image"
           className="profile-image"
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        />
+        /> */}
         <div>
           <p
             className="name"

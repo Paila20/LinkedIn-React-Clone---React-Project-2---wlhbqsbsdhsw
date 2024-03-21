@@ -24,18 +24,14 @@ export default function LoginComponent() {
         console.log(res);
         localStorage.setItem("userData", JSON.stringify(res.data));
         localStorage.setItem("token" , JSON.stringify(res.data.token)); 
-        localStorage.setItem("user", JSON.stringify(res.data.name));
+        localStorage.setItem("user", JSON.stringify(res.data.data.name));
         navigate("/");
       }
       else{
         toast.error("Incorrect EmailId or Password");
-      }
-    //   else if (res.status == "fail" && res.message == "Incorrect EmailId or Password") {
-    //     alert(res.message);
-    //     setCredentials(credentails.email(""));
-    //     setCredentials(credentails.password(""));
-        
-    // }
+        setCredentials({email:"" , password:""});
+     }
+   
     
   };
  

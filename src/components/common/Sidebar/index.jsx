@@ -2,8 +2,9 @@ import { Avatar } from 'antd';
 import React from 'react';
 import './index.css';
 
-function Sidebar({currentUser}) {
-   
+function Sidebar({currentUser, posts}) {
+   console.log(posts);
+   console.log(currentUser)
 
 
     const recentItem = (topic) => (

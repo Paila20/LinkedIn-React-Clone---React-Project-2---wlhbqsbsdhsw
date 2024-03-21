@@ -36,7 +36,9 @@ export default function SearchUsers({ setIsSearch }) {
         userName: item.author.name,
       };
     });
-    setSearchValue(searchData);
+    const arr = searchData;
+
+    setSearchValue(new Set(arr));
   };
 
   const handleFilter = async () => {

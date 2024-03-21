@@ -1,6 +1,6 @@
 import { ReusableAxios } from "../../components/CustomHook/ReusableAxios";
 
-const token = (localStorage.getItem("token"));
+const token = JSON.parse(localStorage.getItem("token"));
 console.log(token);
 // var tokenn = JSON.parse(token);
 // console.log(tokenn["token"])
