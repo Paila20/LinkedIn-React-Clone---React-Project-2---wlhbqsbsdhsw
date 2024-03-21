@@ -8,7 +8,7 @@ import "./index.scss";
 import { fetchComments, fetchPost } from "../../../utils/user/post";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
 
-export default function PostStatus({ currentUser,posts}) {
+export default function PostStatus({ currentUser, posts }) {
   console.log(currentUser);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -48,19 +48,23 @@ export default function PostStatus({ currentUser,posts}) {
         <p className="headline">{currentUser?.data.headline}</p>
        </div>  */}
       <div className="post-status">
-        { 
-        currentUser?.data?.profileImage?(
-        <img
-          className="post-image"
-          src={currentUser.data.profileImage}
-          alt="imageLink"
-        />
-        )
-        :
-        (
-        <h2 className= "post-image" style={{backgroundColor: BACKGROUND_COLORS[(currentUser.data.name.charCodeAt(0))%20]}}>{currentUser.data.name.charAt(0)}</h2>
-        )
-      }
+        {currentUser?.data?.profileImage ? (
+          <img
+            className="post-image"
+            src={currentUser?.data?.profileImage}
+            alt="imageLink"
+          />
+        ) : (
+          <h2
+            className="post-image"
+            style={{
+              backgroundColor:
+                BACKGROUND_COLORS[currentUser?.data?.name.charCodeAt(0) % 20],
+            }}
+          >
+            {currentUser?.data?.name.charAt(0)}
+          </h2>
+        )}
         <button
           className="open-post-modal"
           onClick={() => {

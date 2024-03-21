@@ -7,35 +7,29 @@ import { getUsers } from "../utils/user/login";
 
 export default function LoginComponent() {
   let navigate = useNavigate();
-  const [credentails, setCredentials] = useState({email: "", password: ""});
+  const [credentails, setCredentials] = useState({ email: "", password: "" });
 
   const login = async () => {
-    
-    
-      const body = JSON.stringify({
-        email: credentails["email"],
-        password: credentails["password"],
-        appType: "linkedin",
-      });
-
-      const res = await getUsers(body);
-      if (res.status === 200) {
-        toast.success("Signed In to Linkedin!");
-        console.log(res);
-        localStorage.setItem("userData", JSON.stringify(res.data));
-        localStorage.setItem("token" , JSON.stringify(res.data.token)); 
-        localStorage.setItem("user", JSON.stringify(res.data.data.name));
-        navigate("/");
-      }
-      else{
-        toast.error("Incorrect EmailId or Password");
-        setCredentials({email:"" , password:""});
-     }
-   
-    
+    const body = JSON.stringify({
+      email: credentails["email"],
+      password: credentails["password"],
+      appType: "linkedin",
+    });
+    console.log("Login");
+    const res = await getUsers(body);
+    console.log(res);
+    if (res.status === 200) {
+      toast.success("Signed In to Linkedin!");
+      console.log(res);
+      localStorage.setItem("userData", JSON.stringify(res.data));
+      localStorage.setItem("token", JSON.stringify(res.data.token));
+      localStorage.setItem("user", JSON.stringify(res.data.data.name));
+      navigate("/");
+    } else {
+      toast.error("Incorrect EmailId or Password");
+      setCredentials({ email: "", password: "" });
+    }
   };
- 
- 
 
   return (
     <div className="login-wrapper">
@@ -65,7 +59,7 @@ export default function LoginComponent() {
             placeholder="Password"
           />
         </div>
-        
+
         <button onClick={login} className="login-btn">
           Sign in
         </button>
