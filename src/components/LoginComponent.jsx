@@ -7,11 +7,11 @@ import { getUsers } from "../utils/user/login";
 
 export default function LoginComponent() {
   let navigate = useNavigate();
-  const [credentails, setCredentials] = useState({});
+  const [credentails, setCredentials] = useState({email: "", password: ""});
 
   const login = async () => {
     
-    try {
+    
       const body = JSON.stringify({
         email: credentails["email"],
         password: credentails["password"],
@@ -19,7 +19,7 @@ export default function LoginComponent() {
       });
 
       const res = await getUsers(body);
-      if (res.status === success) {
+      if (res.status === 200) {
         toast.success("Signed In to Linkedin!");
         console.log(res);
         localStorage.setItem("userData", JSON.stringify(res.data));
@@ -27,16 +27,16 @@ export default function LoginComponent() {
         localStorage.setItem("user", JSON.stringify(res.data.name));
         navigate("/");
       }
-      else if (res.status == "fail" && res.message == "Incorrect EmailId or Password") {
-        alert(res.message);
-        setCredentials(credentails.email(""));
-        setCredentials(credentails.password(""));
+      else{
+        toast.error("Incorrect EmailId or Password");
+      }
+    //   else if (res.status == "fail" && res.message == "Incorrect EmailId or Password") {
+    //     alert(res.message);
+    //     setCredentials(credentails.email(""));
+    //     setCredentials(credentails.password(""));
         
-    }
-    } catch (err) {
-      console.log(err);
- 
-    }
+    // }
+    
   };
  
  
