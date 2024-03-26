@@ -45,7 +45,11 @@ export default function PostStatus({ currentUser, posts }) {
         )
         :
         (
-        <h2 className= "post-image" style={{backgroundColor: BACKGROUND_COLORS[(currentUser.data.name.charCodeAt(0))%20]}}>{currentUser.data.name.charAt(0)}</h2>
+          <img
+          className="post-image"
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          alt="imageLink"
+        />
         )
       }
         <button
