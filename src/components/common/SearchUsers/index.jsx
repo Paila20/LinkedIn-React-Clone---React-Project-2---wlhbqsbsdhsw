@@ -6,6 +6,7 @@ import "./index.scss";
 import { searchFilter, searchItem } from "../../../utils/user/search";
 import qs from "qs";
 import { fetchPost } from "../../../utils/user/post";
+import { Link } from "react-router-dom";
 
 export default function SearchUsers({ setIsSearch }) {
   const [searchvalue, setSearchValue] = useState([]);
@@ -62,9 +63,9 @@ export default function SearchUsers({ setIsSearch }) {
         <div className="search-result">
           {searchvalue?.map((d, i) => {
             return (
-              <>
-                <p key={i}>{d.userName}</p>
-              </>
+              <Link to={`/profile/${d.id}`} key={i}>
+                <p>{d.userName}</p>
+              </Link>
             );
           })}
         </div>

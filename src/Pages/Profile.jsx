@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ProfileComponent from "../components/ProfileComponent";
 
 import { useNavigate } from "react-router-dom";
-
+import ProfileComponent from "../components/ProfileComponent";
 import Loader from "../components/common/Loader";
 
 export default function Profile({ currentUser }) {

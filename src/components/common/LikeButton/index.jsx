@@ -31,28 +31,26 @@ export default function LikeButton({
 
   const [toggle, setToggle] = useState(false);
 
+  const handleLike = async () => {
+    // Make the API call to like the post
+    const liked = await likeaPost(posts._id);
 
-const handleLike = async () => {
-  // Make the API call to like the post
-  const liked = await likeaPost(posts._id);
-
-  // Check if the API call was successful (status code 201)
-  if (liked.status === 201) {
-    // If already liked, decrease like count and set like state to false
-   setToggle(!toggle);
-   setLikeCount(likeCount+1);
-}
-}
+    // Check if the API call was successful (status code 201)
+    if (liked.status === 201) {
+      // If already liked, decrease like count and set like state to false
+      setToggle(!toggle);
+      setLikeCount(likeCount + 1);
+    }
+  };
 
   const handleDisLike = async () => {
     const disliked = await dislikeaPost(posts._id);
     console.log(disliked);
-    if(disliked.status===204){
+    if (disliked.status === 204) {
       setToggle(!toggle);
       setDisLikeCount(dislikeCount + 1);
     }
-   
-  }
+  };
   const createComment = (values) => {
     commentForm.validateFields().then(async (formValues) => {
       const data = {
@@ -77,17 +75,18 @@ const handleLike = async () => {
   return (
     <div className="like-container">
       <p>
-      <span>{toggle ? `${posts.likeCount} ` : `${posts.dislikeCount} `}
-      Likes</span> &{" "}
-
-        
-        <span>{comments.length} Comments</span>
+        <span>
+          {/* {toggle ? `${posts?.likeCount} ` : `${posts.dislikeCount} `} */}
+          {posts ? posts.likeCount : 0}
+          Likes
+        </span>{" "}
+        & <span>{comments.length} Comments</span>
       </p>
       <div className="hr-line">
         <hr />
       </div>
       <div className="like-comment">
-        <div className="likes-comment-inner" onClick={handleLike}> 
+        <div className="likes-comment-inner" onClick={handleLike}>
           {/* {posts.isLiked === true ? (
             <BsFillHandThumbsUpFill size={30} color="#0a66c2" />
           ) : (
@@ -98,15 +97,18 @@ const handleLike = async () => {
               </span>
             </Button>
           )} */}
-      
-        {toggle ? (
-            <BsFillHandThumbsUpFill  onClick = {handleLike} size={30} color="#0a66c2" />
+
+          {toggle ? (
+            <BsFillHandThumbsUpFill
+              onClick={handleLike}
+              size={30}
+              color="#0a66c2"
+            />
           ) : (
-            <BsHandThumbsUp onClick= {handleDisLike} size={30} />
-          )} 
+            <BsHandThumbsUp onClick={handleDisLike} size={30} />
+          )}
 
           <p className={toggle ? "blue" : "black"}>Like</p>
-        
         </div>
         <div
           className="likes-comment-inner"
@@ -136,7 +138,10 @@ const handleLike = async () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Add a Comment" className="comment-input"/>
+                  <Input
+                    placeholder="Add a Comment"
+                    className="comment-input"
+                  />
                 </Form.Item>
                 <Button type="" htmlType="submit" className="add-comment-btn">
                   Add Comment
@@ -150,10 +155,11 @@ const handleLike = async () => {
             ? comments.map((comment) => {
                 return (
                   <div className="all-comments">
-              
                     <p className="comment">{comment.content}</p>
 
-                    <p className="timestamp">{timeStampConversionToDateAndTime(comment.createdAt)}</p>
+                    <p className="timestamp">
+                      {timeStampConversionToDateAndTime(comment.createdAt)}
+                    </p>
                     <BsTrash
                       size={20}
                       className="action-icon"
