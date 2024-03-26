@@ -9,7 +9,6 @@ export default function HomeLayout() {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("userData")) || {};
-    console.log(userData);
     if (userData) {
       setCurrentUser(userData);
     }

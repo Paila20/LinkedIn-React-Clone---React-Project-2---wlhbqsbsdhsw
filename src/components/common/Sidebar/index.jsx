@@ -4,8 +4,6 @@ import './index.css';
 import { BACKGROUND_COLORS } from '../../../utils/user/login';
 
 function Sidebar({currentUser, posts}) {
-   console.log(posts);
-   console.log(currentUser)
 
 
     const recentItem = (topic) => (

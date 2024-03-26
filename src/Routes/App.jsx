@@ -24,7 +24,6 @@ function App() {
     if (Object.keys(userData).length > 0) {
       setAuthenticated(true);
       setCurrentUser(userData);
-      console.log(currentUser)
     } else {
       setAuthenticated(true);
     }

@@ -15,12 +15,9 @@ export default function LoginComponent() {
       password: credentails["password"],
       appType: "linkedin",
     });
-    console.log("Login");
     const res = await getUsers(body);
-    console.log(res);
     if (res.status === 200) {
       toast.success("Signed In to Linkedin!");
-      console.log(res);
       localStorage.setItem("userData", JSON.stringify(res.data));
       localStorage.setItem("token", JSON.stringify(res.data.token));
       localStorage.setItem("user", JSON.stringify(res.data.data.name));

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 
 import "./index.scss";
 import { searchFilter, searchItem } from "../../../utils/user/search";
@@ -22,41 +22,27 @@ export default function SearchUsers({ setIsSearch }) {
     }
   };
 
-  const handleSearch = async (value) => {
-    // const data = {
-    //   location: value,
-    // };
-    // const searchData = await searchItem(qs.stringify(data));
-    // if (searchData.status === 200) {
-    //   setSearchValue(searchData.data);
-    // }
-    console.log(postsData.data);
-    const searchData = postsData?.data?.map((item) => {
-      return {
-        id: item.author._id,
-        userName: item.author.name,
-      };
+  const handleSearch = (value) => {
+    const searchedData = postsData?.data?.map((item) => {
+      if (item?.author?.name && item.author.name.includes(value)) {
+        return {
+          id: item.author._id,
+          userName: item.author.name,
+        };
+      }
     });
-      // Convert array to Set to remove duplicates
-  const uniqueSearchData = new Set(searchData);
+    const uniqueData = new Set(
+      searchedData.filter((item) => item !== undefined).map(JSON.stringify)
+    );
 
-  // Convert Set back to array if necessary
-  const uniqueArray = [...uniqueSearchData];
+    const uniqueArray = Array.from(uniqueData).map(JSON.parse);
 
-  setSearchValue(uniqueArray);
-    // const arr = searchData;
-
-    // setSearchValue(new Set(arr));
-  };
-
-  const handleFilter = async () => {
-    const searchFilter = await searchFilter();
-    console.log(searchFilter);
+    setSearchValue(uniqueArray);
   };
 
   return (
     <div className="search-users">
-    <FaSearch/>
+      <FaSearch />
       <input
         placeholder="Search Users.."
         onChange={(event) => handleSearch(event.target.value)}
@@ -69,12 +55,9 @@ export default function SearchUsers({ setIsSearch }) {
           handleSearch("");
         }}
       />
-      {console.log(searchvalue.data)}
       {searchvalue && (
         <div className="search-result">
-  
           {searchvalue?.map((d, i) => {
-            console.log(d);
             return (
               <>
                 <p key={i}>{d.userName}</p>

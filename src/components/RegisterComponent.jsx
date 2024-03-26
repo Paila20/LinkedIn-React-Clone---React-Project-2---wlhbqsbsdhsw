@@ -19,7 +19,6 @@ export default function RegisterComponent() {
         appType: "linkedin",
       });
       const res = await registerAPI(body);
-      console.log(register)
       if (res.status === 201) {
         toast.success("Account Created!");
        

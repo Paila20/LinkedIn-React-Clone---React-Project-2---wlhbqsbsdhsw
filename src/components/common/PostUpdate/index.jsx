@@ -10,7 +10,6 @@ import { BACKGROUND_COLORS } from "../../../utils/user/login";
 import InputOptions from "../InputOptions";
 
 export default function PostStatus({ currentUser, posts }) {
-  console.log(currentUser);
   const [modalOpen, setModalOpen] = useState(false);
 
   const [allPosts, setAllPosts] = useState([]);
