@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { FaSearch } from 'react-icons/fa';
 
 import "./index.scss";
 import { searchFilter, searchItem } from "../../../utils/user/search";
@@ -36,9 +37,16 @@ export default function SearchUsers({ setIsSearch }) {
         userName: item.author.name,
       };
     });
-    const arr = searchData;
+      // Convert array to Set to remove duplicates
+  const uniqueSearchData = new Set(searchData);
 
-    setSearchValue(new Set(arr));
+  // Convert Set back to array if necessary
+  const uniqueArray = [...uniqueSearchData];
+
+  setSearchValue(uniqueArray);
+    // const arr = searchData;
+
+    // setSearchValue(new Set(arr));
   };
 
   const handleFilter = async () => {
@@ -48,6 +56,7 @@ export default function SearchUsers({ setIsSearch }) {
 
   return (
     <div className="search-users">
+    <FaSearch/>
       <input
         placeholder="Search Users.."
         onChange={(event) => handleSearch(event.target.value)}

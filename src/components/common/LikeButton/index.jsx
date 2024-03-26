@@ -9,6 +9,7 @@ import { Button, Col, Form, Input, Row } from "antd";
 import {
   createComments,
   deleteComments,
+  dislikeaPost,
   fetchComments,
   likeaPost,
   updatePost,
@@ -25,17 +26,33 @@ export default function LikeButton({
 }) {
   const [commentForm] = Form.useForm();
   const [showCommentBox, setShowCommentBox] = useState(false);
-  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(posts.likeCount);
+  const [dislikeCount, setDisLikeCount] = useState(posts.dislikeCount);
 
-  const handleLike = async () => {
-    const liked = await likeaPost(posts._id);
+  const [toggle, setToggle] = useState(false);
 
-    if (liked.status === 201) {
-      console.log(liked);
-      setLiked(!liked);
+
+const handleLike = async () => {
+  // Make the API call to like the post
+  const liked = await likeaPost(posts._id);
+
+  // Check if the API call was successful (status code 201)
+  if (liked.status === 201) {
+    // If already liked, decrease like count and set like state to false
+   setToggle(!toggle);
+   setLikeCount(likeCount+1);
+}
+}
+
+  const handleDisLike = async () => {
+    const disliked = await dislikeaPost(posts._id);
+    console.log(disliked);
+    if(disliked.status===204){
+      setToggle(!toggle);
+      setDisLikeCount(dislikeCount + 1);
     }
-  };
-
+   
+  }
   const createComment = (values) => {
     commentForm.validateFields().then(async (formValues) => {
       const data = {
@@ -60,14 +77,17 @@ export default function LikeButton({
   return (
     <div className="like-container">
       <p>
-        <span>{posts.likeCount} People Like this Post</span> &{" "}
-        <span>{posts.commentCount} People commented this Post</span>
+      <span>{toggle ? `${posts.likeCount} ` : `${posts.dislikeCount} `}
+      Likes</span> &{" "}
+
+        
+        <span>{comments.length} Comments</span>
       </p>
       <div className="hr-line">
         <hr />
       </div>
       <div className="like-comment">
-        <div className="likes-comment-inner">
+        <div className="likes-comment-inner" onClick={handleLike}> 
           {/* {posts.isLiked === true ? (
             <BsFillHandThumbsUpFill size={30} color="#0a66c2" />
           ) : (
@@ -79,13 +99,13 @@ export default function LikeButton({
             </Button>
           )} */}
       
-        {liked ? (
-            <BsFillHandThumbsUpFill size={30} color="#0a66c2" />
+        {toggle ? (
+            <BsFillHandThumbsUpFill  onClick = {handleLike} size={30} color="#0a66c2" />
           ) : (
-            <BsHandThumbsUp size={30} />
-          )}
+            <BsHandThumbsUp onClick= {handleDisLike} size={30} />
+          )} 
 
-          <p className={liked ? "blue" : "black"}>Like</p>
+          <p className={toggle ? "blue" : "black"}>Like</p>
         
         </div>
         <div
@@ -130,7 +150,7 @@ export default function LikeButton({
             ? comments.map((comment) => {
                 return (
                   <div className="all-comments">
-                    {/* <p className="name">{comment.}</p> */}
+              
                     <p className="comment">{comment.content}</p>
 
                     <p className="timestamp">{timeStampConversionToDateAndTime(comment.createdAt)}</p>

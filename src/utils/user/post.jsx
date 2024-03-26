@@ -80,6 +80,22 @@ export const likeaPost = async (post_id) => {
     return error;
   }
 };
+
+export const dislikeaPost = async (post_id) => {
+  const url = `https://academics.newtonschool.co/api/v1/linkedin/like/${post_id}`;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    projectID: "i1dieevrt9g1",
+  };
+  try {
+    const dislikeaPost = await ReusableAxios(url, "delete", headers);
+    return dislikeaPost;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
 export const fetchComments = async (post_id) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/post/${post_id}/comments`;
 

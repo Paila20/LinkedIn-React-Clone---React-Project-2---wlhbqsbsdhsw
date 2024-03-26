@@ -81,7 +81,7 @@ const ModalComponent = ({
               },
             ]}
           >
-            {posts?.content ? (
+            {/* {posts?.content ? (
               <TextArea
               className="modal-input"
                 defaultValue={posts.content}
@@ -89,9 +89,19 @@ const ModalComponent = ({
               />
             ) : (
               <TextArea className="modal-input" placeholder="What do you want to talk about?" />
-            )}
+            )} */}
+
+            {posts?.content ? (
+              <ReactQuill
+              className="modal-input"
+                defaultValue={posts.content}
+                placeholder="What do you want to talk about?"
+              />
+            ) : (
+              <ReactQuill className="modal-input" placeholder="What do you want to talk about?" />
+             )}
           </Form.Item>
-          {/* <Form.Item name="image"> */}
+              {/* <Form.Item name="image"> */}
           <label for="pic-upload">
           <AiOutlinePicture size={35} className="picture-icon" />
            </label>

@@ -1,6 +1,7 @@
 import { Avatar } from 'antd';
 import React from 'react';
 import './index.css';
+import { BACKGROUND_COLORS } from '../../../utils/user/login';
 
 function Sidebar({currentUser, posts}) {
    console.log(posts);
@@ -18,11 +19,20 @@ function Sidebar({currentUser, posts}) {
         <div className="sidebar">
             <div className="sidebar__top">
                 <img src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png" alt="" />
-                {/* <Avatar className="sidebar__avatar" src={currentUser.photoUrl}> {currentUser.email[0].toUpperCase()} </Avatar> */}
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" > {currentUser.name}</Avatar>
-
-                <h2>{currentUser.name}</h2>
-                <h4>{currentUser.email}</h4>
+                {/* <Avatar className="sidebar__avatar" src={currentUser.photoUrl}> {currentUser.email[0].toUpperCase()} </Avatar>
+                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" > {currentUser.name}</Avatar> */}
+                    { 
+                currentUser?.data?.profileImage?(
+               
+                <Avatar src={currentUser?.data?.profileImage} > </Avatar> 
+                ) 
+                :
+                (
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></Avatar> 
+                )
+                }
+                <h2>{currentUser?.data?.name}</h2>
+                <h4>{currentUser?.data?.email}</h4>
             </div>
             <div className="sidebar__stats">
                 <div className="sidebar__stat">

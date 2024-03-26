@@ -15,6 +15,7 @@ import { BsBriefcase } from "react-icons/bs";
 import ProfilePopup from "../ProfilePopup";
 import "./index.scss";
 
+
 export default function Topbar({ currentUser }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
@@ -101,15 +102,28 @@ export default function Topbar({ currentUser }) {
           <BsBriefcase size={30} className="react-icon" />
           <AiOutlineMessage size={30} className="react-icon" />
           <AiOutlineBell size={30} className="react-icon" />
+          { 
+                currentUser?.data?.profileImage?(
+                <img
+                className="user-logo"
+                src={currentUser?.data?.profileImage}
+                alt="imageLink"
+                onClick={displayPopup}
+                />
+                )
+                :
+                (
+                  <img
+                  className="user-logo"
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  alt="imageLink"
+                  onClick={displayPopup}
+                  />
+                )
+                } 
         </div>
       )}
-      <img
-        className="user-logo"
-        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        alt="user"
-        onClick={displayPopup}
-      />
-
+      
       {searchInput.length === 0 ? (
         <></>
       ) : (

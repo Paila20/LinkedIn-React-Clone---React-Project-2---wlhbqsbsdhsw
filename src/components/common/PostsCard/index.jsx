@@ -74,22 +74,19 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
         )
         :
         (
-        <h2 className= "profile-image" style={{backgroundColor: BACKGROUND_COLORS[(posts.author.name.charCodeAt(0))%BACKGROUND_COLORS.length]}}>{posts.author.name.charAt(0)}</h2>
-        )  
-      }
-        {/* <img
-          alt="profile-image"
+          <img
           className="profile-image"
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        /> */}
+          alt="imageLink"
+        />
+
+        )  
+      }
+       
         <div>
           <p
             className="name"
-            // onClick={() =>
-            //   navigate("/profile", {
-            //     state: { id: posts?.userID, email: posts.userEmail },
-            //   })
-            // }
+          
           >
             {posts?.author?.name}
           </p>
@@ -102,15 +99,17 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
       </div>
           
           <p className="status">{posts.content}</p>
-          {posts.images !== null && posts.images.length > 0 ? (
+         {posts?.images && posts?.images?.length > 0 ? (
              <img
-          onClick={() => setImageModal(true)}
-          src={posts.images}
+          src={posts?.images[0]}
           className="post-image"
           alt="post-image"
               />
-            
-          ) : <></>}
+           
+          ) :(
+            <></>
+           )
+           }
        
  
       <LikeButton
@@ -120,7 +119,7 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
         fetchingPosts={fetchingPosts}
       />
 
-      <Modal
+      {/* <Modal
         centered
         open={imageModal}
         onOk={() => setImageModal(false)}
@@ -133,8 +132,8 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
           className="post-image modal"
           alt="post-image"
         />
-      </Modal>
-      {openEditPost === true ? (
+      </Modal> */}
+      {/* {openEditPost === true ? (
         <ModalComponent
           modalOpen={openEditPost}
           setModalOpen={setOpenEditPost}
@@ -142,7 +141,7 @@ export default function PostsCard({ posts, currentUser, fetchingPosts }) {
           isEdit={true}
           posts={posts}
         />
-      ) : null}
+      ) : null} */}
     </div>
   );
   // : (

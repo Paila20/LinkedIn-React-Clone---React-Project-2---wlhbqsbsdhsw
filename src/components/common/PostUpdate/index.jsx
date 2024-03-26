@@ -1,12 +1,13 @@
 import React, { useState, useMemo, useEffect } from "react";
 
 import ModalComponent from "../Modal";
-
+import { MdImage, MdSubscriptions, MdEventNote, MdViewDay } from 'react-icons/md';
 import { getUniqueID } from "../../../helpers/getUniqueId";
 import PostsCard from "../PostsCard";
 import "./index.scss";
 import { fetchComments, fetchPost } from "../../../utils/user/post";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
+import InputOptions from "../InputOptions";
 
 export default function PostStatus({ currentUser,posts}) {
   console.log(currentUser);
@@ -32,33 +33,21 @@ export default function PostStatus({ currentUser,posts}) {
 
   return (
     <div className="post-status-main">
-      {/* <div className="user-details">
-        <img
-          src={
-            currentUser?.data?.profileImage
-              ? currentUser?.data?.profileImage
-              : null
-          }
-          alt="imageLink"
-        />
-        <p className="name">
-          {console.log(currentUser)}
-          {currentUser?.data?.name ? currentUser?.data?.name : "Default User"}
-        </p>
-        <p className="headline">{currentUser?.data.headline}</p>
-       </div>  */}
+     <div className="feed__inputcontainer">
       <div className="post-status">
         { 
         currentUser?.data?.profileImage?(
         <img
           className="post-image"
-          src={currentUser.data.profileImage}
+          src={currentUser?.data?.profileImage}
           alt="imageLink"
         />
-        )
-        :
-        (
-        <h2 className= "post-image" style={{backgroundColor: BACKGROUND_COLORS[(currentUser.data.name.charCodeAt(0))%20]}}>{currentUser.data.name.charAt(0)}</h2>
+        ):(
+          <img
+          className="post-image"
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          alt="imageLink"
+        />
         )
       }
         <button
@@ -70,6 +59,21 @@ export default function PostStatus({ currentUser,posts}) {
         >
           Start a Post
         </button>
+      </div>
+      <div className="feed__inputoptions">
+          <InputOptions Icon={MdImage} title="Photo" color="#70B5F9" />
+          <InputOptions
+            Icon={MdSubscriptions}
+            title="Video"
+            color="#E7A33E"
+          />
+          <InputOptions Icon={MdEventNote} title="Event" color="#C0CBCD" />
+          <InputOptions
+            Icon={MdViewDay}
+            title="Write Article"
+            color="#C7FC15E"
+          />
+        </div>
       </div>
 
       {modalOpen ? (
