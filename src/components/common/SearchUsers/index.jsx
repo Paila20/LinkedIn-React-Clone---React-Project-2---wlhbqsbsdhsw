@@ -24,7 +24,10 @@ export default function SearchUsers({ setIsSearch }) {
 
   const handleSearch = (value) => {
     const searchedData = postsData?.data?.map((item) => {
-      if (item?.author?.name && item.author.name.includes(value)) {
+      if (
+        item?.author?.name.toLowerCase() &&
+        item.author.name.toLowerCase().includes(value.toLowerCase())
+      ) {
         return {
           id: item.author._id,
           userName: item.author.name,
