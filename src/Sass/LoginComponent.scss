@@ -52,6 +52,11 @@ body {
   flex-direction: column;
   gap: 10px;
   width: 300px;
+  z-index: 1;
+  position: relative;
+  .common-input{
+    z-index: 1;
+  }
 }
 
 .linkedinLogo {
@@ -113,3 +118,4 @@ body {
     font-size: 18px;
   }
 }
+
