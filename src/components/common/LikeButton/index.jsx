@@ -75,11 +75,13 @@ export default function LikeButton({
   return (
     <div className="like-container">
       <p>
-      <span>{toggle ? `${posts.likeCount} ` : `${posts.dislikeCount} `}
-      Likes</span> &{" "}
 
-        
-        <span>{comments.length} Comments</span>
+        <span>
+          {/* {toggle ? `${posts?.likeCount} ` : `${posts.dislikeCount} `} */}
+          {posts ? posts.likeCount : 0}
+          Likes
+        </span>{" "}
+        & <span>{comments.length} Comments</span>
       </p>
       <div className="hr-line">
         <hr />
