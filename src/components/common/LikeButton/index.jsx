@@ -75,6 +75,7 @@ export default function LikeButton({
   return (
     <div className="like-container">
       <p>
+
         <span>
           {/* {toggle ? `${posts?.likeCount} ` : `${posts.dislikeCount} `} */}
           {posts ? posts.likeCount : 0}

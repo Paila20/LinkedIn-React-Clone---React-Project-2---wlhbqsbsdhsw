@@ -26,7 +26,7 @@ export default function SearchUsers({ setIsSearch }) {
   const handleSearch = (value) => {
     const searchedData = postsData?.data?.map((item) => {
       if (
-        item?.author?.name.toLowerCase() &&
+        item?.author?.name &&
         item.author.name.toLowerCase().includes(value.toLowerCase())
       ) {
         return {
@@ -46,7 +46,6 @@ export default function SearchUsers({ setIsSearch }) {
 
   return (
     <div className="search-users">
-      <FaSearch />
       <input
         placeholder="Search Users.."
         onChange={(event) => handleSearch(event.target.value)}
