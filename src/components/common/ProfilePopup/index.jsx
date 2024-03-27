@@ -16,17 +16,15 @@ export default function ProfilePopup({ currentUser }) {
   return (
     <div className="popup-card">
       <p className="name">{currentUser?.data?.name}</p>
-      {/* <p className="headline">{currentUser?.headline}</p> */}
       <Button
         title="View Profile"
-        // onClick={() =>
-        //   navigate("/profile", {
-        //     state: {
-        //       id: currentUser?.data?._id,
-        //     },
-        //   })
-        // }
-        disabled={true}
+        onClick={() =>
+          navigate("/profile", {
+            state: {
+              id: currentUser?.data?._id,
+            },
+          })
+        }
       />
       <Button title="Log out" onClick={handleLogout} disabled={false} />
     </div>
