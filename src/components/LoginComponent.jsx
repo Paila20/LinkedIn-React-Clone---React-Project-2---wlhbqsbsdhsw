@@ -76,7 +76,7 @@
 
 import React from "react";
 import { Form, Input, Button, message } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+
 import { useNavigate } from "react-router-dom";
 import { getUsers } from "../utils/user/login";
 import LinkedinLogo from "../assets/linkedinLogo.png";
@@ -132,9 +132,11 @@ const LoginComponent = () => {
             </Form.Item>
             <Form.Item
               name="password"
-              rules={[{ required: true, message: "Please input your Password!" }]}
+              rules={[{ required: true, message: "Please input your Password!" },
+                     { min: 6, message: "Password must be at least 6 characters!" },
+            ]}
             >
-              <Input.Password
+              <Input
  
                 placeholder="Password"
                 className="common-input"

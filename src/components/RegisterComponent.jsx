@@ -117,7 +117,7 @@ export default function RegisterComponent() {
         navigate("/");
         form.resetFields();
       } else {
-        message.error("Incorrect Email or password");
+        message.error("User Already Exists");
         form.resetFields();
       }
     } catch (error) {
