@@ -2,14 +2,14 @@ import React, { useState, useMemo, useEffect } from "react";
 
 import ModalComponent from "../Modal";
 import { MdImage, MdSubscriptions, MdEventNote, MdViewDay } from 'react-icons/md';
-import { getUniqueID } from "../../../helpers/getUniqueId";
+
 import PostsCard from "../PostsCard";
 import "./index.scss";
 import { fetchComments, fetchPost } from "../../../utils/user/post";
-import { BACKGROUND_COLORS } from "../../../utils/user/login";
+
 import InputOptions from "../InputOptions";
 
-export default function PostStatus({ currentUser, posts }) {
+export default function PostStatus({ currentUser }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const [allPosts, setAllPosts] = useState([]);

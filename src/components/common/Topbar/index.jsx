@@ -40,32 +40,8 @@ export default function Topbar({ currentUser }) {
     });
   };
 
-  const handleSearch = () => {
-    if (searchInput !== "") {
-      let searched = users.filter((user) => {
-        return Object.values(user)
-          .join("")
-          .toLowerCase()
-          .includes(searchInput.toLowerCase());
-      });
 
-      setFilteredUsers(searched);
-    } else {
-      setFilteredUsers(users);
-    }
-  };
-
-  useEffect(() => {
-    let debounced = setTimeout(() => {
-      handleSearch();
-    }, 1000);
-
-    return () => clearTimeout(debounced);
-  }, [searchInput]);
-
-  useEffect(() => {
-    // getAllUsers(setUsers);
-  }, []);
+ 
   return (
     <div className="topbar-main">
       {popupVisible ? (
@@ -97,7 +73,7 @@ export default function Topbar({ currentUser }) {
           <AiOutlineUserSwitch
             size={30}
             className="react-icon"
-            onClick={() => goToRoute("/connections")}
+           
           />
           <BsBriefcase size={30} className="react-icon" />
           <AiOutlineMessage size={30} className="react-icon" />
@@ -124,7 +100,7 @@ export default function Topbar({ currentUser }) {
         </div>
       )}
       
-      {searchInput.length === 0 ? (
+      {/* {searchInput.length === 0 ? (
         <></>
       ) : (
         <div className="search-results">
@@ -136,13 +112,13 @@ export default function Topbar({ currentUser }) {
                 className="search-inner"
                 // onClick={() => openUser(user)}
               >
-                {/* <img src={user.imageLink ? user.imageLink : null} /> */}
+              
                 <p className="name">{currentUser.data.name}</p>
               </div>
             ))
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 }

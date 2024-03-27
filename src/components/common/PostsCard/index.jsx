@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Modal } from "antd";
 import { BsPencil, BsTrash } from "react-icons/bs";
 import LikeButton from "../LikeButton";
-import Carousel from "../Carousel";
+
 import { timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
 import "./index.scss";
 import { deletePost, fetchComments } from "../../../utils/user/post";

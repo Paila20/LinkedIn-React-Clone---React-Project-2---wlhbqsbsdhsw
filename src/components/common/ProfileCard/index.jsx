@@ -2,9 +2,8 @@ import React, { useState, useMemo } from "react";
 
 import PostsCard from "../PostsCard";
 import { HiOutlinePencil } from "react-icons/hi";
-import { useLocation } from "react-router-dom";
-import FileUploadModal from "../FileUploadModal";
-// import { uploadImage as uploadImageAPI } from "../../../api/ImageUpload";
+
+
 import "./index.scss";
 
 export default function ProfileCard({ onEdit, currentUser,posts }) {

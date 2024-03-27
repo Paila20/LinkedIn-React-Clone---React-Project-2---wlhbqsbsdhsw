@@ -25,14 +25,11 @@ export default function SearchUsers({ setIsSearch }) {
 
   const handleSearch = (value) => {
     const searchedData = postsData?.data?.map((item) => {
-<<<<<<< Updated upstream
+
       if (
         item?.author?.name &&
         item.author.name.toLowerCase().includes(value.toLowerCase())
       ) {
-=======
-      if (item?.author?.name && item.author.name.toLowerCase().includes(value.toLowerCase())) {
->>>>>>> Stashed changes
         return {
           id: item.author._id,
           userName: item.author.name,

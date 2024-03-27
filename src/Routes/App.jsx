@@ -9,7 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import ProfileLayout from "../layouts/ProfileLayout";
-import ConnectionLayout from "../layouts/ConnectionLayout";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
@@ -41,20 +41,10 @@ function App() {
           <Route path="/" element={<HomeLayout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<ProfileLayout />} />
-          <Route path="/connections" element={<ConnectionLayout />} />
+       
         </Routes>
       </Router>
-      {/* <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          {authenticated !== false && (
-            <Route path="/" element={<HomeLayout />} />
-          )}
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<ProfileLayout />} />
-          <Route path="/connections" element={<ConnectionLayout />} />
-        </Routes>
-      </Router> */}
+    
     </div>
   );
 }

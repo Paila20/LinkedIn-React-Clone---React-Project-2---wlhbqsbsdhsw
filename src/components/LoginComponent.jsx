@@ -84,6 +84,7 @@ import "../Sass/LoginComponent.scss";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm(); // Initialize form instance
 
   const onFinish = async (values) => {
