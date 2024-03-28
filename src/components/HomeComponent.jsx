@@ -9,7 +9,7 @@ export const HomeComponent = ({ currentUser }) => {
   return (
     <div className="home-component">
       <Sidebar currentUser={currentUser} />
-      <PostStatus currentUser={currentUser} />
+      <PostStatus currentUser={currentUser} postingCheck={true} />
       <Widgets />
     </div>
   );

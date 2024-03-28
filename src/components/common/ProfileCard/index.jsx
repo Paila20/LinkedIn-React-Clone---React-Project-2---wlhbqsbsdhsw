@@ -11,10 +11,6 @@ export default function ProfileCard({
   currentUser,
   // posts
 }) {
-  const [allPosts, setAllPosts] = useState([]);
-  const [currentProfile, setCurrentProfile] = useState({});
-  console.log(currentUser);
-
   return (
     <>
       <div className="profile-card">
@@ -76,7 +72,7 @@ export default function ProfileCard({
       </div> */}
 
       <div className="post-status-main">
-        <PostStatus currentUser={currentUser} />
+        <PostStatus currentUser={currentUser} postingCheck={false} />
         {/* {allPosts?.map((posts) => {
           return (
             <div key={posts._id}>
