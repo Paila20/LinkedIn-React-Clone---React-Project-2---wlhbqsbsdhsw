@@ -10,7 +10,10 @@ export default function Profile({ currentUser }) {
   let navigate = useNavigate();
   console.log(currentUser);
   useEffect(() => {}, [currentUser]);
- 
-  return loading ? <Loader /> : <ProfileCard currentUser={currentUser.currentUser} />;
- 
+
+  return Object.keys(currentUser) < 1 ? (
+    <Loader />
+  ) : (
+    <ProfileCard currentUser={currentUser} />
+  );
 }

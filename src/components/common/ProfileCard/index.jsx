@@ -3,58 +3,43 @@ import React, { useState, useMemo } from "react";
 import PostsCard from "../PostsCard";
 import { HiOutlinePencil } from "react-icons/hi";
 
-
 import "./index.scss";
 
-export default function ProfileCard({ onEdit, currentUser,posts }) {
+export default function ProfileCard({
+  // onEdit,
+  currentUser,
+  // posts
+}) {
   let location = useLocation();
   const [allPosts, setAllPosts] = useState([]);
   const [currentProfile, setCurrentProfile] = useState({});
- console.log(currentUser)
- 
- 
+  console.log(currentUser);
 
   return (
     <>
-     <div className="profile-card">
-        
+      <div className="profile-card">
         <div className="profile-info">
           <div>
-          { 
-        currentUser?.data?.profileImage?(
-        <img
-          className="profile-image"
-          src={currentUser.data.profileImage}
-          alt="profile-image"
-        />
-        )
-        :
-        (
-          <img
-          className="profile-image"
-          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-          alt="profile-image"
-        />
-        )
-      }
-           
-            <h3 className="userName">
-              {currentUser?.data?.name}
-            </h3>
-            <p className="heading">
-              {currentUser?.data?.email}
-            </p>
-           
-           
+            {currentUser?.data?.profileImage ? (
+              <img
+                className="profile-image"
+                src={currentUser.data.profileImage}
+                alt="profile-image"
+              />
+            ) : (
+              <img
+                className="profile-image"
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                alt="profile-image"
+              />
+            )}
+
+            <h3 className="userName">{currentUser?.data?.name}</h3>
+            <p className="heading">{currentUser?.data?.email}</p>
           </div>
-
-         
         </div>
-       
-
-       
       </div>
-     
+
       {/* <div className="profile-card">
         
         <div className="profile-info">
