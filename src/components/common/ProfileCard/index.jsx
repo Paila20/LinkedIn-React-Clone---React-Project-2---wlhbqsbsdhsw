@@ -82,6 +82,7 @@ import "./index.scss";
 import PostStatus from "../PostUpdate";
 
 export default function ProfileCard({ currentUser, posts }) {
+  console.log(posts)
   return (
     <>
       <div className="profile-card">
