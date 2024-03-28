@@ -10,7 +10,6 @@ export default function ProfileCard({
   currentUser,
   // posts
 }) {
-  let location = useLocation();
   const [allPosts, setAllPosts] = useState([]);
   const [currentProfile, setCurrentProfile] = useState({});
   console.log(currentUser);
