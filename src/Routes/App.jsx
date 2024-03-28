@@ -13,6 +13,7 @@ import ProfileLayout from "../layouts/ProfileLayout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
+import Profile from "../Pages/Profile";
 
 function App() {
   const { Navigate } = useNavigate;
@@ -40,7 +41,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<HomeLayout />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<ProfileLayout />} />
+          <Route path="/profile" element={<Profile />} />
        
         </Routes>
       </Router>

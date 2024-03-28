@@ -11,6 +11,6 @@ export default function Profile({ currentUser }) {
   console.log(currentUser);
   useEffect(() => {}, [currentUser]);
  
-  return loading ? <Loader /> : <ProfileCard currentUser={currentUser} />;
+  return loading ? <Loader /> : <ProfileCard currentUser={currentUser.currentUser} />;
  
 }

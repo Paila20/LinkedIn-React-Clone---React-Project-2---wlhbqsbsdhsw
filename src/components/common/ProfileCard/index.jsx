@@ -8,7 +8,7 @@ import "./index.scss";
 
 export default function ProfileCard({ onEdit, currentUser,posts }) {
   let location = useLocation();
-  const [allStatuses, setAllStatus] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const [currentProfile, setCurrentProfile] = useState({});
  console.log(currentUser)
  
@@ -16,8 +16,46 @@ export default function ProfileCard({ onEdit, currentUser,posts }) {
 
   return (
     <>
+     <div className="profile-card">
+        
+        <div className="profile-info">
+          <div>
+          { 
+        currentUser?.data?.profileImage?(
+        <img
+          className="profile-image"
+          src={currentUser.data.profileImage}
+          alt="profile-image"
+        />
+        )
+        :
+        (
+          <img
+          className="profile-image"
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          alt="profile-image"
+        />
+        )
+      }
+           
+            <h3 className="userName">
+              {currentUser?.data?.name}
+            </h3>
+            <p className="heading">
+              {currentUser?.data?.email}
+            </p>
+           
+           
+          </div>
+
+         
+        </div>
+       
+
+       
+      </div>
      
-      <div className="profile-card">
+      {/* <div className="profile-card">
         
         <div className="profile-info">
           <div>
@@ -50,12 +88,12 @@ export default function ProfileCard({ onEdit, currentUser,posts }) {
        
 
        
-      </div>
+      </div> */}
 
       <div className="post-status-main">
-        {allStatuses?.map((posts) => {
+        {allPosts?.map((posts) => {
           return (
-            <div key={posts.id}>
+            <div key={posts._id}>
               <PostsCard posts={posts} />
             </div>
           );
