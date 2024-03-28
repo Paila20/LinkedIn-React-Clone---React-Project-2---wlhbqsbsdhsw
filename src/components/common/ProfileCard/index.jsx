@@ -4,6 +4,7 @@ import PostsCard from "../PostsCard";
 import { HiOutlinePencil } from "react-icons/hi";
 
 import "./index.scss";
+import PostStatus from "../PostUpdate";
 
 export default function ProfileCard({
   // onEdit,
@@ -75,13 +76,14 @@ export default function ProfileCard({
       </div> */}
 
       <div className="post-status-main">
-        {allPosts?.map((posts) => {
+        <PostStatus currentUser={currentUser} />
+        {/* {allPosts?.map((posts) => {
           return (
             <div key={posts._id}>
               <PostsCard posts={posts} />
             </div>
           );
-        })}
+        })} */}
       </div>
     </>
   );
