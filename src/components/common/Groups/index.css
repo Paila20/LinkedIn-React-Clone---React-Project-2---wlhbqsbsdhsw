@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mainContainerGroup {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* justify-content: center; */
+    background-color: #f4f2ee;
+  }
+  
+  .headerGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.181);
+    padding: 0px 10px 0px 10px;
+  }
+  
+  .groupList {
+    width: 97.4%;
+    height: 610px;
+    overflow-y: scroll;
+    padding: 20px;
+    /* gap: 10px; */
+  }
+  .groupList::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .groupList ul{
+    list-style-type: none;
+  }
+  .groupList li{
+    height: 60px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.181);
+    
+  }
+  
+  .groupList li:hover{
+    background-color: #eae5e5;
+  }
+  .logo{
+    width: 70px ;
+  }
+  .listItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    
+  }
+  .channelname{
+    display: flex;
+    align-items: center;
+  }
+  .public{
+    margin: 0 0 0 70px;
+  }
+  .groupProfileImage{
+    width: 40px;
+    height: 40px;
+    
+    text-align: center;
+  }
+  @media (max-width:900px){
+    
+    .cardStyle{
+      width: 100%;
+      margin: 0px 10px 10px -40px;
+    }
+  }

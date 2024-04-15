@@ -1,0 +1,82 @@
+.popup-card {
+    border: 1px solid #a8a8a8;
+    width: 200px;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .popup-card .name {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    text-align: left;
+    margin-top: -7px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+  }
+  
+  .popup-card .headline {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: -15px;
+  }
+  
+  .popup-card .popup-option {
+    cursor: pointer;
+  }
+   .popup-card .premium{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    text-align: left;
+    
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+   }
+
+
+
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-theme {
+  --background-color: #333333;
+  --text-color: #ffffff;
+}
+
+.popup-card {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popup-card .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popup-card .premium {
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.popup-card .premium:hover {
+  text-decoration: underline;
+}

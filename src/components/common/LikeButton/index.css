@@ -1,0 +1,149 @@
+.like-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 7px 10px;
+    cursor: pointer;
+    margin-bottom: -20px;
+  }
+  
+  .like-comment {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    justify-content: space-around;
+  }
+  
+  .comment-input {
+    height: 40px;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    border-radius: 30px;
+    border: 1px solid #737373;
+    font-family: system-ui;
+    color: #4b4b4b;
+    font-size: 16px;
+  }
+  
+  .comment-input:focus {
+    outline: 1px solid #4b4b4b;
+    color: #4b4b4b;
+  }
+  
+  .add-comment-btn {
+    width: 150px;
+    height: 35px;
+    background-color: #0a66c2;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .all-comments {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(227, 227, 227);
+    border-radius: 10px;
+    position: relative;
+    margin-left: 50px;
+    
+  }
+  
+  .all-comments .image {
+    width: 40px;
+    height: 40px;
+    margin-left: -50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .all-comments .name {
+    color: black;
+    text-decoration: none;
+    left: 20px;
+    top: 30px;
+  }
+  
+  .all-comments .comment {
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+  
+  .all-comments .timestamp {
+    position: absolute;
+    right: 190px;
+    top: 10px;
+    color: black;
+  }
+  
+  .all-comments .action-icon {
+    margin-left: 280px;
+    margin-top: 10px;
+  }
+  
+  .all-comments .user {
+    display: flex;
+  }
+  
+  .hr-line {
+    margin-top: -17px;
+  }
+  
+  .hr-line hr {
+    border-top: 1px solid rgb(181, 181, 181);
+  }
+  
+  .like-container p {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+  
+  .likes-comment-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -50px;
+    margin-bottom: -5px;
+  }
+  
+  .likes-comment-inner .blue {
+    color: #0a66c2;
+    font-size: 25px;
+  }
+  
+  .likes-comment-inner .black {
+    color: rgba(58, 58, 58, 0.835);
+  }
+  
+  .likes-comment-inner p {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color:rgba(58, 58, 58, 0.835);
+    font-size: 16px;
+  
+  }
+  .namecom{
+    font-family: system-ui, sans-serif;
+    font-size: 30px;
+    color: #212121;
+    font-weight: 600;
+    margin: 0px 0 0 40px;
+    cursor: pointer;
+  }
+ 
