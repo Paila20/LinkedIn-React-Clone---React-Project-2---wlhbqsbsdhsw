@@ -180,7 +180,7 @@ export default function PostUpdate({
             );
           })
         ) : (
-           <>You haven't posted anything yet</>
+           <div className="posts">You haven't posted anything yet</div>
           )} 
       </div>
     </div>

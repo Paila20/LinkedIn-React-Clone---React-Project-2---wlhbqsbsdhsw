@@ -98,7 +98,7 @@ export default function GroupProfile() {
                 
           </div>
         </div>
-        <div className="advert">
+        <div className="vert">
           <p className="ad">
             Ad <FaEllipsisH />
           </p>
