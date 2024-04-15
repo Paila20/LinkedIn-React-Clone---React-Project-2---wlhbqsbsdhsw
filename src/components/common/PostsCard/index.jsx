@@ -56,7 +56,7 @@ export default function PostsCard({
     <div className="posts-card" key={posts._id}>
       <div className="post-image-wrapper">
         {console.log(posts.author)}
-        {userData?.data?._id === posts?.author?._id && (
+        {currentUser?.data?._id === posts?.author?._id && (
           <div className="action-container">
             <FaEllipsisH onClick={() => setShowActions(!showActions)} />
             {showActions && (

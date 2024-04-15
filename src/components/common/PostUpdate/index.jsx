@@ -90,10 +90,10 @@ export default function PostUpdate({
         <>
           <div className='feed__inputcontainer'>
             <div className="post-status">
-              {userData?.data?.profileImage ? (
+              {currentUser?.data?.profileImage ? (
                 <img
                   className="post-image"
-                  src={userData.data.profileImage}
+                  src={currentUser?.data?.profileImage}
                   alt="imageLink"
                 />
               ) : (
@@ -169,7 +169,7 @@ export default function PostUpdate({
               <div key={post._id}>
                 <PostsCard
                   posts={post}
-                  // currentUser={currentUser}
+                  currentUser={currentUser}
                   fetchingPosts={fetchingPosts}
                   isEdit={isEdit}
                   setIsEdit={setIsEdit}
