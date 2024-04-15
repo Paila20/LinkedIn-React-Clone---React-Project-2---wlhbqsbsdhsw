@@ -29,7 +29,7 @@ export default function ProfilePopup({ toggleTheme ,theme}) {
       />
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
           <Button title="dark/light" onClick={toggleTheme} />
-      <Button title="Log out" onClick={handleLogout} disabled={false} />
+      <Button title="Sign out" onClick={handleLogout} disabled={false} />
     </div>
   );
 }
