@@ -70,6 +70,7 @@ export const likeaPost = async (post_id) => {
     Authorization: `Bearer ${token}`,
     projectID: "i1dieevrt9g1",
   };
+  console.log(token)
   try {
     const likeaPost = await ReusableAxios(url, "post", headers);
     return likeaPost;

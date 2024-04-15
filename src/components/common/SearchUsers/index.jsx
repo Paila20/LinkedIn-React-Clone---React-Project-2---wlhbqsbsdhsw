@@ -56,8 +56,12 @@ export default function SearchUsers({ setIsSearch }) {
   };
 
   return (
-    <div className="search-users">
+    <div className="search-users"
+    >
+      <div className="input-field">
+
       <FaSearch
+      style={{paddingTop:80, paddingBottom:80}}
         className="close-icon"
         size={20}
         onClick={() => {
@@ -66,9 +70,11 @@ export default function SearchUsers({ setIsSearch }) {
         }}
       />
       <input
+      className="searchInput"
         placeholder="Search Users.."
         onChange={(event) => handleSearch(event.target.value)}
       />
+      </div>
 
       {searchvalue.length === 0 ? (
         <div className="search-result">
