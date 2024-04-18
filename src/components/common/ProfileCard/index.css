@@ -150,14 +150,12 @@
   
   height: 280px;
   background-color: whitesmoke;
-<<<<<<< HEAD
+
   margin:-3px -472px 200px -45px;
-=======
-  margin:-3px -378px 200px -85px;
->>>>>>> ed6707e00f90e297f1faada6133e13bccf41a606
+
   
   border-radius: 5px;
-  /* padding: 5px; */
+
   position: relative;
 }
 .linklogo{
@@ -208,7 +206,7 @@
   width: 515px;
     height: 280px;
     background-color: lightblue;
-<<<<<<< HEAD
+
     margin: 188px  175px  -301px 314px;
     border-radius: 5px;
     /* padding: 5px; */
@@ -281,14 +279,8 @@
   padding: 5px;
   position: relative;
 }
-=======
-    margin: 188px  130px  -287px 317px;
-    border-radius: 5px;
-    padding: 5px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
+
+  
 .sidepost{
 
     height: 205px;
@@ -299,16 +291,6 @@
 }
 .profile-image1{
   
-
-  /* width: 520px;
-  height: auto;
-  background-color: whitesmoke;
-  margin: 10px auto;
-  border: 1px solid #b7b7b7;
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px; */
 
 
   width: 150px;
@@ -360,7 +342,7 @@
   padding: 5px;
   position: relative;
 }
->>>>>>> ed6707e00f90e297f1faada6133e13bccf41a606
+
 .lang{
  
   display: flex;
@@ -371,11 +353,10 @@
   
   height: 300px;
   background-color: whitesmoke;
-<<<<<<< HEAD
+ 
   margin: -9px -67px 18px 219px;
-=======
-  margin: -9px -67px 18px 261px;;
->>>>>>> ed6707e00f90e297f1faada6133e13bccf41a606
+
+
   
   border-radius: 5px;
   padding: 5px;
