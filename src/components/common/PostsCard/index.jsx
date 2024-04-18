@@ -35,9 +35,13 @@ export default function PostsCard({
     }
 
   }, []);
+
+  useEffect(()=>{
+
+  },[currentUser])
    
 
-
+console.log(currentUser)
 
  
   const handleDeletePost = async () => {
@@ -55,7 +59,7 @@ export default function PostsCard({
   ) : (
     <div className="posts-card" key={posts._id}>
       <div className="post-image-wrapper">
-        {console.log(posts.author)}
+      
         {currentUser?.data?._id === posts?.author?._id && (
           <div className="action-container">
             <FaEllipsisH onClick={() => setShowActions(!showActions)} />
@@ -68,11 +72,11 @@ export default function PostsCard({
                   }}
                 >
                   <BsPencil size={20} className="action-icon" />
-                  <span className="span">Edit</span>
+             
                 </p>
                 <p className="btn" onClick={handleDeletePost}>
                   <BsTrash size={20} className="action-icon" />
-                  <span className="span">Delete</span>
+
                 </p>
               </div>
             )}

@@ -4,7 +4,7 @@ const token = JSON.parse(localStorage.getItem("token"));
 // var tokenn = JSON.parse(token);
 // console.log(tokenn["token"])
 
-export const createPost = async (body) => {
+export const createPost = async (body, token) => {
   const url = "https://academics.newtonschool.co/api/v1/linkedin/post/";
 
   const headers = {
@@ -19,7 +19,7 @@ export const createPost = async (body) => {
     return error;
   }
 };
-export const updatePost = async (data, id) => {
+export const updatePost = async (data, id, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/post/${id}`;
 
   const headers = {

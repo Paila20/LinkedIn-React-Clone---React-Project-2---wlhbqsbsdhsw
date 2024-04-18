@@ -1,4 +1,4 @@
-.like-container {
+/* .like-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -148,3 +148,151 @@
     cursor: pointer;
   }
  
+   */
+   .like-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 7px 10px;
+    cursor: pointer;
+    margin-bottom: -20px;
+  }
+  
+  .like-comment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .comment-input {
+    height: 40px;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    border-radius: 30px;
+    border: 1px solid #737373;
+    font-family: system-ui;
+    color: #4b4b4b;
+    font-size: 16px;
+    width: 100%; /* Take full width */
+    max-width: 480px; /* Limit maximum width */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  
+  .add-comment-btn {
+    width: 100%; /* Take full width */
+    height: 35px;
+    background-color: #0a66c2;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .all-comments {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(227, 227, 227);
+    border-radius: 10px;
+    position: relative;
+    margin: 6px 14px -6px 88px; /* Adjust margin */
+  }
+  
+  .all-comments .image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 11px 0 0 -69px;
+    
+  }
+  
+  .all-comments .namecom {
+    font-family: system-ui, sans-serif;
+    font-size: 20px; /* Decrease font size */
+    color: #212121;
+    font-weight: 600;
+    margin: -46px 0 49px 26px; /* Adjust margin */
+    cursor: pointer;
+  }
+  
+  .all-comments .comment {
+   
+    margin: -36px 20px 44px 27px;
+  }
+  
+  .stamp {
+   top: 10px;
+   position: absolute;
+   right: 160px;
+  }
+  
+  .all-comments .action-icon {
+    position: absolute;
+    right: 40px; /* Adjust position */
+    top: 15px; /* Adjust position */
+  }
+  .icon{
+    position: absolute;
+    right: 40px; /* Adjust position */
+    top: 55px;
+  }
+  
+  .hr-line {
+    margin: 10px 0 20px 0;
+    
+  }
+  
+  .hr-line hr {
+    border-top: 1px solid rgb(181, 181, 181);
+  }
+  
+  .like-container p {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: -20px;
+  }
+  
+  .likes-comment-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -50px;
+    margin-bottom: -5px;
+  }
+  
+  .likes-comment-inner .blue {
+    color: #0a66c2;
+    font-size: 25px;
+  }
+  
+  .likes-comment-inner .black {
+    color: rgba(58, 58, 58, 0.835);
+  }
+  
+  .likes-comment-inner p {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: rgba(58, 58, 58, 0.835);
+    font-size: 16px;
+  }
+  
+  @media (max-width: 450px) {
+    .stamp{
+      position: absolute;
+      right: 164px; /* Adjust position */
+      top: 31px;
+    }
+    .action-icon{
+      right: -10px;
+    }
+  }

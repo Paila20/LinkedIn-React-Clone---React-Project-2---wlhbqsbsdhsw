@@ -6,8 +6,11 @@ import { useNavigate } from "react-router-dom";
 import LinkedinLogo from "../assets/linkedinLogo.png";
 import { registerAPI } from "../utils/user/login";
 import "../css/LoginComponent.css";
+import { UseAuthContext } from "../helpers/AuthContext";
 
 export default function RegisterComponent() {
+
+  const {setLoginToken} =UseAuthContext();
   let navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -25,9 +28,11 @@ export default function RegisterComponent() {
       if (res.status === 201) {
         message.success("Account Created!");
         localStorage.setItem("token", JSON.stringify(res.data.token));
+        setLoginToken(res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.data.user.name));
         localStorage.setItem("userData", JSON.stringify(res.data));
         navigate("/login");
+        form.resetFields();
       } else {
         message.error("User Already Exists");
         form.resetFields();

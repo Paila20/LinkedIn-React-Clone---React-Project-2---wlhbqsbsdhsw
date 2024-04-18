@@ -1,12 +1,20 @@
 import React from 'react';
 import "./index.css";
-
+import Button from "../Button";
 import { InfoCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
+import { UseAuthContext } from '../../../helpers/AuthContext';
+import { FaEllipsisH } from 'react-icons/fa';
+
+import { BACKGROUND_COLORS } from '../../../utils/user/login';
+import LinkedinLogo from "../../../assets/linkedinLogo.png";
+import { MdMargin } from 'react-icons/md';
 
 
 function Widgets() {
+    const{currentUser} =UseAuthContext();
 
     return (
+        <>
         <div className='widgets'>
             <div className="widgets__header">
                 <h2>LinkedIn News</h2>
@@ -47,6 +55,31 @@ function Widgets() {
                 <br/>
             </div>
         </div>
+        <div className='advertcard'>
+        <p className="adc">
+            Ad <FaEllipsisH />
+          </p>
+          <p className='logname'>{currentUser?.data?.name}, boost your job search with premium</p>
+          <div className="img">
+            <h2
+              className="logoo"
+              style={{
+                backgroundColor:
+                  BACKGROUND_COLORS[
+                    (currentUser?.data?.name
+                      ? currentUser?.data?.name.charCodeAt(0)
+                      : 0) % 20
+                  ],
+              }}
+            >
+              {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
+            </h2>
+            <img className="linklogo" src={LinkedinLogo} />
+          </div>
+          <p className='data'>See who's viewed your profile in the last 90 days</p>
+          <button className='bt'> Try for free! </button>
+        </div>
+        </>
     );
 
 }

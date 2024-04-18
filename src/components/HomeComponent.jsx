@@ -19,7 +19,7 @@ export const HomeComponent = () => {
     <Topbar/>
     <div className="home-component">
       <Sidebar  />
-      <PostUpdate profile={false} />
+      <PostUpdate profile={false} currentUser={currentUser}/>
       <Widgets />
     </div>
     </>

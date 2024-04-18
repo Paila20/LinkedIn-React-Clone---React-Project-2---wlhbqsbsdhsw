@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../Button";
@@ -7,13 +7,23 @@ import { UseAuthContext } from "../../../helpers/AuthContext";
 
 export default function ProfilePopup({ toggleTheme ,theme}) {
   let navigate = useNavigate();
-  const {currentUser} = UseAuthContext();
+  const {currentUser, setLoginToken} = UseAuthContext();
+
+  useEffect(()=>{
+    if(typeof (localStorage.getItem('token')) !==  'string'){
+    goToLogin();
+    }
+  },[])
  
+  function goToLogin() {
+    navigate('/login')
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("userData");
+    setLoginToken(null);
     navigate("/login");
   };
 
@@ -29,7 +39,7 @@ export default function ProfilePopup({ toggleTheme ,theme}) {
       />
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
           <Button title="dark/light" onClick={toggleTheme} />
-      <Button title="Sign out" onClick={handleLogout} disabled={false} />
+      <Button title="Log out" onClick={handleLogout} disabled={false} />
     </div>
   );
 }

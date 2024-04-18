@@ -12,7 +12,8 @@ const ModalComponent = ({
   setModalOpen,
   fetchingPosts,
   isEdit,
-  posts
+  posts,
+  currentUser
  
 }) => {
   const [form] = Form.useForm();
@@ -30,18 +31,22 @@ const ModalComponent = ({
       formData.append("images", imageUpload);
 
       if (isEdit !== true) {
-        const creatingPost = await createPost(formData);
-        if (creatingPost.status === 201) {
-          toast.success("You created a new post");
-          form.resetFields();
-          setImageUpload(null);
-          setModalOpen(false);
-          fetchingPosts();
-        } else {
-          toast.error("Something went wrong");
+        if(currentUser !== undefined){
+          const creatingPost = await createPost(formData, currentUser.token);
+          if (creatingPost.status === 201) {
+            toast.success("You created a new post");
+            form.resetFields();
+            setImageUpload(null);
+            setModalOpen(false);
+            fetchingPosts();
+          } else {
+            toast.error("Something went wrong");
+          }
         }
+       
       } else {
-        const updatingPost = await updatePost(formData, posts._id);
+        if(currentUser !== undefined){
+          const updatingPost = await updatePost(formData, posts._id, currentUser.token);
         if (updatingPost.status === 200) {
           toast.success("You updated your post");
           form.resetFields();
@@ -51,6 +56,8 @@ const ModalComponent = ({
         } else {
           toast.error("Something went wrong");
         }
+       }
+        
       }
     });
   };

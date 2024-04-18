@@ -7,8 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { getUsers } from "../utils/user/login";
 import LinkedinLogo from "../assets/linkedinLogo.png";
 import "../css/LoginComponent.css";
+import { UseAuthContext } from "../helpers/AuthContext";
 
 const LoginComponent = () => {
+
+  const {setLoginToken} =UseAuthContext();
   const navigate = useNavigate();
  
   const [form] = Form.useForm(); 
@@ -27,6 +30,7 @@ const LoginComponent = () => {
       message.success("Signed In to LinkedIn!");
       localStorage.setItem("userData", JSON.stringify(res.data));
       localStorage.setItem("token", JSON.stringify(res.data.token));
+      setLoginToken(true);
       localStorage.setItem("user", JSON.stringify(res.data.data.name));
       navigate("/");
       form.resetFields(); 
