@@ -150,7 +150,7 @@
   
   height: 280px;
   background-color: whitesmoke;
-  margin:-3px -472px 200px -45px;
+  margin:-3px -472px 200px -77px;
   
   border-radius: 5px;
 
@@ -270,7 +270,7 @@
   
   height: 300px;
   background-color: whitesmoke;
-  margin: -4px -100px 200px 218px;
+  margin:-4px -100px 200px 289px;
   
   border-radius: 5px;
   padding: 5px;
@@ -286,7 +286,7 @@
   
   height: 300px;
   background-color: whitesmoke;
-  margin: -9px -67px 18px 219px;
+  margin:-9px -67px 18px 287px;
   
   border-radius: 5px;
   padding: 5px;
@@ -304,3 +304,6 @@
 
 
 
+@media (max-width: 1200px){
+  
+}

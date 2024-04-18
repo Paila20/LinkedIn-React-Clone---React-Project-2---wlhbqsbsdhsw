@@ -46,7 +46,7 @@
     margin-top: -15px;
   }
   .post-status-main .feed__inputcontainer{
-    background-color: white;
+    background-color: whitesmoke;
     padding: 8px;
     padding-bottom: 5px;
     border-radius: 5px;
@@ -54,16 +54,12 @@
     margin-top: 15px;
     border: 1px solid #b7b7b7;
     width: 505px;
-    /* top: 70px; */
+  
   }
   
   .post-status-main .feed__inputcontainer .post-status {
     width: 75%;
-    /* height: 100px; */
-    /* background-color: whitesmoke; */
-    /* margin-top: 30px; */
-    /* margin : 20px auto; */
-     /* border: 1px solid #b7b7b7; */
+    
     border-radius: 7px;
     display: flex;
     justify-content: space-around;
@@ -149,15 +145,18 @@
       width: 100%;
       flex-basis: 100%;
       box-sizing: border-box;
-      margin-top: 90px;
+      margin-top: 9px;
     
     }
     .post-status-main .feed__inputcontainer .post-status .open-post-modal {
    
       margin:36px -84px 10px -55px; 
+      max-width: 230px;
      
    }
-   
+   .post-status-main .feed__inputcontainer .post-status .post-image {
+   margin-left: 10px;
+   }
   }
   
   @media  (max-width: 600px) {
@@ -177,7 +176,16 @@
       width: 100%;
      
 }
-     
+
+.post-status-main .feed__inputcontainer .post-status .open-post-modal {
+   
+  margin:36px -84px 10px -55px;
+  max-width: 350px; 
+ 
+}
+.post-status-main .feed__inputcontainer .post-status .post-image {
+  margin-left: 10px;
+  }
   
   }
    

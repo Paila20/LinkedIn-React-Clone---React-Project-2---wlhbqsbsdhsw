@@ -21,7 +21,7 @@ function Widgets() {
                 <InfoCircleOutlined/>
             </div>
             
-            <div className="widgets__article">
+            {/* <div className="widgets__article">
                 <div className="separate">
                     <div className="widgets__articleLeft">
                         <ExclamationCircleOutlined />
@@ -53,7 +53,33 @@ function Widgets() {
                     </div>
                 </div>
                 <br/>
-            </div>
+            </div> */}
+
+<div className="widgets__article">
+        <ul>
+            <li>
+                <div className="widgets__articleRight">
+                    <h4>Dogecoin</h4>
+                    <p>Finally reaches $1</p>
+       
+                </div>
+            </li>
+            <li>
+                <div className="widgets__articleRight">
+                    <h4>Tesla</h4>
+                    <p>Launches internet in India</p>
+     
+                </div>
+            </li>
+            <li>
+                <div className="widgets__articleRight">
+                    <h4>SpaceX SN15</h4>
+                    <p>Launching soon!</p>
+                   
+                </div>
+            </li>
+        </ul>
+    </div>
         </div>
         <div className='advertcard'>
         <p className="adc">

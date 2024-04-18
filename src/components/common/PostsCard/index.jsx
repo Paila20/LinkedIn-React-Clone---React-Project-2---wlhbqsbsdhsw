@@ -68,7 +68,7 @@ console.log(currentUser)
                 <p
                   className="btn"
                   onClick={() => {
-                    setModalOpen(true), setIsEdit(true), setSinglePost(posts);
+                    setModalOpen(true), setIsEdit(true), setSinglePost(posts), setShowActions(!showActions);
                   }}
                 >
                   <BsPencil size={20} className="action-icon" />
