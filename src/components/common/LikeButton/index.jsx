@@ -46,9 +46,7 @@ export default function LikeButton({
     setToggle(!toggle);
     if (like) {
       setLike(like + 1);
-    } else {
-      setLike(like - 1);
-    }
+    } 
   }
 
   const handleLike = async () => {
@@ -56,6 +54,7 @@ export default function LikeButton({
 
     if (liked.status === 201) {
       setLike(liked.data);
+      fetchingPosts();
     }
   };
 
