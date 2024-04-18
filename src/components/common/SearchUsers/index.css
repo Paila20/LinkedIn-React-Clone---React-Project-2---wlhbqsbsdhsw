@@ -123,3 +123,9 @@
   margin: 20px 10px 10px;
   font-size: 14px;
 }
+
+@media (max-width:500px){
+  .search-users .input-field {
+    width: 100px;
+  }
+}

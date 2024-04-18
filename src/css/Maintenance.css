@@ -1,0 +1,15 @@
+.maintenancediv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    overflow-y: hidden;
+    margin-top: 50px;
+}
+
+@media (max-width:450px){
+    .maintenancediv{
+        width: 366px;
+        height: auto;
+    }
+}

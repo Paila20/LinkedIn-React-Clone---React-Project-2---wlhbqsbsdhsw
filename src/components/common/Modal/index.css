@@ -42,3 +42,8 @@
   
   }
   
+  @media (max-width:450px){
+    .post-btn{
+      left: 200px;
+    }
+  }

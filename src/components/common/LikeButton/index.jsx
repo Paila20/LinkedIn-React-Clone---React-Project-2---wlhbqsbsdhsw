@@ -108,7 +108,7 @@ export default function LikeButton({
         >
          
 
-          <BsHandThumbsUp className={toggle ? "blue" : "black"} />
+          <BsHandThumbsUp className={toggle ? "blue" : "black"}  style={{marginTop:20}}/>
           <p className={toggle ? "blue" : "black"} >Like</p>
         </div>
         <div
@@ -119,6 +119,7 @@ export default function LikeButton({
         >
           {
             <AiOutlineComment
+            style={{marginTop:20}}
               size={30}
               color={showCommentBox ? "#0a66c2" : "#212121"}
             />
@@ -131,7 +132,8 @@ export default function LikeButton({
         <>
           <Form form={commentForm} onFinish={createComment}>
             <Row gutter={24}>
-              <Col xs={24} sm={24} md={12} xl={12} lg={12} xxl={12}>
+    
+              <Col span={24}>
                 <Form.Item
                   name="content"
                   rules={[
@@ -146,11 +148,13 @@ export default function LikeButton({
                     className="comment-input"
                   />
                 </Form.Item>
+                <Col span={5}>
                 <Button type="" htmlType="submit" className="add-comment-btn">
-                  Add Comment
+                  Post
                 </Button>
+                </Col>
               </Col>
-              <Col xs={24} sm={24} md={12} xl={12} lg={12} xxl={12}></Col>
+             
             </Row> 
             
   
@@ -181,7 +185,7 @@ export default function LikeButton({
                         {comment?.author_details?.name}
                       </p>
 
-                      <p className="timestamp">
+                      <p className="stamp">
                         {timeStampConversionToDateAndTime(comment.createdAt)}
                       </p>
                       {currentUser?.data?.name ===
@@ -195,7 +199,7 @@ export default function LikeButton({
                           { activeCommentActions === comment._id &&  (
                             <BsTrash
                               size={20}
-                              className="action-icon"
+                              className="icon"
                               onClick={() => deleteComment(comment._id)}
                             />
                           )}

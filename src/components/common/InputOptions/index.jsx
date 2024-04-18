@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
-function InputOptions({ Icon, title, color, onClick }) {
+function InputOptions({ Icon, title, color, onClick, size }) {
     const IconComponent = Icon;
   return (
     <div className="inputoption" onClick={onClick}>
-      <IconComponent style={{ color: color }} />
-      <h4>{title}</h4>
+      <IconComponent style={{ color: color ,fontSize:size}} />
+      <h4 style={{ fontSize: "1.2rem" }}>{title}</h4>
     </div>
   );
 }

@@ -24,6 +24,7 @@ export default function PostUpdate({
   profile,
   handleLocalStorageUpdate,
 }) {
+  console.log(currentUser)
   const [modalOpen, setModalOpen] = useState(false);
 
   const [allPosts, setAllPosts] = useState([]);
@@ -49,6 +50,7 @@ export default function PostUpdate({
   useEffect(() => {}, [currentUser]);
 
   const fetchingPosts = async () => {
+  
     const posts = await fetchPost();
 
     if (posts.status === 200) {
@@ -78,6 +80,7 @@ export default function PostUpdate({
         setAllPosts(posts?.data?.data);
       }
     }
+  
   };
 
   return loading? (
@@ -125,30 +128,30 @@ export default function PostUpdate({
             <div className="feed__inputoptions">
               <InputOptions
                 Icon={MdImage}
-                title="Photo"
+                title="Media"
                 color="#70B5F9"
+                size={30}
                 onClick={() => goToRoute("/maintenance")}
               />
-              <InputOptions
-                Icon={MdSubscriptions}
-                title="Video"
-                color="#E7A33E"
-                onClick={() => goToRoute("/maintenance")}
-              />
+             
               <InputOptions
                 Icon={MdEventNote}
                 title="Event"
-                color="#C0CBCD"
+                color="#FFA500"
+                size={30}
                 onClick={() => goToRoute("/maintenance")}
               />
               <InputOptions
                 Icon={MdViewDay}
                 title="Write Article"
-                color="#C7FC15E"
+                color="#FFA500"
+                size={30}
                 onClick={() => goToRoute("/maintenance")}
               />
             </div>
+           
           </div>
+         
 
           {modalOpen ? (
             <ModalComponent

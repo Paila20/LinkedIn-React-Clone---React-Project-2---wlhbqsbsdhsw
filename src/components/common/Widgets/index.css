@@ -7,9 +7,13 @@
     border: 1px solid lightgrey;
     height: fit-content;
     padding-bottom: 6px;
-    width: 60%;
-    right: 130px;
-    
+    width: 80%;
+    /* width: 350px; */
+    right: 100px;
+    display: flex; /* Keep it as flex */
+    flex-direction: column; /* Change to column direction */
+    /* padding: 10px; */
+
 }
 
 .widgets__header{
@@ -17,6 +21,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    width: 300px;
+
 }
 
 .widgets__header > h2{
@@ -58,9 +64,49 @@
     font-size: 14px;
     flex: 1;
 }
+.advertcard{
+    width: 320px;
+    height: 250px;
+    background-color: whitesmoke;
+    margin: 290px -280px 10px 550px;
+   
+    object-fit: cover;
+    position: fixed;
+    border-radius: 10px;
+}
+.adc{
+    margin: 10px 0px 20px 260px;
+}
+.logname{
+    justify-content: center;
+    align-items: center;
+    margin: -25px 0 0 20px
+}
+.img{
+    margin-left: 80px;
+}
+.data{
+    margin-left: 20px;
+}
+.bt{
+    
+    margin-left: 100px;
+    border: 2px solid blue; 
+    padding: 10px 5px 20px 5px;
+    background-color: white; 
+    border-radius: 40px;
+    color: blue; 
+    height: 20px;
+    text-align: center;
+
+
+}
 
 @media (max-width: 768px) {
     .widgets {
+        display: none;
+    }
+    .advertcard{
         display: none;
     }
 }
@@ -69,10 +115,16 @@
     .widgets {
         display: none;
     }
+    .advertcard{
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) {
     .widgets {
+        display: none;
+    }
+    .advertcard{
         display: none;
     }
 }
