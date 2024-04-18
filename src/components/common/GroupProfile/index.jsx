@@ -16,6 +16,7 @@ export default function GroupProfile() {
   const { currentUser } = UseAuthContext();
   const { id } = useParams();
   const [channelid, setChannelID] = useState({});
+  const [isFollowed, setIsFollowed] = useState(false);
 
   useEffect(() => {
     GetChannelID();
@@ -30,6 +31,9 @@ export default function GroupProfile() {
       }
     }
   };
+  function ToggleFollow(){
+    setIsFollowed( !isFollowed );
+  }
 
   return (
     <>
@@ -40,7 +44,7 @@ export default function GroupProfile() {
             <img
               src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png"
               alt=""
-              className="img"
+              className="imgg"
             />
 
             {currentUser?.data?.profileImage ? (
@@ -76,7 +80,7 @@ export default function GroupProfile() {
         <div className="card">
           <div className="info">
            
-            
+                   
                   
                     <h2
                       className="profile"
@@ -87,6 +91,9 @@ export default function GroupProfile() {
                           ],
                       }}
                     >
+                       <button  className="followbtn" onClick={ToggleFollow}>
+                        {isFollowed ? 'Unfollow' : 'Follow'}
+                    </button>
                       {channelid?.name ? channelid?.name.charAt(0) : ""}
                     </h2>
 
@@ -95,6 +102,7 @@ export default function GroupProfile() {
                     <p className=" public">
                       <FaUsers /> Public Group
                     </p>
+                   
                 
           </div>
         </div>

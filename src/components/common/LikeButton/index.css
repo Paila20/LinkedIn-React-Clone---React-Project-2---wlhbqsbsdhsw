@@ -24,13 +24,13 @@
     font-family: system-ui;
     color: #4b4b4b;
     font-size: 16px;
-    width: 100%; /* Take full width */
-    max-width: 480px; /* Limit maximum width */
-    box-sizing: border-box; /* Include padding and border in width */
+    width: 100%; 
+    max-width: 480px; 
+    box-sizing: border-box; 
   }
   
   .add-comment-btn {
-    width: 100%; /* Take full width */
+    width: 100%; 
     height: 35px;
     background-color: #0a66c2;
     color: white;
@@ -54,7 +54,7 @@
     background-color: rgb(227, 227, 227);
     border-radius: 10px;
     position: relative;
-    margin: 6px 14px -6px 88px; /* Adjust margin */
+    margin: 6px 14px -6px 88px; 
   }
   
   .all-comments .image {
@@ -70,10 +70,10 @@
   
   .all-comments .namecom {
     font-family: system-ui, sans-serif;
-    font-size: 20px; /* Decrease font size */
+    font-size: 20px; 
     color: #212121;
     font-weight: 600;
-    margin: -46px 0 49px 26px; /* Adjust margin */
+    margin: -46px 0 49px 26px; 
     cursor: pointer;
   }
   
@@ -90,12 +90,12 @@
   
   .all-comments .action-icon {
     position: absolute;
-    right: 40px; /* Adjust position */
-    top: 15px; /* Adjust position */
+    right: 40px; 
+    top: 15px; 
   }
   .icon{
     position: absolute;
-    right: 40px; /* Adjust position */
+    right: 40px; 
     top: 55px;
   }
   
@@ -144,7 +144,7 @@
   @media (max-width: 450px) {
     .stamp{
       position: absolute;
-      right: 164px; /* Adjust position */
+      right: 164px; 
       top: 31px;
     }
     .action-icon{
