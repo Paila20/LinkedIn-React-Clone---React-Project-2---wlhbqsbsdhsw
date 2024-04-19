@@ -79,8 +79,12 @@ export default function GroupProfile() {
         </div>
         <div className="card">
           <div className="info">
-           
-                   
+           <img src='https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="imggg"/>
+          {/* <img
+              src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png"
+              alt=""
+              className="imggg"
+            /> */}
                   
                     <h2
                       className="profile"
