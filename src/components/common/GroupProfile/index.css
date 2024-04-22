@@ -256,8 +256,15 @@ color: white;
 
 @media (max-width:1200px){
   .grouppost{
-    margin-top: -186px;
+    margin-top: 0px;
     margin-left: 50px;
+  }
+  .vert{
+    display: none;
+  }
+  .imggg{
+    width: 100%;
+    max-width: 900px;
   }
 }
 
@@ -269,4 +276,35 @@ color: white;
     width: 70%;
     margin-right: 20px;
   }
+  .imggg{
+    width: 100%;
+    max-width: 642px;
+  }
+}
+
+@media (max-width: 450px) {
+  .card .info {
+      width: 100%;
+  }
+  .grouppost{
+    width: 70%;
+    margin-right: 20px;
+  }
+  .imggg{
+    width: 100%;
+    max-width: 313px;
+  }
+  .followbtn{
+    margin: 84px -224px 0 119px;
+  }
+  .card .Name{
+    margin-left: 14px;
+  }
+  .card .head{
+    margin-left: 14px;
+  }
+  .public{
+    margin-left: 14px;
+  }
+
 }

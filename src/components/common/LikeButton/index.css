@@ -144,10 +144,11 @@
   @media (max-width: 450px) {
     .stamp{
       position: absolute;
-      right: 164px; 
-      top: 31px;
+      
+      right: 17px;
+        top: 14px;
     }
-    .action-icon{
-      right: -10px;
+    .all-comments .action-icon{
+      top: 40px;
     }
   }

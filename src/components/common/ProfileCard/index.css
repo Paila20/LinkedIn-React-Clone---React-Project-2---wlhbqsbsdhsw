@@ -331,7 +331,7 @@ min-width: 500px;
     max-width: 500px;
   }
 }
-@media (max-width:600px){
+/* @media (max-width:600px){
  .cards{
   margin-left: 50px;
  }
@@ -339,7 +339,7 @@ min-width: 500px;
   width: 100%;
   max-width: 500px;
 }
-}
+} */
 
 @media (max-width:600px){
   .cards{
@@ -367,8 +367,9 @@ min-width: 500px;
  @media (max-width:450px){
   .profile-card{
     width: 100%;
-    min-width: 214px;
+    min-width: 325px;
     flex-direction: column;
+    margin-left: 10px;
   }
   .profile-image{
    width: 80px;
@@ -380,10 +381,11 @@ min-width: 500px;
    margin:16px 0 0 45px;
   }
   .heading{
-   margin: 1px 0 0 -13px;
+   margin: 1px 0 0 27px;
   }
   .cards{
     min-width: 500px;
+    margin-left: -56px;
   }
  }
 
