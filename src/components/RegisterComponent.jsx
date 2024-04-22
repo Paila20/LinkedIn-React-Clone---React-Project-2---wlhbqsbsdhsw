@@ -44,7 +44,7 @@ export default function RegisterComponent() {
     <div className="login-wrapper">
       <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
       <div className="login-wrapper-inner">
-        <h1 className="heading">Make the most of your professional life</h1>
+        <h1 className="head">Make the most of your professional life</h1>
         <Form
           form={form}
           name="register"

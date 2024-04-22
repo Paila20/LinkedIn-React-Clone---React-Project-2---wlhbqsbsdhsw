@@ -45,13 +45,16 @@ console.log(currentUser)
 
  
   const handleDeletePost = async () => {
-    const deletedPost = await deletePost(posts._id);
-    if (deletedPost.status === 204) {
-      toast.success("your post deleted successfully");
-      fetchingPosts();
-    } else {
-      toast.error("Something went wrong");
+    if(currentUser !== undefined ){
+      const deletedPost = await deletePost(posts._id,  currentUser.token);
+      if (deletedPost.status === 204) {
+        toast.success("your post deleted successfully");
+        fetchingPosts();
+      } else {
+        toast.error("Something went wrong");
+      }
     }
+   
   };
 
   return loading ? (
@@ -68,7 +71,7 @@ console.log(currentUser)
                 <p
                   className="btn"
                   onClick={() => {
-                    setModalOpen(true), setIsEdit(true), setSinglePost(posts), setShowActions(!showActions);
+                    setModalOpen(true), setIsEdit(true), setSinglePost(posts)
                   }}
                 >
                   <BsPencil size={20} className="action-icon" />

@@ -34,7 +34,7 @@ export const updatePost = async (data, id, token) => {
     return error;
   }
 };
-export const deletePost = async (id) => {
+export const deletePost = async (id, token) => {
   const url = "https://academics.newtonschool.co/api/v1/linkedin/post/" + id;
 
   const headers = {
@@ -63,7 +63,7 @@ export const fetchPost = async () => {
     return error;
   }
 };
-export const likeaPost = async (post_id) => {
+export const likeaPost = async (post_id,token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/like/${post_id}`;
 
   const headers = {
@@ -95,7 +95,7 @@ export const dislikeaPost = async (post_id) => {
     return error;
   }
 };
-export const fetchComments = async (post_id) => {
+export const fetchComments = async (post_id, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/post/${post_id}/comments`;
 
   const headers = {
@@ -110,7 +110,7 @@ export const fetchComments = async (post_id) => {
     return error;
   }
 };
-export const createComments = async (post_id, body) => {
+export const createComments = async (post_id, body, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/comment/${post_id}`;
 
   const headers = {
@@ -125,7 +125,7 @@ export const createComments = async (post_id, body) => {
     return error;
   }
 };
-export const deleteComments = async (comment_id) => {
+export const deleteComments = async (comment_id, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/comment/${comment_id}`;
 
   const headers = {

@@ -120,9 +120,9 @@ export default function ProfileCard() {
                     <h3 className="userName">
                       {currentUser?.data?._id !== id ? id : currentUser?.data?.name}
                     </h3>
-                    <p className="heading">
+                    {/* <p className="heading">
                       {currentUser?.data?._id !== id ? id : currentUser?.data?.email}
-                    </p>
+                    </p> */}
                     <p className="heading">
                       joined At
                       {currentUser?.data?._id !== id ? id : timeStampConversionToDateAndTime(currentUser?.data?.createdAt)}

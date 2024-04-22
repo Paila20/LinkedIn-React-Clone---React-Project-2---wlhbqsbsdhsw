@@ -66,8 +66,8 @@
     flex: 1;
 }
 .advertcard{
-    width: 350px;
-    height: 250px;
+    width: 330px;
+    height: 260px;
     background-color: whitesmoke;
 
    
@@ -99,8 +99,9 @@
     background-color: white; 
     border-radius: 40px;
     color: blue; 
-    height: 20px;
+    height: 5px;
     text-align: center;
+    margin-top: -5px;
 
 
 }

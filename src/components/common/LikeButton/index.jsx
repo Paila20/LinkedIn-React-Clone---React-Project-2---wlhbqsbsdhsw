@@ -36,10 +36,13 @@ export default function LikeButton({
 
 
   const handleFetchPostComments = async () => {
-    const comments = await fetchComments(posts._id);
-    if (comments.status === 200) {
-      setComments(comments.data.data);
+    if(currentUser !== undefined){
+      const comments = await fetchComments(posts._id, currentUser.token);
+      if (comments.status === 200) {
+        setComments(comments.data.data);
+      }
     }
+   
   };
 
   function Toggle() {
@@ -50,12 +53,16 @@ export default function LikeButton({
   }
 
   const handleLike = async () => {
-    const liked = await likeaPost(posts._id);
+
+    if(currentUser !== undefined){
+      const liked = await likeaPost(posts._id, currentUser.token);
 
     if (liked.status === 201) {
       setLike(liked.data);
       fetchingPosts();
     }
+    }
+    
   };
 
   const createComment = (values) => {
@@ -63,23 +70,30 @@ export default function LikeButton({
       const data = {
         content: formValues.content,
       };
-      const postComment = await createComments(posts._id, data);
-      if (postComment.status === 200) {
-       
-        
-        handleFetchPostComments();
-        fetchingPosts();
-        commentForm.resetFields();
+
+      if(currentUser !== undefined){
+        const postComment = await createComments(posts._id, data, currentUser.token);
+        if (postComment.status === 200) {
+         
+          
+          handleFetchPostComments();
+          fetchingPosts();
+          commentForm.resetFields();
+        }
       }
+     
     });
   };
 
   const deleteComment = async (comment_id) => {
-    const deletedComment = await deleteComments(comment_id);
-    if (deletedComment.status === 204) {
-      handleFetchPostComments();
-      fetchingPosts();
+    if(currentUser !== undefined){
+      const deletedComment = await deleteComments(comment_id, currentUser.token);
+      if (deletedComment.status === 204) {
+        handleFetchPostComments();
+        fetchingPosts();
+      }
     }
+  
   };
   const toggleCommentActions = (commentId) => {
    

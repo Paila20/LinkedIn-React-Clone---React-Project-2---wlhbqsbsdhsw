@@ -44,7 +44,7 @@ const LoginComponent = () => {
       <div className="login-container">
         <img src={LinkedinLogo} className="linkedin-logo" alt="LinkedIn Logo" />
         <div className="login-wrapper-inner">
-          <h1 className="heading">Sign in</h1>
+          <h1 className="head">Sign in</h1>
           <p className="sub-heading">Stay updated on your professional world</p>
           <div className="auth-inputs">
           <Form form={form} name="login" onFinish={onFinish} initialValues={{ remember: true }}>
