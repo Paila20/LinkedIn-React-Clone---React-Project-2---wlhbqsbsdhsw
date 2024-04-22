@@ -117,11 +117,29 @@
   z-index: 999 !important;
   padding: 0px 10px;
   color: #000000;
+
+
 }
 
 .search-users .search-result p {
   margin: 20px 10px 10px;
   font-size: 14px;
+}
+.searchimg{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 12px;
+  object-fit: cover;
+  margin: 16px 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchinput{
+  display: flex;
+  flex-direction: row;
 }
 
 @media (max-width:500px){

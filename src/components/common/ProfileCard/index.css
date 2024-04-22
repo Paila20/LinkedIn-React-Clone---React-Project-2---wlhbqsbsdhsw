@@ -1,14 +1,14 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
 }
 .profile{
   display: flex;
   flex-direction: row;
 }
 .cards{
-  margin-top: 300px;
+  margin-top: 196px;
  margin-left: 350px;
 
   
@@ -24,7 +24,9 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    margin: 200px -123px -300px 139px;
+    /* margin: 200px -123px -300px 139px; */
+    top: 194px;
+    left: 143px;
    
   }
   
@@ -46,7 +48,8 @@
     justify-content: center;
     align-items: center;
     font-size: 75px;
-   margin: 50px 0 0 20px;
+    margin-top: 50px;
+   /* margin: 50px 0 0 20px; */
   }
   
   .profile-card .profile-info .right-info {
@@ -101,7 +104,10 @@
     font-weight: 600;
     font-size: 24px;
     
-    margin: -104px 0 0 212px;
+    margin-left: 232px;
+
+    margin-top: -83px;
+    /* margin: -104px 0 0 212px; */
   }
   
   .heading {
@@ -111,8 +117,9 @@
     color: rgba(0, 0, 0, 0.9);
     font-weight: 600;
     font-size: 24px;
+    margin-left: 178px;
     
-    margin: 1px 0 0 208px;
+ 
   
   }
   .jointime{
@@ -156,11 +163,14 @@
   
   height: 300px;
   background-color: whitesmoke;
-  margin:-7px 194px 200px 449px;
-  
+
+  right: -390px;
+  left: 715px;
+
+  top: 2px;
   border-radius: 5px;
   padding: 5px;
-  position: relative;
+  position: absolute;
 }
 .linklogo{
   width: 90px;
@@ -249,7 +259,7 @@
   font-weight: 600;
   font-size: 24px;
  
-  margin: 98px 9px 0 73px;
+
 }
 .butn1{
 
@@ -271,11 +281,12 @@
   
   height: 230px;
   background-color: whitesmoke;
-  margin: -4px -100px 200px 415px;
-  
+
+  right: -431px;
+  top: 257px;
   border-radius: 5px;
   padding: 5px;
-  position: relative;
+  position: absolute;
 }
 .lang{
  
@@ -287,11 +298,12 @@
   
   height: 230px;
   background-color: whitesmoke;
-  margin: -9px -66px 18px 415px;
+ 
+  right: -429px;
   
   border-radius: 5px;
   padding: 5px;
-  position: relative;
+  position: absolute;
 }
 .hr-line {
    margin: 10px 0 20px 0;
@@ -304,7 +316,7 @@
 }
 
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
 
   .advert{
     display: none;
@@ -365,7 +377,7 @@ min-width: 500px;
     width: 100%;
     min-width: 325px;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: -145px;
   }
   .profile-image{
    width: 80px;
@@ -384,4 +396,4 @@ min-width: 500px;
     margin-left: -56px;
   }
  }
- */
+ 

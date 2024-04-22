@@ -19,13 +19,17 @@ export default function ProfileCard() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
+    
     const searcheduser = JSON.parse(localStorage.getItem("searcheduser")) || null;
     if (searchedUser !== null) {
       setSearchedUser(searcheduser);
     }
     setLoading(false);
   }, [searchedUser]);
+  
 
   const goToRoute = (route) => {
     navigate(route);
@@ -33,8 +37,11 @@ export default function ProfileCard() {
 
   const handleLocalStorageUpdate = () => {
     const updatedSearchedUser = JSON.parse(localStorage.getItem("searcheduser")) || null;
+    console.log(updatedSearchedUser)
     setSearchedUser(updatedSearchedUser);
   };
+
+ 
 
   return (
     <>

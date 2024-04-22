@@ -7,9 +7,12 @@ import { searchFilter, searchItem } from "../../../utils/user/search";
 import qs from "qs";
 import { fetchPost } from "../../../utils/user/post";
 import { Link } from "react-router-dom";
+import { BACKGROUND_COLORS } from "../../../utils/user/login";
 
 export default function SearchUsers({ setIsSearch }) {
-  const [searchvalue, setSearchValue] = useState([]);
+   const [searchvalue, setSearchValue] = useState([]);
+
+  
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
@@ -20,6 +23,8 @@ export default function SearchUsers({ setIsSearch }) {
     }
   }, [postsData]);
 
+
+
   const fetchingPosts = async () => {
     const searchData = await fetchPost();
     if (searchData.status === 200) {
@@ -28,8 +33,9 @@ export default function SearchUsers({ setIsSearch }) {
   };
 
   const handleSearch = (value) => {
+    setSearchValue([]);
     if (!postsData?.data) {
-      setSearchValue([]);
+      
 
       return;
     }
@@ -84,7 +90,26 @@ export default function SearchUsers({ setIsSearch }) {
         <div className="search-result">
           {searchvalue.map((d, i) => (
             <Link to={`/profile/${d.id}`} key={i}>
+              <div className="searchinput">
+              <p><FaSearch/></p>
+              {
+                d.userName.profileImage ? (<img src={d.userName.profileImage}/>) : ( <h2
+                  className="searchimg"
+                  style={{
+                    backgroundColor:
+                      BACKGROUND_COLORS[
+                        (d?.userName
+                          ? d?.userName.charCodeAt(0)
+                          : 0) % 20
+                      ],
+                  }}
+                >
+                  {d?.userName ? d?.userName.charAt(0) : ""}
+                </h2>)
+              }
               <p>{d.userName}</p>
+              </div>
+             
             </Link>
           ))}
         </div>

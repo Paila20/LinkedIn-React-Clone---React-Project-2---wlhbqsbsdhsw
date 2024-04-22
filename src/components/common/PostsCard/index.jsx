@@ -41,7 +41,7 @@ export default function PostsCard({
   },[currentUser])
    
 
-console.log(currentUser)
+
 
  
   const handleDeletePost = async () => {

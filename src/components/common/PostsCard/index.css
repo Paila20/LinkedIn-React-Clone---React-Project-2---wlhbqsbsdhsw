@@ -80,6 +80,7 @@
    cursor: pointer;
    /* display: flex; */
    top: 10px;
+   cursor: pointer;
  }
 
  .container {
