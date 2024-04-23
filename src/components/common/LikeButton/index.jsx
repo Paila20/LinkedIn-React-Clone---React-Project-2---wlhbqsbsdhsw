@@ -201,7 +201,7 @@ export default function LikeButton({
                       <p className="stamp">
                         {timeStampConversionToDateAndTime(comment.createdAt)}
                       </p>
-                      {currentUser?.data?.name ===
+                      {currentUser?.data?.user?.name ===
                         comment?.author_details?.name && (
                         <div className="ellipsis-container">
                           <FaEllipsisH

@@ -5,7 +5,7 @@
   }
   .side{
     width: 300px;
-    top: 80px;
+    top: 100px;
   
     position: sticky;
     flex: 0.2;
@@ -240,15 +240,14 @@ color: white;
 }
 .groupImage{
   display: flex;
-  /* justify-content: flex-start;
-  align-items: center; */
+ 
   gap: 5px;
   flex-direction: row;
 }
 .interestedgroups{
   width: 200px;
   height: 610px;
-  /* overflow-y: scroll; */
+ 
   padding: 20px;
   margin: 10px 0;
   margin-left: 950px;
@@ -293,7 +292,7 @@ color: white;
 @media (max-width:1200px){
   .grouppost{
    
-    margin-top: -338px;
+    margin-top: 2px;
         margin-left: 50px;
         width: 509px;
   }
@@ -311,7 +310,7 @@ color: white;
   }
   .interestedgroups{
     margin-right: 18px;
-    margin-left: -192px;
+    margin-left: 575px;
 
   }
 }
@@ -320,25 +319,50 @@ color: white;
   .card .info {
       width: 100%;
   }
+ 
   .grouppost{
-    width: 77%;
-    margin-right: 20px;
+   
+        margin-top: 2px;
+        margin-left: 50px;
+        width: 509px;
   }
   .imggg{
     width: 100%;
     max-width: 570px;
 
   }
+  .interestedgroups{
+    margin-right: 18px;
+    margin-left: 575px;
+
+  }
+}
+
+@media (max-width:750px){
+  .interestedgroups{
+    display: none;
+
+  }
+  .grouppost{
+   
+    margin-top: 2px;
+    margin-left: 50px;
+    width: 442px;
+}
 }
 
 @media (max-width: 450px) {
   .card .info {
       width: 100%;
   }
+
+
   .grouppost{
-    width: 70%;
-    margin-right: 20px;
-  }
+   
+    margin-top: 2px;
+    margin-left: 50px;
+    width: 322px;
+}
   .imggg{
     width: 120%;
     max-width: 313px;

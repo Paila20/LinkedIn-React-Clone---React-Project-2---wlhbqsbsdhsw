@@ -9,7 +9,7 @@
 
 @media (max-width:450px){
     .maintenancediv{
-        width: 366px;
-        height: auto;
+        max-width: 366px;
+        height:700px ;
     }
 }

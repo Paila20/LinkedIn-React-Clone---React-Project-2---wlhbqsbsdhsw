@@ -48,6 +48,10 @@ export default function PostUpdate({
   useEffect(() => {}, [isEdit, modalOpen, singlePost,allPosts]);
 
   useEffect(() => {}, [currentUser]); 
+  
+  useEffect(()=>{
+ fetchingPosts();
+  },[currentUser])
 
   const fetchingPosts = async () => {
   

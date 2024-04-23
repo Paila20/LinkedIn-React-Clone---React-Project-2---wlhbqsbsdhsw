@@ -1,0 +1,52 @@
+export const getNewsList = () => {
+  return [
+    {
+      headLine: "Decoding India's IT trends",
+      telecastedAt: "17h",
+    },
+    {
+      headLine: "Google cuts jobs in AI push",
+      telecastedAt: "1d",
+    },
+    {
+      headLine: "Banks rethink maternity perks",
+      telecastedAt: "1d",
+    },
+    {
+      headLine: "PSU insurers lose market share",
+      telecastedAt: "2d",
+    },
+    {
+      headLine: "Kuku FM raises $25 million",
+      telecastedAt: "21h",
+    },
+    {
+      headLine: "Hiring trend shifts in IT",
+      telecastedAt: "3h",
+    },
+    {
+      headLine: "Small cities lead festive buying",
+      telecastedAt: "14h",
+    },
+    {
+      headLine: "Cricket returns to Olympics",
+      telecastedAt: "3h",
+    },
+    {
+      headLine: "India on steady growth path",
+      telecastedAt: "3h",
+    },
+    {
+      headLine: "Top newsletters to follow",
+      telecastedAt: "3h",
+    },
+    {
+      headLine: "All eyes on AI at Big Four",
+      telecastedAt: "3h",
+    },
+    {
+      headLine: "Cricket returns to Olympics",
+      telecastedAt: "3h",
+    },
+  ];
+};
