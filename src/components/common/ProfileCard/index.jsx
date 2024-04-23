@@ -137,9 +137,7 @@ console.log(currentUser)
                       <h1>Profile Language</h1>
                       <p>English</p>
                     </div>
-                    <div className="-line">
-                   <hr/>
-                   </div>
+                   <hr></hr>
                     <div className="">
                       <h1>Public profile & URL </h1>
                       <p>www.linkedin.com/{currentUser?.data?.user?.email}</p>
