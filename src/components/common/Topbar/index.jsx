@@ -71,7 +71,10 @@ export default function Topbar() {
         <></>
       )} 
   
-      <img className="linkedin-logo" src={LinkedinLogo} alt="LinkedinLogo" />
+      <img className="linkedin-logo" 
+      src={LinkedinLogo} 
+      alt="LinkedinLogo"
+      onClick={()=>goToRoute('/')} />
       
       {isSearch ? (
         <div ref={dropdownRef}>

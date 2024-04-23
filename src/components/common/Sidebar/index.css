@@ -1,5 +1,5 @@
 .sidebar{
-    width: 800px;
+    width: 900px;
     top: 80px;
   
     position: sticky;
@@ -44,6 +44,8 @@
     background-color: white;
     padding-bottom: 10px;
     height: 200px;
+   
+   
 }
 
 .sidebar__top > h4{
@@ -70,6 +72,7 @@
     justify-content: space-between;
     padding-left: 5px;
     padding-right:5px;
+    width: 200px;
 }
 .sidebar__stat > p{
     color: grey;
@@ -103,6 +106,7 @@
     background-color: white;
     border-radius: 10px;
     margin-top: 10px;
+  
 }
 
 .sidebar__recentItem{
@@ -142,8 +146,7 @@
     justify-content: center;
     align-items: center;
   }
-
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .sidebar {
         display: none;
     }
@@ -151,12 +154,8 @@
 
 @media (max-width: 900px) {
     .sidebar {
-        display: none;
+   left: 32px;
     }
 }
 
-@media (max-width: 1200px) {
-    .sidebar {
-        display: none;
-    }
-}
+

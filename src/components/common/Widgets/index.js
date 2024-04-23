@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./index.css";
 import Button from "../Button";
 import { InfoCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
@@ -7,81 +7,61 @@ import { FaEllipsisH } from 'react-icons/fa';
 
 import { BACKGROUND_COLORS } from '../../../utils/user/login';
 import LinkedinLogo from "../../../assets/linkedinLogo.png";
+import { FaCircleDot } from "react-icons/fa6";
+import { IoChevronDown } from "react-icons/io5";
+import { IoChevronUp } from "react-icons/io5";
 import { MdMargin } from 'react-icons/md';
+import { getNewsList } from '../../../assets/news';
 
 
 function Widgets() {
     const{currentUser} =UseAuthContext();
 
+    const newsList = getNewsList();
+    const splicedList = newsList.slice(0, 5);
+    const [showLess, setShowLess] = useState(false);
+    const [newsArray, setNewsArray] = useState(splicedList);
+  
+
+    const handleShowMore = () => {
+        setShowLess(true);
+        setNewsArray(newsList);
+      };
+    
+      const handleShowLess = () => {
+        setShowLess(false);
+        setNewsArray(splicedList);
+      };
+    
+
     return (
-        <>
+        < div className='wid'>
         <div className='widgets'>
             <div className="widgets__header">
                 <h2>LinkedIn News</h2>
                 <InfoCircleOutlined/>
             </div>
             
-            {/* <div className="widgets__article">
-                <div className="separate">
-                    <div className="widgets__articleLeft">
-                        <ExclamationCircleOutlined />
+         
+                <div className="widgets__article">
+                {newsArray.map((data, i) => {
+                  return (
+                    <div key={i}>
+                      <div className=''>
+                        <p className=''><FaCircleDot style={{scale: "0.5"}}/> {data.headLine}</p>
+                        <p className=''>{data.telecastedAt} ago</p>
+                      </div>
                     </div>
-                    <div className="widgets__articleRight">
-                        <h4>Dogecoin</h4>
-                        <p>Finally reaches $1</p>
-                    </div>
-                </div>
-                <br/>
-                <div className="separate">
-                    <div className="widgets__articleLeft">
-                        <ExclamationCircleOutlined />
-                    </div>
-                    <div className="widgets__articleRight">
-                        <h4>Tesla</h4>
-                        <p>Launches internet in India</p>
-                    </div>
-                </div>
-                <br />
-                <div className="separate">
-                    <div className="widgets__articleLeft">
-                        <ExclamationCircleOutlined/>
-                        
-                    </div>
-                    <div className="widgets__articleRight">
-                        <h4>SpaceX SN15</h4>
-                        <p>Launching soon!</p>
-                    </div>
-                </div>
-                <br/>
-            </div> */}
-
-<div className="widgets__article">
-        <ul>
-            <li>
-                <div className="widgets__articleRight">
-                    <h4>Dogecoin</h4>
-                    <p>Finally reaches $1</p>
-                    <p>1d ago</p>
-       
-                </div>
-            </li>
-            <li>
-                <div className="widgets__articleRight">
-                    <h4>Tesla</h4>
-                    <p>Launches internet in India</p>
-                    <p>2d ago</p>
-                </div>
-            </li>
-            <li>
-                <div className="widgets__articleRight">
-                    <h4>SpaceX SN15</h4>
-                    <p>Launching soon!</p>
-                   <p>2d ago</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-        </div>
+                  );
+                })}
+                <button  className='lessbtn' onClick={showLess ? handleShowLess : handleShowMore}>
+                  {showLess ? "Show less" : "Show more"} {showLess ? <IoChevronUp /> : <IoChevronDown />}
+                </button>
+        
+             </div>
+            
+        </div> 
+        
         <div className='advertcard'>
         <p className="adc">
             Ad <FaEllipsisH />
@@ -106,7 +86,9 @@ function Widgets() {
           <p className='data'>See who's viewed your profile in the last 90 days</p>
           <button className='bt'> Try for free! </button>
         </div>
-        </>
+       
+       
+        </div>
     );
 
 }

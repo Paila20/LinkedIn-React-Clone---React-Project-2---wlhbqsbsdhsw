@@ -140,6 +140,18 @@
     color: rgba(58, 58, 58, 0.835);
     font-size: 16px;
   }
+
+  @media (max-width: 800px) {
+    .stamp{
+      position: absolute;
+      
+      right: 17px;
+        top: 14px;
+    }
+    .all-comments .action-icon{
+      top: 40px;
+    }
+  }
   
   @media (max-width: 450px) {
     .stamp{

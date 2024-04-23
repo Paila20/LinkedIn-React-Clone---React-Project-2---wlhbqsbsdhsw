@@ -1,27 +1,27 @@
 export const getNewsList = () => {
   return [
     {
-      headLine: "Decoding India's IT trends",
+      headLine: "Top Companies in tech, finance ",
       telecastedAt: "17h",
     },
     {
-      headLine: "Google cuts jobs in AI push",
+      headLine: "FMCG goes big with small",
       telecastedAt: "1d",
     },
     {
-      headLine: "Banks rethink maternity perks",
+      headLine: "Skills to keep up with the emerging tech",
       telecastedAt: "1d",
     },
     {
-      headLine: "PSU insurers lose market share",
+      headLine: "Building fintech for scale",
       telecastedAt: "2d",
     },
     {
-      headLine: "Kuku FM raises $25 million",
+      headLine: "More firms eye ESG space",
       telecastedAt: "21h",
     },
     {
-      headLine: "Hiring trend shifts in IT",
+      headLine: "Luxury homes rise in tier 2 cities",
       telecastedAt: "3h",
     },
     {
@@ -45,7 +45,7 @@ export const getNewsList = () => {
       telecastedAt: "3h",
     },
     {
-      headLine: "Cricket returns to Olympics",
+      headLine: "Google cuts jobs in AI push",
       telecastedAt: "3h",
     },
   ];

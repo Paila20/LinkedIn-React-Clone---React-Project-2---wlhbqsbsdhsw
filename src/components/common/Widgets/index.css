@@ -1,20 +1,29 @@
 .widgets{
-    position: sticky;
-    top: 80px;
+   
+    position: relative;
+    top: 8px;
     flex: 0.2;
     background-color: whitesmoke;
     border-radius: 10px;
     border: 1px solid lightgrey;
     height: fit-content;
     padding-bottom: 6px;
-   
-
-    right: 90px;
     display: flex; 
     flex-direction: column; 
-  
+    width: 290px;
     padding: 15px;
+    margin-right: 30px;
+    margin-left: -60px;
+    z-index: 99;
     
+}
+
+.wid{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    right: 50px;
+   
 }
 
 .widgets__header{
@@ -22,7 +31,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    width: 280px;
+    width: 250px;
 
 
 }
@@ -73,11 +82,10 @@
 
  
     object-fit: cover;
-    position: fixed;
+    position:  relative;
     border-radius: 10px;
-    right: 90px;
-    top: 380px;
-    
+    right: 60px;
+    top: 20px;   
 }
 .adc{
     margin: 10px 0px 20px 260px;
@@ -107,8 +115,11 @@
 
 
 }
+.lessbtn{
+    width: 100px;
+}
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .widgets {
         display: none;
     }
@@ -134,3 +145,4 @@
         display: none;
     }
 }
+ 
