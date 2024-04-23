@@ -26,6 +26,16 @@ export default function Topbar() {
 
   const dropdownRef = useRef(null);
 
+  useEffect(()=>{
+    if(typeof (localStorage.getItem('token')) !==  'string' ){
+    goToLogin();
+    }
+  },[])
+ 
+  function goToLogin() {
+    navigate('/login')
+  } 
+
   useEffect(() => {
   
     document.addEventListener("mousedown", handleClickOutside);
