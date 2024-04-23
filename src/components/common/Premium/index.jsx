@@ -9,7 +9,7 @@ export default function  Premium() {
     <div className='mainContainerTrypremium'>
       <div
         style={{
-          height: "260px",
+          height: "130px",
           width: "100%",
           display: "flex",
           alignContent: "center",
@@ -17,8 +17,8 @@ export default function  Premium() {
           backgroundColor: "white",
         }}
       >
-        <div style={{ height: "55px", width: "100%", borderBottom: "1px solid #8c8c8c33", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <Space style={{ width: "74%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ height: "100px", width: "100%", borderBottom: "1px solid #8c8c8c33", display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <Space style={{ width: "74%", height: 50, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Link to="/" style={{ transform: "scale(1.8)", marginTop: "10px" }}><HomeOutlined /></Link>
             <Link className='backtohomeLink' to='/'>Back to LinkedIn.com</Link>
           </Space>
@@ -28,7 +28,7 @@ export default function  Premium() {
         
           <p className='monthTrail'>Start your free 1-month trial today. Cancel anytime. We’ll send you a reminder 7 days before your trial ends.</p>
           <Button
-              style={{ marginTop: "50px", width: "10%", borderRadius: "20px" }}
+              style={{ marginTop: "15px", width: "10%", borderRadius: "20px" }}
               type="primary"
               shape="round"
             >
