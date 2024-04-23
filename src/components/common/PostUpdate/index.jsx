@@ -60,7 +60,7 @@ export default function PostUpdate({
         console.log(currentUser)
         if (typeof currentUser !== "string") {
           localStorage.removeItem("searcheduser");
-          current = currentUser?.data?._id;
+          current = currentUser?.data?.user?._id;
           finalPostData = posts?.data?.data.filter(
             (item) => item?.author?._id === current
           );
@@ -105,13 +105,13 @@ export default function PostUpdate({
                   style={{
                     backgroundColor:
                       BACKGROUND_COLORS[
-                        (userData?.data?.name
-                          ? userData?.data?.name.charCodeAt(0)
+                        (userData.data?.user?.name
+                          ? userData?.data?.user?.name.charCodeAt(0)
                           : 0) % 20
                       ],
                   }}
                 >
-                  {userData?.data?.name ? userData?.data?.name.charAt(0) : ""}
+                  {userData?.data?.user?.name ? userData?.data?.user?.name.charAt(0) : ""}
                 </h2>
               )}
               <button

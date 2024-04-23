@@ -6,7 +6,7 @@ import LinkedinLogo from "../../../assets/linkedinLogo.png";
 import Button from "../Button";
 
 import "./index.css";
-import { getChannelID } from "../../../utils/user/search";
+import { getChannelID, gettingChannel } from "../../../utils/user/search";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
@@ -21,6 +21,25 @@ export default function GroupProfile() {
   useEffect(() => {
     GetChannelID();
   }, []);
+
+  const [getGroup, setGetGroup] = useState([]);
+
+  const getChannel = async () => {
+   
+      const result = await gettingChannel();
+     console.log(result);
+   if(result.status ===   200){
+      setGetGroup(result.data);
+      // console.log("he", result.data); 
+
+    }
+  } 
+  
+
+  useEffect(() => {
+    getChannel();
+  }, []);
+
 
   const GetChannelID = async () => {
     if (id !== undefined) {
@@ -47,8 +66,8 @@ export default function GroupProfile() {
               className="imgg"
             />
 
-            {currentUser?.data?.profileImage ? (
-              <Avatar src={currentUser?.data?.profileImage} className="avatar">
+            {channelid?.owner?.profileImage ? (
+              <Avatar src={channelid?.owner?.profileImage} className="avatar">
                 {" "}
               </Avatar>
             ) : (
@@ -57,20 +76,20 @@ export default function GroupProfile() {
                 style={{
                   backgroundColor:
                     BACKGROUND_COLORS[
-                      (currentUser?.data?.name
-                        ? currentUser?.data?.name.charCodeAt(0)
+                      (channelid?.owner?.name
+                        ? channelid?.owner?.name.charCodeAt(0)
                         : 0) % 20
                     ],
                 }}
               >
-                {currentUser?.data?.name
-                  ? currentUser?.data?.name.charAt(0)
+                {channelid?.owner?.name
+                  ? channelid?.owner?.name.charAt(0)
                   : ""}
               </h2>
             )}
 
-            <h2 className="name ">{currentUser?.data?.name}</h2>
-            <h4 className="email">{currentUser?.data?.email}</h4>
+            <h2 className="name ">{channelid?.owner?.name}</h2>
+            <h4 className="email">{channelid?.owner?.email}</h4>
             <h4 className="email"> Joined At {timeStampConversionToDateAndTime(channelid.createdAt)}</h4>
             <Link to={'/group'}>
             <h4 className="group"> Groups </h4>
@@ -106,41 +125,33 @@ export default function GroupProfile() {
                 
           </div>
         </div>
-        <div className="vert">
-          <p className="ad">
-            Ad <FaEllipsisH />
-          </p>
-          <p>{currentUser?.data?.name}, boost your job search with premium</p>
-          <div className="images">
-            <h2
-              className="logoo"
-              style={{
-                backgroundColor:
-                  BACKGROUND_COLORS[
-                    (currentUser?.data?.name
-                      ? currentUser?.data?.name.charCodeAt(0)
-                      : 0) % 20
-                  ],
-              }}
-            >
-              {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
-            </h2>
-            <img className="linklogo" src={LinkedinLogo} />
-          </div>
-          <p>See who's viewed your profile in the last 90 days</p>
-          <Button title="Try for free!" />
+       <div  className="interestedgroups">
+        <h2>Groups you might be interested in </h2>
+        <div className="groupSide ">
+          <ul>
+            {getGroup?.data?.length > 15 &&  // Check if there are more than one item
+              getGroup?.data?.slice(15).map((item, index) => (  // Slice the array to exclude the first item
+                <div key={index} className="groupimage">
+                  <h2 className='groupProfileImage' style={{ backgroundColor: BACKGROUND_COLORS[(item?.name ? item?.name.charCodeAt(0) : 0) % 20] }}>
+                    {`${item.name.slice(0,1).toUpperCase()}`}
+                  </h2>
+                 
+                    <li className="channelname">{item.name}</li>
+                   <button className="groupsbtn"> Join</button>
+                   <hr></hr>
+                </div>
+              ))}
+          </ul>
         </div>
-      </div>
-      <div className="grouppost">
-      <h1 className="data"> 
-      
-      About this Group
-      </h1>
-      <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus fugit quod cumque ex doloribus magnam facere animi tenetur, voluptatibus quam assumenda recusandae totam ratione non. Iure molestias iste blanditiis nihil?
-      </p>
+        </div>
        
-      </div>
+        </div>
+        <div className="grouppost">
+      
+          No posts Available
+        </div>
+     
+     
     </>
   );
 }

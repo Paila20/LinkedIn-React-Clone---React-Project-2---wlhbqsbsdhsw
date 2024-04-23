@@ -25,6 +25,7 @@ export default function RegisterComponent() {
         appType: "linkedin",
       });
       const res = await registerAPI(body);
+      console.log(res)
       if (res.status === 201) {
         message.success("Account Created!");
         localStorage.setItem("token", JSON.stringify(res.data.token));
@@ -35,7 +36,7 @@ export default function RegisterComponent() {
         form.resetFields();
       } else {
         message.error("User Already Exists");
-        form.resetFields();
+    
       }
     
   };

@@ -61,6 +61,7 @@ function Widgets() {
                 <div className="widgets__articleRight">
                     <h4>Dogecoin</h4>
                     <p>Finally reaches $1</p>
+                    <p>1d ago</p>
        
                 </div>
             </li>
@@ -68,14 +69,14 @@ function Widgets() {
                 <div className="widgets__articleRight">
                     <h4>Tesla</h4>
                     <p>Launches internet in India</p>
-     
+                    <p>2d ago</p>
                 </div>
             </li>
             <li>
                 <div className="widgets__articleRight">
                     <h4>SpaceX SN15</h4>
                     <p>Launching soon!</p>
-                   
+                   <p>2d ago</p>
                 </div>
             </li>
         </ul>
@@ -85,20 +86,20 @@ function Widgets() {
         <p className="adc">
             Ad <FaEllipsisH />
           </p>
-          <p className='logname'>{currentUser?.data?.name}, boost your job search with premium</p>
+          <p className='logname'>{currentUser?.data?.user?.name}, boost your job search with premium</p>
           <div className="img">
             <h2
               className="logoo"
               style={{
                 backgroundColor:
                   BACKGROUND_COLORS[
-                    (currentUser?.data?.name
-                      ? currentUser?.data?.name.charCodeAt(0)
+                    (currentUser?.data?.user?.name
+                      ? currentUser?.data?.user?.name.charCodeAt(0)
                       : 0) % 20
                   ],
               }}
             >
-              {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
+              {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
             </h2>
             <img className="linklogo" src={LinkedinLogo} />
           </div>

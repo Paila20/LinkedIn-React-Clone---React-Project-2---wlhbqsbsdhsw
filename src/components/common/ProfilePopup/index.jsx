@@ -31,11 +31,11 @@ export default function ProfilePopup({ toggleTheme ,theme}) {
   return (
     <div className={`popup-card ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
 
-      <p className="name">{currentUser?.data?.name}</p>
+      <p className="name">{currentUser?.data?.user?.name}</p>
 
       <Button
         title="View Profile"
-        onClick={() => navigate(`/profile/${currentUser?.data?._id}`)}
+        onClick={() => navigate(`/profile/${currentUser?.data?.user?._id}`)}
       />
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
           <Button title="dark/light" onClick={toggleTheme} />

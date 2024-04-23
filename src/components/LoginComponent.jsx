@@ -23,7 +23,7 @@ const LoginComponent = () => {
       password,
       appType: "linkedin",
     });
-
+ 
     const res = await getUsers(body);
 
     if (res.status === 200) {
@@ -31,7 +31,7 @@ const LoginComponent = () => {
       localStorage.setItem("userData", JSON.stringify(res.data));
       localStorage.setItem("token", JSON.stringify(res.data.token));
       setLoginToken(true);
-      localStorage.setItem("user", JSON.stringify(res.data.data.name));
+      localStorage.setItem("user", JSON.stringify(res.data.data.user.name));
       navigate("/");
       form.resetFields(); 
     } else {

@@ -22,8 +22,8 @@ const {currentUser , setCurrentUser} = UseAuthContext();
         } 
     }, [])
     useEffect(()=>{
-     currentUser
-    },[])
+     
+    },[currentUser])
     return (
         <div className={`sidebar ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
             <div className="sidebar__top">
@@ -36,15 +36,15 @@ const {currentUser , setCurrentUser} = UseAuthContext();
                 ) 
                 :
                 (
-                    <h2 className="sidebar__avatar" style={{backgroundColor: BACKGROUND_COLORS[(currentUser?.data?.name ? currentUser?.data?.name.charCodeAt(0) : 0) % 20]}}>
-                    {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ''}
+                    <h2 className="sidebar__avatar" style={{backgroundColor: BACKGROUND_COLORS[(currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charCodeAt(0) : 0) % 20]}}>
+                    {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ''}
                   </h2>
 
                 )
                 }
                
-                <h2 className='name '>{currentUser?.data?.name}</h2>
-                <h4 className='email'>{currentUser?.data?.email}</h4>
+                <h2 className='name '>{currentUser?.data?.user?.name}</h2>
+                <h4 className='email'>{currentUser?.data?.user?.email}</h4>
             </div>
             <div className="sidebar__stats">
                 <div className="sidebar__stat">

@@ -20,7 +20,7 @@ export default function ProfileCard() {
   const navigate = useNavigate();
 
   
-
+console.log(currentUser)
   useEffect(() => {
     
     const searcheduser = JSON.parse(localStorage.getItem("searcheduser")) || null;
@@ -83,18 +83,18 @@ export default function ProfileCard() {
                     <p className="adc">
                       Ad <FaEllipsisH />
                     </p>
-                    <p>{currentUser?.data?.name}, boost your job search with premium</p>
+                    <p>{currentUser?.data?.user?.name}, boost your job search with premium</p>
                     <div className="images">
                       <h2
                         className="logoo"
                         style={{
                           backgroundColor:
                             BACKGROUND_COLORS[
-                              (currentUser?.data?.name ? currentUser?.data?.name.charCodeAt(0) : 0) % 20
+                              (currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charCodeAt(0) : 0) % 20
                             ],
                         }}
                       >
-                        {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
+                        {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
                       <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" />
                     </div>
@@ -117,22 +117,20 @@ export default function ProfileCard() {
                         style={{
                           backgroundColor:
                             BACKGROUND_COLORS[
-                              (currentUser?.data?.name ? currentUser?.data?.name.charCodeAt(0) : 0) % 20
+                              (currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charCodeAt(0) : 0) % 20
                             ],
                         }}
                       >
-                        {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
+                        {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
                     )}
                     <h3 className="userName">
-                      {currentUser?.data?._id !== id ? id : currentUser?.data?.name}
+                      {currentUser?.data?.user?._id !== id ? id : currentUser?.data?.user?.name}
                     </h3>
-                    {/* <p className="heading">
-                      {currentUser?.data?._id !== id ? id : currentUser?.data?.email}
-                    </p> */}
+                  
                     <p className="heading">
                       joined At
-                      {currentUser?.data?._id !== id ? id : timeStampConversionToDateAndTime(currentUser?.data?.createdAt)}
+                      {currentUser?.data?.user?._id !== id ? id : timeStampConversionToDateAndTime(currentUser?.data?.createdAt)}
                     </p>
                    
                   </div>
@@ -147,25 +145,25 @@ export default function ProfileCard() {
                    </div>
                     <div className="">
                       <h1>Public profile & URL </h1>
-                      <p>www.linkedin.com/{currentUser?.data?.email}</p>
+                      <p>www.linkedin.com/{currentUser?.data?.user?.email}</p>
                     </div>
                   </div>
                   <div className="sideprofile">
                     <p className="ad">
                       Ad <FaEllipsisH />
                     </p>
-                    <p>{currentUser?.data?.name}, boost your job search with premium</p>
+                    <p>{currentUser?.data?.user?.name}, boost your job search with premium</p>
                     <div className="images">
                       <h2
                         className="logoo"
                         style={{
                           backgroundColor:
                             BACKGROUND_COLORS[
-                              (currentUser?.data?.name ? currentUser?.data?.name.charCodeAt(0) : 0) % 20
+                              (currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charCodeAt(0) : 0) % 20
                             ],
                         }}
                       >
-                        {currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ""}
+                        {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
                       <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" />
                     </div>
@@ -181,8 +179,8 @@ export default function ProfileCard() {
       )}
       <div className="cards">
         <PostUpdate
-          className="card"
-          currentUser={currentUser?.data?._id !== id ? id : currentUser}
+          
+          currentUser={currentUser?.data?.user?._id !== id ? id : currentUser}
           profile={true}
           handleLocalStorageUpdate={handleLocalStorageUpdate}
         />

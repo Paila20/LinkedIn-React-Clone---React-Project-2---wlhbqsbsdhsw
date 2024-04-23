@@ -124,8 +124,8 @@ export default function Topbar() {
         ) : (
         
         
-      <h2 className="user-logo"  onClick={displayPopup} style={{backgroundColor: BACKGROUND_COLORS[( currentUser?.data?.name ? currentUser?.data?.name.charCodeAt(0) : 0) % 20]}}>
-        { currentUser?.data?.name ? currentUser?.data?.name.charAt(0) : ''}
+      <h2 className="user-logo"  onClick={displayPopup} style={{backgroundColor: BACKGROUND_COLORS[( currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charCodeAt(0) : 0) % 20]}}>
+        { currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ''}
       </h2>
          )}
        <span style={{marginTop:50,marginRight:-5, marginBottom:5, fontSize: 10}}>Me</span> 
