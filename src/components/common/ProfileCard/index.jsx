@@ -28,7 +28,7 @@ export default function ProfileCard() {
       setSearchedUser(searcheduser);
     }
     setLoading(false);
-  }, [searchedUser]);
+  }, []);
   
 
   const goToRoute = (route) => {
@@ -51,9 +51,9 @@ export default function ProfileCard() {
       {loading ? (
         <Loader/>
       ) : (
-        <div className="profile">
        
-            <div className="profile-info">
+       
+            <div className="">
               {searchedUser !== null ? (
                 <div className="profile-card">
                   <div>
@@ -136,15 +136,15 @@ export default function ProfileCard() {
                     </p>
                    
                   </div>
-                  <div className="">
+                  <div >
                   <div className="lang">
-                    <div className="">
+                    <div>
                       <h1>Profile Language</h1>
                       <p>English</p>
                     </div>
-                    <div className="hr-line">
-                      <hr />
-                    </div>
+                    <div className="-line">
+                   <hr/>
+                   </div>
                     <div className="">
                       <h1>Public profile & URL </h1>
                       <p>www.linkedin.com/{currentUser?.data?.email}</p>
@@ -175,9 +175,9 @@ export default function ProfileCard() {
                   </div>
                 </div>
               )}
-            </div>
+             </div>
         
-        </div>
+      
       )}
       <div className="cards">
         <PostUpdate

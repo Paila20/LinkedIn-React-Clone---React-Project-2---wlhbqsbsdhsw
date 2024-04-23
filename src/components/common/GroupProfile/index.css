@@ -5,7 +5,7 @@
   }
   .side{
     width: 300px;
-    top: 120px;
+    top: 80px;
   
     position: sticky;
     flex: 0.2;
@@ -53,7 +53,7 @@
       width: 70%;
       height: 300px;
       background-color: whitesmoke;
-      margin: 50px -120px 10px 50px;
+      margin: 10px -120px 10px 50px;
       border-radius: 5px;
       padding: 5px;
       position: relative;
@@ -161,7 +161,7 @@
   
     height: 300px;
     background-color: whitesmoke;
-    margin: 50px 50px 200px 140px;;
+    margin: 10px 50px 200px 140px;;
    
     border-radius: 5px;
     padding: 5px;
@@ -204,8 +204,9 @@
     margin:  -180px 350px 0 350px;
    
     background-color: white;
-    width: 550px;
+    width: 590px;
     height: auto;
+    border-radius: 5px;
   }
 
 .data{
@@ -263,8 +264,13 @@ color: white;
     display: none;
   }
   .imggg{
+    width: 128%;
+    max-width: 570px;
+   
+  }
+  .card{
     width: 100%;
-    max-width: 900px;
+    max-width: 500px;
   }
 }
 
@@ -273,12 +279,13 @@ color: white;
       width: 100%;
   }
   .grouppost{
-    width: 70%;
+    width: 77%;
     margin-right: 20px;
   }
   .imggg{
     width: 100%;
-    max-width: 642px;
+    max-width: 570px;
+
   }
 }
 
@@ -291,7 +298,7 @@ color: white;
     margin-right: 20px;
   }
   .imggg{
-    width: 100%;
+    width: 120%;
     max-width: 313px;
   }
   .followbtn{
@@ -305,6 +312,10 @@ color: white;
   }
   .public{
     margin-left: 14px;
+  }
+  .card{
+    max-width: 311px;
+    width: 100%;
   }
 
 }
