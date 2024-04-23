@@ -128,10 +128,7 @@ console.log(currentUser)
                       {currentUser?.data?.user?._id !== id ? id : currentUser?.data?.user?.name}
                     </h3>
                   
-                    <p className="heading">
-                      joined At
-                      {currentUser?.data?.user?._id !== id ? id : timeStampConversionToDateAndTime(currentUser?.data?.createdAt)}
-                    </p>
+                    
                    
                   </div>
                   <div >
