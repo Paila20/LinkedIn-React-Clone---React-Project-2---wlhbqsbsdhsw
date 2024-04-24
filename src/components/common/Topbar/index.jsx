@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState ,useRef} from "react";
-import LinkedinLogo from "../../../assets/linkedinLogo.png";
+import LinkedinLogo from "../../../assets/linklogo.png";
 import SearchUsers from "../SearchUsers";
 import {
   AiOutlineHome,

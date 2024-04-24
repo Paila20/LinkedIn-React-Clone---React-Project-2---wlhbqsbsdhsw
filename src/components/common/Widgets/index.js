@@ -86,7 +86,7 @@ function Widgets() {
           <p className='data'>See who's viewed your profile in the last 90 days</p>
           <button className='bt'> Try for free! </button>
         </div>
-       <div>
+       <div >
         <img  className = "inlogo" src={linkedin}/>
         <div className='corp'>LinkedIn Corporation © 2024</div>
        </div>

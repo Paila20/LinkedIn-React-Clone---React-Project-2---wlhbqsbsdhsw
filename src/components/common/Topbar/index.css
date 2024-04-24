@@ -15,10 +15,15 @@
   }
   
   .linkedin-logo {
-    width: 72px;
+    
+
+    width: 46px;
     margin-left: 40px;
     border-radius: none;
     margin-right: -25px;
+    height: 40px;
+    margin-top: 7px;
+    margin-bottom: 5px;
   }
   
   .react-icons {
@@ -40,7 +45,7 @@
     padding: 5px;
     color: gray;
     background-color:hsl(207, 35%, 81%);
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 50px;
   }
   .react-search > input{
@@ -89,7 +94,7 @@
   
   .popup-position {
     position: absolute;
-    right: 100px;
+    right: 10px;
     top: 65px;
     z-index: 99;
   }
@@ -156,6 +161,13 @@ font-size: 13px;
     .react-search{
       width: 200px;
     }
+    .popup-position {
+      position: absolute;
+      right: 0px;
+      top: 480px;
+
+      z-index: 99;
+    }
   }
   
   @media (max-width: 600px) {
@@ -174,6 +186,13 @@ font-size: 13px;
       margin-left: auto;
 
     } 
+    .popup-position {
+      position: absolute;
+      right: 0px;
+      top: 300px;
+ 
+      z-index: 99;
+    }
    
   }
   
@@ -190,5 +209,12 @@ font-size: 13px;
       margin-left: auto;
 
     } 
+    .popup-position {
+      position: absolute;
+      right: 0px;
+      top: 300px;
+
+      z-index: 99;
+    }
   }
   
