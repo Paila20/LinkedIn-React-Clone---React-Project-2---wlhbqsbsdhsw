@@ -58,11 +58,11 @@ export default function GroupProfile() {
   }
 
   return (
-    <>
+    <div className="channel-info"style={{ backgroundColor: darkmode ? 'black' : '' }}>
     <Topbar/>
       <div className="channel" style={{ backgroundColor: darkmode ? 'black' : '' }}>
-        <div className="side">
-          <div className="top">
+        <div className="side" >
+          <div className="top" style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
             <img
               src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png"
               alt=""
@@ -99,8 +99,8 @@ export default function GroupProfile() {
             </Link>
           </div>
         </div>
-        <div className="card">
-          <div className="info">
+        <div className="card"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
+          <div className="info"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' }}>
            <img src='https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="imggg"/>
           
                   
@@ -119,8 +119,8 @@ export default function GroupProfile() {
                       {channelid?.name ? channelid?.name.charAt(0) : ""}
                     </h2>
 
-                    <h3 className="Name">{channelid?.name}</h3>
-                    <p className="head">{channelid?.description}</p>
+                    <h3 className="Name" style={{ color: darkmode ? 'white' : '' }}>{channelid?.name}</h3>
+                    <p className="head" style={{ color: darkmode ? 'white' : '' }}>{channelid?.description}</p>
                     <p className=" public">
                       <FaUsers /> Public Group
                     </p>
@@ -128,20 +128,21 @@ export default function GroupProfile() {
                 
           </div>
         </div>
-       <div  className="interestedgroups">
-        <h2>Groups you might be interested in </h2>
+       <div  className="interestedgroups" style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
+        <h2 >Groups you might be interested in </h2>
         <div className="groupSide ">
           <ul>
-            {getGroup?.data?.length > 15 &&  // Check if there are more than one item
-              getGroup?.data?.slice(15).map((item, index) => (  // Slice the array to exclude the first item
+            {getGroup?.data?.length > 5 &&  // Check if there are more than one item
+              getGroup?.data?.slice(2,7).map((item, index) => (  // Slice the array to exclude the first item
                 <div key={index} className="groupimage">
-                  <h2 className='groupProfileImage' style={{ backgroundColor: BACKGROUND_COLORS[(item?.name ? item?.name.charCodeAt(0) : 0) % 20] }}>
+                  <h2 className='groupimageside' style={{ backgroundColor: BACKGROUND_COLORS[(item?.name ? item?.name.charCodeAt(0) : 0) % 20] }}>
                     {`${item.name.slice(0,1).toUpperCase()}`}
                   </h2>
                  
-                    <li className="channelname">{item.name}</li>
-                   <button className="groupsbtn"> Join</button>
-                   <hr></hr>
+                    <li className="channelnameside">{item.name}</li>
+                    <div><button className="groupsbtn"> Join</button></div>
+
+                   <hr className="hrgroup"></hr>
                 </div>
               ))}
           </ul>
@@ -149,12 +150,12 @@ export default function GroupProfile() {
         </div>
        
         </div>
-        <div className="grouppost">
+        <div className="grouppost" style={{ backgroundColor: darkmode ? 'black' : '', color: darkmode? 'white': ' ',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
       
           No posts Available
         </div>
      
      
-    </>
+    </div>
   );
 }

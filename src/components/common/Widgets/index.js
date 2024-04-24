@@ -62,8 +62,8 @@ function Widgets() {
             
         </div> 
         
-        <div className='advertcard' style={{ backgroundColor: darkmode ? 'black' : '', border:darkmode?'white': "" }}>
-        <p className="adc">
+        <div className='advertcard' style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
+        <p className="adc" style={{color: darkmode ? 'white': ''}}>
             Ad <FaEllipsisH  style={{color: darkmode ? 'white': ''}}/>
           </p>
           <p className='logname' style={{color: darkmode ? 'white': ''}}>{currentUser?.data?.user?.name}, boost your job search with premium</p>

@@ -44,7 +44,7 @@ console.log(currentUser)
  
 
   return (
-    <>
+    < div style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <div className="topbar">
         <Topbar/>
       </div>
@@ -55,7 +55,7 @@ console.log(currentUser)
        
             <div style={{ backgroundColor: darkmode ? 'black' : '' }}>
               {searchedUser !== null ? (
-                <div className="profile-card">
+                <div className="profile-card" >
                   <div>
                  
                   {searchedUser?.profileImage ? (
@@ -77,14 +77,14 @@ console.log(currentUser)
                       {searchedUser?.name ? searchedUser?.name.charAt(0) : ""}
                     </h2>
                   )}
-                  <h3 className="userName">{searchedUser.name}</h3>
+                  <h3 className="userName" style={{color: darkmode ? 'white': ''}}>{searchedUser.name}</h3>
                   </div>
-                  <div className="advert">
-                    <p className="adc">
-                      Ad <FaEllipsisH />
+                  <div className="advert"  style={{ backgroundColor: darkmode ? 'black' : '' ,border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
+                    <p className="adc" style={{color: darkmode ? 'white': ''}}>
+                      Ad <FaEllipsisH style={{color: darkmode ? 'white': ''}}/>
                     </p>
-                    <p>{currentUser?.data?.user?.name}, boost your job search with premium</p>
-                    <div className="images">
+                    <p style={{color: darkmode ? 'white': ''}}>{currentUser?.data?.user?.name}, boost your job search with premium</p>
+                    <div className="images" style={{color: darkmode ? 'white': ''}}>
                       <h2
                         className="logoo"
                         style={{
@@ -96,14 +96,14 @@ console.log(currentUser)
                       >
                         {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
-                      <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" />
+                      <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" style={{color: darkmode ? 'white': ''}}/>
                     </div>
-                    <p>See who's viewed your profile in the last 90 days</p>
+                    <p style={{color: darkmode ? 'white': ''}}>See who's viewed your profile in the last 90 days</p>
                     <Button title="Try for free!" />
                   </div>
                 </div>
               ) : (
-                <div className="profile-card">
+                <div className="profile-card" >
                   <div>
                     {currentUser?.data?.profileImage ? (
                       <img
@@ -124,7 +124,7 @@ console.log(currentUser)
                         {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
                     )}
-                    <h3 className="userName">
+                    <h3 className="userName" style={{color: darkmode ? 'white': ''}}>
                       {currentUser?.data?.user?._id !== id ? id : currentUser?.data?.user?.name}
                     </h3>
                   
@@ -132,23 +132,23 @@ console.log(currentUser)
                    
                   </div>
                   <div >
-                  <div className="lang">
-                    <div>
+                  <div className="lang"  style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
+                    <div style={{color: darkmode ? 'white': ''}}>
                       <h1>Profile Language</h1>
                       <p>English</p>
                     </div>
                    <hr></hr>
                     <div className="">
-                      <h1>Public profile & URL </h1>
-                      <p>www.linkedin.com/{currentUser?.data?.user?.email}</p>
+                      <h1 style={{color: darkmode ? 'white': ''}}>Public profile & URL </h1>
+                      <p style={{color: darkmode ? 'white': ''}}>www.linkedin.com/{currentUser?.data?.user?.email}</p>
                     </div>
                   </div>
-                  <div className="sideprofile">
-                    <p className="ad">
-                      Ad <FaEllipsisH />
+                  <div className="sideprofile"  style={{ backgroundColor: darkmode ? 'black' : '',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
+                    <p className="ad" style={{color: darkmode ? 'white': ''}}>
+                      Ad <FaEllipsisH style={{color: darkmode ? 'white': ''}}/>
                     </p>
-                    <p>{currentUser?.data?.user?.name}, boost your job search with premium</p>
-                    <div className="images">
+                    <p style={{color: darkmode ? 'white': ''}}>{currentUser?.data?.user?.name}, boost your job search with premium</p>
+                    <div className="images" style={{color: darkmode ? 'white': ''}}>
                       <h2
                         className="logoo"
                         style={{
@@ -160,9 +160,9 @@ console.log(currentUser)
                       >
                         {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
-                      <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" />
+                      <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" style={{color: darkmode ? 'white': ''}}/>
                     </div>
-                    <p>See who's viewed your profile in the last 90 days</p>
+                    <p style={{color: darkmode ? 'white': ''}}>See who's viewed your profile in the last 90 days</p>
                     <Button title="Try for free!" />
                   </div>
                   </div>
@@ -172,7 +172,7 @@ console.log(currentUser)
         
       
       )}
-      <div className="cards">
+      <div className="cards"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
         <PostUpdate
           
           currentUser={currentUser?.data?.user?._id !== id ? id : currentUser}
@@ -180,7 +180,7 @@ console.log(currentUser)
           handleLocalStorageUpdate={handleLocalStorageUpdate}
         />
       </div>
-    </>
+    </div>
   );
 }
  

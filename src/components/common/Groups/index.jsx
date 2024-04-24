@@ -49,15 +49,16 @@ export default function Groups() {
           boxShadow: '0px 0px 0px 0.2px grey',
           position: 'absolute',
           left: '195px',
+           backgroundColor: darkmode ? 'black' : '' 
         }}
       >
-        <div className="headerGroup ">
-          <span>Your groups</span>
+        <div className="headerGroup " style={{ backgroundColor: darkmode ? 'black' : '' }}>
+          <span style={{color: darkmode ? 'white': ''}}>Your groups</span>
           <span>
             <CreateGroup getChannel={getChannel} />
           </span>
         </div>
-        <div className="groupList ">
+        <div className="groupList " style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <ul>
             {console.log(getGroup)}
             {getGroup?.data?.length>0  &&
