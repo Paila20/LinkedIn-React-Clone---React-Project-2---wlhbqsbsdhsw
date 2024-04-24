@@ -25,6 +25,7 @@ export default function PostsCard({
  
  const [showActions, setShowActions] = useState(false);
   const [loading, setLoading] = useState(false);
+  const {darkmode} = UseAuthContext();
  
   const userData = JSON.parse(localStorage.getItem("userData"));
 
@@ -60,12 +61,12 @@ export default function PostsCard({
   return loading ? (
     <Loader />
   ) : (
-    <div className="posts-card" key={posts._id}>
+    <div className="posts-card" key={posts._id} style={{ backgroundColor: darkmode ? 'black' : 'whitesmoke' }}>
       <div className="post-image-wrapper">
       
         {currentUser?.data?.user?._id === posts?.author?._id && (
           <div className="action-container">
-            <FaEllipsisH onClick={() => setShowActions(!showActions)} />
+            <FaEllipsisH onClick={() => setShowActions(!showActions)} style={{color: darkmode ? 'white': ''}}/>
             {showActions && (
               <div className="container">
                 <p
@@ -109,9 +110,9 @@ export default function PostsCard({
         )}
 
         <div>
-          <p className="name">{posts?.author?.name}</p>
-          <p className="headline">Writer | Developer</p>
-          <p className="timestamp">
+          <p className="name" style={{color: darkmode ? 'white': ''}}>{posts?.author?.name}</p>
+          <p className="headline" style={{color: darkmode ? 'white': ''}}>Writer | Developer</p>
+          <p className="timestamp" style={{color: darkmode ? 'white': ''}}>
             {timeStampConversionToDateAndTime(posts.createdAt)}
           </p>
         </div>

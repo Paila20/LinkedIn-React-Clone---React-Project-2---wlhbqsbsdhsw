@@ -5,9 +5,9 @@ import Button from "../Button";
 import "./index.css";
 import { UseAuthContext } from "../../../helpers/AuthContext";
 
-export default function ProfilePopup({ toggleTheme ,theme}) {
+export default function ProfilePopup() {
   let navigate = useNavigate();
-  const {currentUser, setLoginToken} = UseAuthContext();
+  const {currentUser, setLoginToken, darkmode, toggleDarkMode} = UseAuthContext();
 
   useEffect(()=>{
     if(typeof (localStorage.getItem('token')) !==  'string'){
@@ -29,7 +29,7 @@ export default function ProfilePopup({ toggleTheme ,theme}) {
 
 
   return (
-    <div className={`popup-card ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+    <div className='popup-card ' style={{ backgroundColor: darkmode ? 'black' : '' }}>
 
       <p className="name">{currentUser?.data?.user?.name}</p>
 
@@ -38,7 +38,7 @@ export default function ProfilePopup({ toggleTheme ,theme}) {
         onClick={() => navigate(`/profile/${currentUser?.data?.user?._id}`)}
       />
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
-          <Button title="dark/light" onClick={toggleTheme} />
+          <Button title="dark/light" onClick={toggleDarkMode} />
       <Button title="Log out" onClick={handleLogout} disabled={false} />
     </div>
   );

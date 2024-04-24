@@ -13,7 +13,7 @@ import PostUpdate from "../PostUpdate";
 import "./index.css";
 
 export default function ProfileCard() {
-  const { currentUser } = UseAuthContext();
+  const { currentUser,darkmode } = UseAuthContext();
   const [searchedUser, setSearchedUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -53,7 +53,7 @@ console.log(currentUser)
       ) : (
        
        
-            <div className="">
+            <div style={{ backgroundColor: darkmode ? 'black' : '' }}>
               {searchedUser !== null ? (
                 <div className="profile-card">
                   <div>

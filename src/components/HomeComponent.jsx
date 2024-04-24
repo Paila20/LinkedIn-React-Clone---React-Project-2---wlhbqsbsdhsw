@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export const HomeComponent = () => {
   let navigate = useNavigate();
-  const {currentUser} = UseAuthContext();
+  const {currentUser, darkmode} = UseAuthContext();
 
   useEffect(() => {
     localStorage.removeItem("searcheduser");
@@ -32,7 +32,7 @@ export const HomeComponent = () => {
   return (
     <>
     <Topbar/>
-    <div className="home-component">
+    <div className="home-component" style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Sidebar  />
       <PostUpdate profile={false} currentUser={currentUser}/>
       <Widgets />

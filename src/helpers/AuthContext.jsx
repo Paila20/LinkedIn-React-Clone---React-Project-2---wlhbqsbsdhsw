@@ -8,6 +8,11 @@ export const  AuthContextProvider = ({children}) => {
 
     const [currentUser, setCurrentUser] = useState({});
     const [logintoken, setLoginToken] = useState(false);
+    const [darkmode ,setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+      setDarkMode(prevMode => !prevMode);
+  };
     
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem("userData")) || {};
@@ -29,7 +34,7 @@ export const  AuthContextProvider = ({children}) => {
 
  
   return (
-    <MyContext.Provider value ={{currentUser, setCurrentUser, logintoken, setLoginToken}}>
+    <MyContext.Provider value ={{currentUser, setCurrentUser, logintoken, setLoginToken, darkmode, setDarkMode, toggleDarkMode}}>
         {children}
       
     </MyContext.Provider>

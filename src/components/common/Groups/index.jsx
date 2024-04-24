@@ -9,21 +9,25 @@ import { BACKGROUND_COLORS } from "../../../utils/user/login";
 import { Link } from "react-router-dom";
 import { displayName } from "react-quill";
 import Topbar from '../Topbar';
+import { UseAuthContext } from "../../../helpers/AuthContext";
 
 
 
 export default function Groups() {
   const [getGroup, setGetGroup] = useState([]);
+  const {darkmode, currentUser} = UseAuthContext();
 
   const getChannel = async () => {
-   
-      const result = await gettingChannel();
+   if(currentUser !== undefined){
+    const result = await gettingChannel(currentUser.token);
      console.log(result);
    if(result.status ===   200){
       setGetGroup(result.data);
-      // console.log("he", result.data); 
+    
 
     }
+   }
+      
   } 
   
 
@@ -34,7 +38,7 @@ export default function Groups() {
   return (
     <>
      <Topbar/>
-    <div className="mainContainerGroup">
+    <div className="mainContainerGroup" style={{ backgroundColor: darkmode ? 'black' : '' }}>
      
       <Card
       className="cardStyle"

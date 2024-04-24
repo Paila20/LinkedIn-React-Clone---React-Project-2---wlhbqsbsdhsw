@@ -41,7 +41,7 @@
     align-items: center;
     border-radius: 5px;
     height: 20px;
-    width: 300px;
+   
     padding: 5px;
     color: gray;
     background-color:hsl(207, 35%, 81%);
@@ -51,6 +51,7 @@
   .react-search > input{
     outline: none;
     border: none;
+    width: 300px;
     border-radius: 100px;
     background-color: hsl(207, 35%, 81%);
     

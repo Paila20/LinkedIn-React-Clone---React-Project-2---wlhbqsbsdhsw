@@ -4,35 +4,38 @@ import { EditOutlined } from '@ant-design/icons';
 // import 'antd/dist/antd.css';
 import './index.css';
 import { creatingagroup } from '../../../utils/user/search';
+import { UseAuthContext } from '../../../helpers/AuthContext';
 
 export default function CreateGroup({getChannel}) {
   const [open, setOpen] = useState(false);
   const [channelName, setChannelName] = useState('');
   const [channelDescription, setChannelDescription] = useState('');
-
+ const {darkmode, currentUser} = UseAuthContext();
+ console.log(currentUser)
 
   const createGroup = async () => {
     let formData = new FormData();
     formData.append("name", channelName);
     formData.append("description", channelDescription);
-     
-      const result = await creatingagroup(formData);
+     if(currentUser !== undefined){
+      const result = await creatingagroup(formData,  currentUser.token);
 
-      console.log(' res', result);
-    if(result.status === 200){
-
-    
-      getChannel();
-      setChannelName('');
-      setChannelDescription('');
+      if(result.status === 200){
+  
+      
+        getChannel();
+        setChannelName('');
+        setChannelDescription('');
+       
+      }
+     }
      
-    }
     
   };
 
 
   return (
-    <div className="mainGroupContainer">
+    <div className="mainGroupContainer" style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Button type="primary" onClick={() => setOpen(true)}>
         Create Group
       </Button>

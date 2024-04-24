@@ -17,6 +17,7 @@ export default function GroupProfile() {
   const { id } = useParams();
   const [channelid, setChannelID] = useState({});
   const [isFollowed, setIsFollowed] = useState(false);
+  const {darkmode} = UseAuthContext();
 
   useEffect(() => {
     GetChannelID();
@@ -25,14 +26,16 @@ export default function GroupProfile() {
   const [getGroup, setGetGroup] = useState([]);
 
   const getChannel = async () => {
-   
-      const result = await gettingChannel();
+   if(currentUser !== undefined){
+    const result = await gettingChannel(currentUser.token);
      console.log(result);
    if(result.status ===   200){
       setGetGroup(result.data);
-      // console.log("he", result.data); 
+    
 
     }
+   }
+      
   } 
   
 
@@ -42,8 +45,8 @@ export default function GroupProfile() {
 
 
   const GetChannelID = async () => {
-    if (id !== undefined) {
-      const res = await getChannelID(id);
+    if (id !== undefined && currentUser !== undefined ) {
+      const res = await getChannelID(id, currentUser.token);
       console.log(res);
       if (res.status === 200) {
         setChannelID(res.data.data);
@@ -57,7 +60,7 @@ export default function GroupProfile() {
   return (
     <>
     <Topbar/>
-      <div className="channel">
+      <div className="channel" style={{ backgroundColor: darkmode ? 'black' : '' }}>
         <div className="side">
           <div className="top">
             <img

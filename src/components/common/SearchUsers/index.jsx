@@ -8,12 +8,13 @@ import qs from "qs";
 import { fetchPost } from "../../../utils/user/post";
 import { Link } from "react-router-dom";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
+import { UseAuthContext } from "../../../helpers/AuthContext";
 
 export default function SearchUsers({ setIsSearch }) {
    const [searchvalue, setSearchValue] = useState([]);
+    const [postsData, setPostsData] = useState([]);
 
-  
-  const [postsData, setPostsData] = useState([]);
+    const {darkmode} =UseAuthContext();
 
   useEffect(() => {
 
@@ -62,8 +63,7 @@ export default function SearchUsers({ setIsSearch }) {
   };
 
   return (
-    <div className="search-users"
-    >
+    <div className="search-users" style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <div className="input-field">
 
       <FaSearch

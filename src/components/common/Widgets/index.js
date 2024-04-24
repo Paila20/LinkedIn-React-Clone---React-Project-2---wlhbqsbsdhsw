@@ -15,7 +15,7 @@ import { getNewsList } from '../../../assets/news';
 
 
 function Widgets() {
-    const{currentUser} =UseAuthContext();
+    const{currentUser, darkmode} =UseAuthContext();
 
     const newsList = getNewsList();
     const splicedList = newsList.slice(0, 5);
@@ -35,21 +35,21 @@ function Widgets() {
     
 
     return (
-        < div className='wid'>
-        <div className='widgets'>
-            <div className="widgets__header">
-                <h2>LinkedIn News</h2>
-                <InfoCircleOutlined/>
+        < div className='wid'  style={{ backgroundColor: darkmode ? 'black' : '' }}>
+        <div className='widgets' style={{ backgroundColor: darkmode ? 'black' : '' }}>
+            <div className="widgets__header" style={{ backgroundColor: darkmode ? 'black' : '' }}>
+                <h2 style={{color: darkmode ? 'white': ''}}>LinkedIn News</h2>
+                <InfoCircleOutlined style={{color: darkmode ? 'white': ''}}/>
             </div>
             
          
-                <div className="widgets__article">
+                <div className="widgets__article" style={{ backgroundColor: darkmode ? 'black' : '' }}>
                 {newsArray.map((data, i) => {
                   return (
                     <div key={i}>
-                      <div className=''>
-                        <p className=''><FaCircleDot style={{scale: "0.5"}}/> {data.headLine}</p>
-                        <p className=''>{data.telecastedAt} ago</p>
+                      <div style={{color: darkmode ? 'white': ''}}>
+                        <p style={{color: darkmode ? 'white': ''}}><FaCircleDot style={{scale: "0.5"}}/> {data.headLine}</p>
+                        <p style={{color: darkmode ? 'white': ''}}>{data.telecastedAt} ago</p>
                       </div>
                     </div>
                   );
@@ -62,12 +62,12 @@ function Widgets() {
             
         </div> 
         
-        <div className='advertcard'>
+        <div className='advertcard' style={{ backgroundColor: darkmode ? 'black' : '', border:darkmode?'white': "" }}>
         <p className="adc">
-            Ad <FaEllipsisH />
+            Ad <FaEllipsisH  style={{color: darkmode ? 'white': ''}}/>
           </p>
-          <p className='logname'>{currentUser?.data?.user?.name}, boost your job search with premium</p>
-          <div className="img">
+          <p className='logname' style={{color: darkmode ? 'white': ''}}>{currentUser?.data?.user?.name}, boost your job search with premium</p>
+          <div className="img" style={{color: darkmode ? 'white': ''}}>
             <h2
               className="logoo"
               style={{
@@ -81,14 +81,14 @@ function Widgets() {
             >
               {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
             </h2>
-            <img className="linklogo" src={LinkedinLogo} />
+            <img className="linklogo" src={LinkedinLogo} style={{color: darkmode ? 'white': ''}}/>
           </div>
-          <p className='data'>See who's viewed your profile in the last 90 days</p>
+          <p className='data'style={{color: darkmode ? 'white': ''}}>See who's viewed your profile in the last 90 days</p>
           <button className='bt'> Try for free! </button>
         </div>
        <div >
         <img  className = "inlogo" src={linkedin}/>
-        <div className='corp'>LinkedIn Corporation © 2024</div>
+        <div className='corp' style={{color: darkmode ? 'white': ''}}>LinkedIn Corporation © 2024</div>
        </div>
        
         </div>

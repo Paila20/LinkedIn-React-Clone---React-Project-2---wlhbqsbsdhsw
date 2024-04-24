@@ -33,6 +33,7 @@ export default function PostUpdate({
   const [loading, setLoading] = useState(true);
 
   const [singlePost, setSinglePost] = useState(null);
+  const {darkmode} = UseAuthContext();
   const userData = JSON.parse(localStorage.getItem("userData"));
 
   let navigate = useNavigate();
@@ -92,10 +93,10 @@ export default function PostUpdate({
         
       ):(
 
-    <div className='post-status-main'>
+    <div className='post-status-main' style={{ backgroundColor: darkmode ? 'black' : '' }}>
       {profile !== true ? (
         <>
-          <div className='feed__inputcontainer'>
+          <div className='feed__inputcontainer' style={{ backgroundColor: darkmode ? 'black' : '' }}>
             <div className="post-status">
               {currentUser?.data?.profileImage ? (
                 <img

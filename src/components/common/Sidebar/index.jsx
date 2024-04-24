@@ -5,7 +5,7 @@ import { BACKGROUND_COLORS } from '../../../utils/user/login';
 import { UseAuthContext } from '../../../helpers/AuthContext';
 
 function Sidebar({theme}) {
-const {currentUser , setCurrentUser} = UseAuthContext();
+const {currentUser , setCurrentUser ,darkmode} = UseAuthContext();
 
     const recentItem = (topic) => (
         <div className="sidebar__recentItem">
@@ -25,8 +25,8 @@ const {currentUser , setCurrentUser} = UseAuthContext();
      
     },[currentUser])
     return (
-        <div className={`sidebar ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
-            <div className="sidebar__top">
+        <div className= 'sidebar'  style={{ backgroundColor: darkmode ? 'black' : '' }} >
+            <div className="sidebar__top" style={{ backgroundColor: darkmode ? 'black' : '' }}>
                 <img src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png" alt="" />
                
                     { 
@@ -43,10 +43,10 @@ const {currentUser , setCurrentUser} = UseAuthContext();
                 )
                 }
                
-                <h2 className='name '>{currentUser?.data?.user?.name}</h2>
-                <h4 className='email'>{currentUser?.data?.user?.email}</h4>
+                <h2 className='name ' style={{color: darkmode ? 'white': ''}} >{currentUser?.data?.user?.name}</h2>
+                <h4 className='email' style={{color: darkmode ? 'white': ''}}>{currentUser?.data?.user?.email}</h4>
             </div>
-            <div className="sidebar__stats">
+            <div className="sidebar__stats" style={{ backgroundColor: darkmode ? 'black' : '' }}>
                 <div className="sidebar__stat">
                     <p>Who viewed you</p>
                     <p className="sidebar__statNumber">1000</p>
@@ -56,8 +56,8 @@ const {currentUser , setCurrentUser} = UseAuthContext();
                     <p className="sidebar__statNumber">1448</p>
                 </div>
             </div>
-            <div className="sidebar__bottom">
-                <p>Recent</p>
+            <div className="sidebar__bottom" style={{ backgroundColor: darkmode ? 'black' : '' }}>
+                <p style={{color: darkmode ? 'white': ''}}>Recent</p>
                 {recentItem('Never')}
                 {recentItem('Give')}
                 {recentItem('UP')}

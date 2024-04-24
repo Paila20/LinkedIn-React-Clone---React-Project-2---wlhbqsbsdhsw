@@ -36,7 +36,7 @@ export const searchFilter = async (item) => {
   }
 };
 
-export const gettingChannel = async () => {
+export const gettingChannel = async (token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/channel/`;
 
   const headers = {
@@ -52,7 +52,7 @@ export const gettingChannel = async () => {
   }
 };
 
-export const getChannelID = async (id) => {
+export const getChannelID = async (id, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/channel/${id}`;
 
   const headers = {
@@ -61,14 +61,14 @@ export const getChannelID = async (id) => {
   };
   try {
     const res = await ReusableAxios(url, "get", headers);
-    console.log(user)
+  
     return res;
   } catch (error) {
     console.log(error);
     return error;
   }
 };
-export const gettingpostsofagroup = async (id) => {
+export const gettingpostsofagroup = async (id, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/channels/${id}/posts`;
 
   const headers = {
@@ -84,11 +84,11 @@ export const gettingpostsofagroup = async (id) => {
   }
 };
 
-export const creatingagroup = async (body) => {
+export const creatingagroup = async (body, token) => {
   const url = `https://academics.newtonschool.co/api/v1/linkedin/channel/`;
 
   const headers = {
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDc5ZWMzN2E2ODMxNjQwNjhlOTYzZSIsImlhdCI6MTcxMjYzOTgzOCwiZXhwIjoxNzQ0MTc1ODM4fQ.7og9dCQow5_CeOPjxSUT-n_2KU06_y3PSLqa3hyUH3g`,
+    Authorization: `Bearer ${token}`,
     projectID: "i1dieevrt9g1",
   };
   try {

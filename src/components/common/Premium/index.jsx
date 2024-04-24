@@ -2,11 +2,15 @@ import { Avatar, Button, Space, Typography, Box } from 'antd';
 import { Link } from 'react-router-dom';
 import { HomeOutlined } from '@ant-design/icons';
 import './index.css'
+import { UseAuthContext } from '../../../helpers/AuthContext';
 
 
 export default function  Premium() {
+
+const{darkmode} =UseAuthContext();
+
   return (
-    <div className='mainContainerTrypremium'>
+    <div className='mainContainerTrypremium' style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <div
         style={{
           height: "130px",

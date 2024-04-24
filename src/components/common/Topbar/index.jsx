@@ -21,7 +21,7 @@ export default function Topbar() {
 
   const [popupVisible, setPopupVisible] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
-  const {currentUser} = UseAuthContext();
+  const {currentUser, darkmode} = UseAuthContext();
   let navigate = useNavigate();
 
   const dropdownRef = useRef(null);
@@ -39,9 +39,9 @@ export default function Topbar() {
   useEffect(() => {
   
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    // return () => {
+    //   document.removeEventListener("mousedown", handleClickOutside);
+    // };
   }, []);
 
   const handleClickOutside = (event) => {
@@ -72,7 +72,8 @@ export default function Topbar() {
   
 
   return (
-    <div className="topbar-main">
+   
+    <div className="topbar-main"   style={{ backgroundColor: darkmode ? 'black' : '' }}>
       {popupVisible ? (
         <div className="popup-position">
           <ProfilePopup currentUser={currentUser} />
@@ -108,20 +109,21 @@ export default function Topbar() {
             size={30}
             className="react-icon"
             onClick={()=>goToRoute('/')}
+            style={{color: darkmode ? 'white': ''}}
           />
-          <span className="icon-name">Home</span>
+          <span className="icon-name" style={{color: darkmode ? 'white': ''}}>Home</span>
         </div>
-        <div className="icon-container">
-          <AiOutlineUserSwitch size={30} className="react-icon"  onClick= {()=>goToRoute('/group')}/>
+        <div className="icon-container" style={{color: darkmode ? 'white': ''}}>
+          <AiOutlineUserSwitch size={30} className="react-icon"  onClick= {()=>goToRoute('/group')} style={{color: darkmode ? 'white': ''}}/>
           <span className="icon-name">Network</span>
         </div>
-        <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')}>
-          <BsBriefcase size={30} className="react-icon" />
+        <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')} style={{color: darkmode ? 'white': ''}}>
+          <BsBriefcase size={30} className="react-icon" style={{color: darkmode ? 'white': ''}}/>
           <span className="icon-name">Jobs</span>
         </div>
         <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')}>
-          <AiOutlineBell size={30} className="react-icon" />
-          <span className="icon-name">Notifications</span>
+          <AiOutlineBell size={30} className="react-icon" style={{color: darkmode ? 'white': ''}}/>
+          <span className="icon-name" style={{color: darkmode ? 'white': ''}} >Notifications</span>
         </div>
        
       <div className="icon-container">

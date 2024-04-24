@@ -23,11 +23,7 @@ function App() {
   
 
 
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+ 
  
 
   return (
@@ -46,7 +42,7 @@ function App() {
           />
            <Route path="/group" element={<Groups />} />
            <Route path="/trypremium" element={<Premium/>} />
-           <Route path="/theme" element={<ProfilePopup toggleTheme= {toggleTheme}  theme={theme}/>} />
+           <Route path="/theme" element={<ProfilePopup />} />
            <Route path="/groupprofile/:id" element={<GroupProfile/>} />
            <Route path="/maintenance" element={<Maintenance />} />
         </Routes>

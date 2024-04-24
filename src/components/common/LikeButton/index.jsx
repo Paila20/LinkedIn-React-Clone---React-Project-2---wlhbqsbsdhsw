@@ -33,7 +33,7 @@ export default function LikeButton({
   const { currentUser } = UseAuthContext();
   const [comments, setComments] = useState([]);
   const [activeCommentActions, setActiveCommentActions] = useState(null);
-
+ const {darkmode} = UseAuthContext();
 
   const handleFetchPostComments = async () => {
     if(currentUser !== undefined){
@@ -101,8 +101,8 @@ export default function LikeButton({
   };
 
   return (
-    <div className="like-container">
-      <p>
+    <div className="like-container"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
+      <p style={{color: darkmode ? 'white': ''}}>
         <span>
           {posts.likeCount}
           Likes
@@ -121,8 +121,8 @@ export default function LikeButton({
         >
          
 
-          <BsHandThumbsUp className={toggle ? "blue" : "black"}  style={{marginTop:20}}/>
-          <p className={toggle ? "blue" : "black"} >Like</p>
+          <BsHandThumbsUp className={toggle ? "blue" : "black"}   style={{color: darkmode ? 'white': '',marginTop:20}}/>
+          <p className={toggle ? "blue" : "black"}  style={{color: darkmode ? 'white': ''}}>Like</p>
         </div>
         <div
           className="likes-comment-inner"
@@ -132,13 +132,13 @@ export default function LikeButton({
         >
           {
             <AiOutlineComment
-            style={{marginTop:20}}
+            style={{color: darkmode ? 'white': '',marginTop:20}}
               size={30}
               color={showCommentBox ? "#0a66c2" : "#212121"}
             />
           }
 
-          <p className={showCommentBox ? "blue" : "black"}>Comments</p>
+          <p className={showCommentBox ? "blue" : "black"} style={{color: darkmode ? 'white':''}}>Comments</p>
         </div>
       </div>
       {showCommentBox ? (

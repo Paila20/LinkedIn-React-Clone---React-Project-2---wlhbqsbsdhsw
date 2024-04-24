@@ -5,6 +5,7 @@ import TextArea from "antd/es/input/TextArea";
 import { createPost, updatePost } from "../../../utils/user/post";
 import { toast } from "react-toastify";
 import "./index.css";
+import { UseAuthContext } from "../../../helpers/AuthContext";
 
 
 const ModalComponent = ({
@@ -18,6 +19,7 @@ const ModalComponent = ({
 }) => {
   const [form] = Form.useForm();
   const [imageUpload, setImageUpload] = useState(null);
+  const {darkmode} = UseAuthContext();
 
   const handleFileUpload = (event) => {
     setImageUpload(event.target.files[0]);
@@ -69,6 +71,7 @@ const ModalComponent = ({
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}
+        style={{ backgroundColor: darkmode ? 'black' : 'whitesmoke' }}
       >
         <Form
           form={form}
