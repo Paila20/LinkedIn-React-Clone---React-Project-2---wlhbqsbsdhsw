@@ -12,8 +12,8 @@ export const createPost = async (body, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const createPost = await ReusableAxios(url, "post", headers, body);
-    return createPost;
+    const res = await ReusableAxios(url, "post", headers, body);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -27,8 +27,8 @@ export const updatePost = async (data, id, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const updatePost = await ReusableAxios(url, "patch", headers, data);
-    return updatePost;
+    const res = await ReusableAxios(url, "patch", headers, data);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -42,8 +42,8 @@ export const deletePost = async (id, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const deletePost = await ReusableAxios(url, "delete", headers);
-    return deletePost;
+    const res = await ReusableAxios(url, "delete", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -56,8 +56,8 @@ export const fetchPost = async () => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const fetchPost = await ReusableAxios(url, "get", headers);
-    return fetchPost;
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -72,8 +72,8 @@ export const likeaPost = async (post_id,token) => {
   };
   console.log(token)
   try {
-    const likeaPost = await ReusableAxios(url, "post", headers);
-    return likeaPost;
+    const res = await ReusableAxios(url, "post", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -88,8 +88,8 @@ export const dislikeaPost = async (post_id) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const dislikeaPost = await ReusableAxios(url, "delete", headers);
-    return dislikeaPost;
+    const res = await ReusableAxios(url, "delete", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -103,8 +103,8 @@ export const fetchComments = async (post_id, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const fetchComments = await ReusableAxios(url, "get", headers);
-    return fetchComments;
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -118,8 +118,8 @@ export const createComments = async (post_id, body, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const createComments = await ReusableAxios(url, "post", headers, body);
-    return createComments;
+    const res = await ReusableAxios(url, "post", headers, body);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -133,8 +133,8 @@ export const deleteComments = async (comment_id, token) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const deleteComments = await ReusableAxios(url, "delete", headers);
-    return deleteComments;
+    const res = await ReusableAxios(url, "delete", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;

@@ -20,7 +20,7 @@ export const HomeComponent = () => {
   },[currentUser] )
   
   useEffect(()=>{
-    if(typeof (localStorage.getItem('token')) !==  'string' && (localStorage.getItem('user') === null)){
+    if(typeof (localStorage.getItem('token')) !==  'string' ){
     goToLogin();
     }
   },[])

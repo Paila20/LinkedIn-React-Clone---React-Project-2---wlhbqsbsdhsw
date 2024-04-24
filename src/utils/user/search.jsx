@@ -12,8 +12,8 @@ export const searchItem = async (item) => {
     "Content-Type": "application/x-www-form-urlencoded",
   };
   try {
-    const searchItem = await ReusableAxios(url, "get", headers, item);
-    return searchItem;
+    const res = await ReusableAxios(url, "get", headers, item);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -28,8 +28,8 @@ export const searchFilter = async (item) => {
   };
 
   try {
-    const searchFilter = await ReusableAxios(url, "get", headers);
-    return searchFilter;
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -44,8 +44,8 @@ export const gettingChannel = async () => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const user = await ReusableAxios(url, "get", headers);
-    return user;
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -60,9 +60,9 @@ export const getChannelID = async (id) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const user = await ReusableAxios(url, "get", headers);
+    const res = await ReusableAxios(url, "get", headers);
     console.log(user)
-    return user;
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -76,8 +76,8 @@ export const gettingpostsofagroup = async (id) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const gettingpostsofagroup = await ReusableAxios(url, "get", headers);
-    return gettingpostsofagroup;
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
   } catch (error) {
     console.log(error);
     return error;
@@ -92,9 +92,9 @@ export const creatingagroup = async (body) => {
     projectID: "i1dieevrt9g1",
   };
   try {
-    const creatingagroup = await ReusableAxios(url, "post", headers, body);
-// console.log(creatingagroup);
-    return creatingagroup;
+    const res = await ReusableAxios(url, "post", headers, body);
+
+    return res;
   } catch (error) {
     console.log(error);
     return error;

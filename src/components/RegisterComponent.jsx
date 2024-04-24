@@ -27,6 +27,7 @@ export default function RegisterComponent() {
       const res = await registerAPI(body);
       console.log(res)
       if (res.status === 201) {
+
         message.success("Account Created!");
         localStorage.setItem("token", JSON.stringify(res.data.token));
         setLoginToken(res.data.token);
@@ -34,7 +35,9 @@ export default function RegisterComponent() {
         localStorage.setItem("userData", JSON.stringify(res.data));
         navigate("/login");
         form.resetFields();
+
       } else {
+        
         message.error("User Already Exists");
     
       }
