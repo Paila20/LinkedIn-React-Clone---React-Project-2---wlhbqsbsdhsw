@@ -10,7 +10,7 @@ export default function  Premium() {
 const{darkmode} =UseAuthContext();
 
   return (
-    <div className='mainContainerTrypremium' style={{ backgroundColor: darkmode ? 'black' : '' }}>
+    <div className='mainContainerTrypremium' style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white' : '' }}>
       <div
         style={{
           height: "130px",
@@ -19,18 +19,19 @@ const{darkmode} =UseAuthContext();
           alignContent: "center",
           flexDirection: "column",
           backgroundColor: "white",
+          backgroundColor: darkmode ? 'black' : '' 
         }}
       >
         <div style={{ height: "100px", width: "100%", borderBottom: "1px solid #8c8c8c33", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <Space style={{ width: "74%", height: 50, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Link to="/" style={{ transform: "scale(1.8)", marginTop: "10px" }}><HomeOutlined /></Link>
-            <Link className='backtohomeLink' to='/'>Back to LinkedIn.com</Link>
+            <Link className='backtohomeLink' to='/' style={{color: darkmode ? "white" : ""}}>Back to LinkedIn.com</Link>
           </Space>
         </div>
         <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", marginBottom: "50px", gap: "5px" }}>
           <h2>Achieve your goals faster with Premium.</h2>
         
-          <p className='monthTrail'>Start your free 1-month trial today. Cancel anytime. We’ll send you a reminder 7 days before your trial ends.</p>
+          <p className='monthTrail' style={{color: darkmode ? "white" : ""}}>Start your free 1-month trial today. Cancel anytime. We’ll send you a reminder 7 days before your trial ends.</p>
           <Button
               style={{ marginTop: "15px", width: "10%", borderRadius: "20px" }}
               type="primary"
@@ -40,8 +41,8 @@ const{darkmode} =UseAuthContext();
             </Button>
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-        <div className='career'>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%",backgroundColor: darkmode ? 'black' : ''  }}>
+        <div className='career' style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <span className='headerCareer'>
             <h2>Career</h2>
             <p>Get hired and get ahead</p>
@@ -64,7 +65,7 @@ const{darkmode} =UseAuthContext();
             </Button>
           </span>
         </div>
-        <div className='career'>
+        <div className='career' style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <span className='headerCareer'>
             <h2>Business</h2>
             <p>Grow and nurture your network</p>
@@ -87,7 +88,7 @@ const{darkmode} =UseAuthContext();
             </Button>
           </span>
         </div>
-        <div className='career'>
+        <div className='career' style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <span className='headerCareer'>
             <h2>Recruiter Lite</h2>
             <p>Find and hire talent</p>

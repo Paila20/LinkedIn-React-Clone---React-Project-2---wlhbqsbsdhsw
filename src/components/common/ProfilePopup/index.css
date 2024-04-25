@@ -80,3 +80,8 @@
 .popup-card .premium:hover {
   text-decoration: underline;
 }
+
+.togglethemebtn{
+  width: 50px;
+  margin-left: 60px;
+}
