@@ -39,9 +39,7 @@ export default function Topbar() {
   useEffect(() => {
   
     document.addEventListener("mousedown", handleClickOutside);
-    // return () => {
-    //   document.removeEventListener("mousedown", handleClickOutside);
-    // };
+   
   }, []);
 
   const handleClickOutside = (event) => {
