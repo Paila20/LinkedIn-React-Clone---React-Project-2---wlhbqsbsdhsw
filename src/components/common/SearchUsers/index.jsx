@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
-
 import "./index.css";
-import { searchFilter, searchItem } from "../../../utils/user/search";
-import qs from "qs";
 import { fetchPost } from "../../../utils/user/post";
 import { Link } from "react-router-dom";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";

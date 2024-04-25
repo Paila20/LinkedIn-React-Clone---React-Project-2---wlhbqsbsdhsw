@@ -10,7 +10,7 @@ import { UseAuthContext } from "../helpers/AuthContext";
 
 export default function RegisterComponent() {
 
-  const {setLoginToken} =UseAuthContext();
+  const {logintoken, setLoginToken} =UseAuthContext();
   let navigate = useNavigate();
   const [form] = Form.useForm();
 

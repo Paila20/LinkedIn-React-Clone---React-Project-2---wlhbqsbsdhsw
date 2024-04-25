@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export const HomeComponent = () => {
   let navigate = useNavigate();
-  const {currentUser, darkmode} = UseAuthContext();
+  const {currentUser, darkmode, logintoken} = UseAuthContext();
 
   useEffect(() => {
     localStorage.removeItem("searcheduser");
@@ -19,15 +19,7 @@ export const HomeComponent = () => {
 
   },[currentUser] )
   
-  useEffect(()=>{
-    if(typeof (localStorage.getItem('token')) !==  'string' ){
-    goToLogin();
-    }
-  },[])
  
-  function goToLogin() {
-    navigate('/login')
-  } 
 
   return (
     <>
