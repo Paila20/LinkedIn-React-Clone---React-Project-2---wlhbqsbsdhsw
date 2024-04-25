@@ -44,7 +44,7 @@
   
   .add-comment-btn:hover {
     background-color:#0a66c2;
-    color: #0a66c2; 
+    /* color: #0a66c2;  */
   }
   
   .all-comments {

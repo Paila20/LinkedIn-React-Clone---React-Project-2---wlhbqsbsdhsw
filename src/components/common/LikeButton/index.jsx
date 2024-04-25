@@ -162,9 +162,9 @@ export default function LikeButton({
                   />
                 </Form.Item>
                 <Col span={5}>
-                <Button type="" htmlType="submit" className="add-comment-btn">
+                <button type="" htmlType="submit" className="add-comment-btn">
                   Post
-                </Button>
+                </button>
                 </Col>
               </Col>
              
