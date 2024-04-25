@@ -86,9 +86,9 @@ export default function Topbar() {
       onClick={()=>goToRoute('/')} />
       
       {isSearch ? (
-        <div ref={dropdownRef}>
+        <div ref={dropdownRef} >
         <SearchUsers 
-          setIsSearch={setIsSearch}/>
+          setIsSearch={setIsSearch} />
           </div>
       ) : (
        

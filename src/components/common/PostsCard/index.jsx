@@ -61,12 +61,12 @@ export default function PostsCard({
   return loading ? (
     <Loader />
   ) : (
-    <div className="posts-card" key={posts._id} style={{ backgroundColor: darkmode ? 'black' : 'whitesmoke' }}>
-      <div className="post-image-wrapper">
+    <div className="posts-card" key={posts._id} style={{ backgroundColor: darkmode ? 'black' : '', color: darkmode ? 'white': '' }}>
+      <div className="post-image-wrapper"  >
       
         {currentUser?.data?.user?._id === posts?.author?._id && (
           <div className="action-container">
-            <FaEllipsisH onClick={() => setShowActions(!showActions)} style={{color: darkmode ? 'white': ''}}/>
+            <FaEllipsisH onClick={() => setShowActions(!showActions)}/>
             {showActions && (
               <div className="container">
                 <p
@@ -75,11 +75,11 @@ export default function PostsCard({
                     setModalOpen(true), setIsEdit(true), setSinglePost(posts), setShowActions(!showActions)
                   }}
                 >
-                  <BsPencil size={20} className="action-icon" />
+                  <BsPencil size={20} className="action-icon" style={{  color: darkmode ? 'white': '' }} />
              
                 </p>
                 <p className="btn" onClick={handleDeletePost}>
-                  <BsTrash size={20} className="action-icon" />
+                  <BsTrash size={20} className="action-icon" style={{  color: darkmode ? 'white': '' }} />
 
                 </p>
               </div>
@@ -110,15 +110,15 @@ export default function PostsCard({
         )}
 
         <div>
-          <p className="name" style={{color: darkmode ? 'white': ''}}>{posts?.author?.name}</p>
-          <p className="headline" style={{color: darkmode ? 'white': ''}}>Writer | Developer</p>
-          <p className="timestamp" style={{color: darkmode ? 'white': ''}}>
+          <p className="name" style={{  color: darkmode ? 'white': '' }}>{posts?.author?.name}</p>
+          <p className="headline" style={{  color: darkmode ? 'white': '' }}>Writer | Developer</p>
+          <p className="timestamp" style={{  color: darkmode ? 'white': '' }} >
             {timeStampConversionToDateAndTime(posts.createdAt)}
           </p>
         </div>
       </div>
-
-      <p className="status">{posts.content}</p>
+      <p className="stat" style={{  color: darkmode ? 'white': '' }}>{posts.title}</p>
+      <p className="status" style={{  color: darkmode ? 'white': '' }}>{posts.content}</p>
       {posts?.images && posts?.images?.length > 0 ? (
         <img src={posts?.images[0]} className="post-image" alt="post-image" />
       ) : (

@@ -59,8 +59,8 @@ export default function SearchUsers({ setIsSearch }) {
   };
 
   return (
-    <div className="search-users" style={{ backgroundColor: darkmode ? 'black' : '' }}>
-      <div className="input-field">
+    <div className="search-users" >
+      <div className="input-field" >
 
       <FaSearch
       style={{paddingTop:80, paddingBottom:80}}
@@ -79,15 +79,15 @@ export default function SearchUsers({ setIsSearch }) {
       </div>
 
       {searchvalue.length === 0 ? (
-        <div className="search-result">
+        <div className="search-result" style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <p></p>
         </div>
       ) : (
-        <div className="search-result">
+        <div className="search-result" style={{ backgroundColor: darkmode ? 'black' : '' }} >
           {searchvalue.map((d, i) => (
             <Link to={`/profile/${d.id}`} key={i}>
-              <div className="searchinput">
-              <p><FaSearch/></p>
+              <div className="searchinput" >
+              <p><FaSearch style={{ color: darkmode ? 'white' : '' }}/></p>
               {
                 d.userName.profileImage ? (<img src={d.userName.profileImage}/>) : ( <h2
                   className="searchimg"
@@ -103,7 +103,7 @@ export default function SearchUsers({ setIsSearch }) {
                   {d?.userName ? d?.userName.charAt(0) : ""}
                 </h2>)
               }
-              <p>{d.userName}</p>
+              <p style={{ color: darkmode ? 'white' : '' }}>{d.userName}</p>
               </div>
              
             </Link>

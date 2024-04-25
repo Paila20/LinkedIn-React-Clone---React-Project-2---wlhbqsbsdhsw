@@ -28,13 +28,15 @@ const ModalComponent = ({
   const handlingPostCreate = async () => {
     form.validateFields().then(async (formValues) => {
       const formData = new FormData();
-      formData.append("title", formValues.content.slice(0, 2));
+      // formData.append("title", formValues.content.slice(0, 2));
+      formData.append("title", formValues.title);
       formData.append("content", formValues.content);
       formData.append("images", imageUpload);
 
       if (isEdit !== true) {
         if(currentUser !== undefined){
           const creatingPost = await createPost(formData, currentUser.token);
+
           if (creatingPost.status === 201) {
             toast.success("You created a new post");
             form.resetFields();
@@ -65,13 +67,13 @@ const ModalComponent = ({
   };
 
   return (
-    <>
+    <div   style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Modal
         title="Create a post"
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}
-        style={{ backgroundColor: darkmode ? 'black' : 'whitesmoke' }}
+        style={{ backgroundColor: darkmode ? 'black' : '' }}
       >
         <Form
           form={form}
@@ -79,10 +81,38 @@ const ModalComponent = ({
           onFinish={handlingPostCreate}
           autoComplete="off"
           initialValues={{
+            title :posts !== null ? posts.title : null,
             content: posts !== null ? posts.content : null,
           }}
+          style={{ backgroundColor: darkmode ? 'black' : '' }}
         >
           <Form.Item
+            name="title"
+            rules={[
+              {
+                required: true,
+                message: "Please write something to create post!",
+              },
+            ]}
+          >
+          
+          {posts?.title ? (
+              <input 
+     
+              className="modalin"
+                defaultValue={posts.title}
+                placeholder="title"
+                style={{ backgroundColor: darkmode ? 'black' : '' ,color : darkmode ? 'white': '' }}
+              />
+            ) : (
+              <input className="modalin"
+              placeholder="title" 
+              style={{ backgroundColor: darkmode ? 'black' : '', color : darkmode ? 'white': '' }}/>
+            )} 
+                      
+          </Form.Item>
+
+        <Form.Item
             name="content"
             rules={[
               {
@@ -91,17 +121,19 @@ const ModalComponent = ({
               },
             ]}
           >
+
            {posts?.content ? (
               <TextArea 
-              style={{height:400}}
+           
               className="modal-input"
                 defaultValue={posts.content}
                 placeholder="What do you want to talk about?"
+                style={{ backgroundColor: darkmode ? 'black' : '', height: 400,color : darkmode ? 'white': ''  }}
               />
             ) : (
               <TextArea className="modal-input"
-               style={{height:400}} 
-              
+             
+               style={{ backgroundColor: darkmode ? 'black' : '', height: 400, color : darkmode ? 'white': ''  }}
                placeholder="What do you want to talk about?" />
             )} 
 
@@ -109,7 +141,7 @@ const ModalComponent = ({
           </Form.Item>
 
           <label htmlFor="pic-upload">
-            <AiOutlinePicture size={35} className="picture-icon" />
+            <AiOutlinePicture size={35} className="picture-icon"  style={{color : darkmode ? 'white': '' }}/>
           </label>
 
           <input
@@ -125,7 +157,7 @@ const ModalComponent = ({
           </Button>
         </Form>
       </Modal>
-    </>
+    </div>
   );
 };
 
