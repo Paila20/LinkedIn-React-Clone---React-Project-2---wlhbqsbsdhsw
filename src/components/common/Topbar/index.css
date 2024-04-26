@@ -30,8 +30,8 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 55%;
-    margin-left: 150px;
+    width:30%;
+    margin-left: 350px;
 
   }
   .react-search{
@@ -139,6 +139,13 @@
   .icon-name{
 font-size: 13px;
   }
+
+  .icon-name-notification{
+    font-size: 13px;
+margin-left: -15px;
+    }
+
+
  
   
   @media (max-width: 500px) {
@@ -217,5 +224,17 @@ font-size: 13px;
 
       z-index: 99;
     }
+  }
+  
+
+  @media (max-width: 1000px) {
+    
+    .react-icons  {
+      
+     
+      margin-left: auto;
+
+    } 
+   
   }
   

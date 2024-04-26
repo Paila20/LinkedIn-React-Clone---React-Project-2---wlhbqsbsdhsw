@@ -5,6 +5,8 @@ import {
   BsHandThumbsUp,
   BsTrash,
 } from "react-icons/bs";
+import { FaRegCommentDots } from "react-icons/fa";
+import { TiThumbsUp } from 'react-icons/ti';
 import { Button, Col, Form, Input, Row } from "antd";
 import {
   createComments,
@@ -121,7 +123,7 @@ export default function LikeButton({
         >
          
 
-          <BsHandThumbsUp className={toggle ? "blue" : "black"}   style={{color: darkmode ? 'white': '',marginTop:20}}/>
+          < BsHandThumbsUp   size={20} className={toggle ? "blue" : "black"}   style={{color: darkmode ? 'white': '',marginTop:20,transform: 'scaleX(-1)'}}/>
           <p className={toggle ? "blue" : "black"}  style={{color: darkmode ? 'white': ''}}>Like</p>
         </div>
         <div
@@ -131,9 +133,9 @@ export default function LikeButton({
           }}
         >
           {
-            <AiOutlineComment
-            style={{color: darkmode ? 'white': '',marginTop:20}}
-              size={30}
+            <FaRegCommentDots
+            style={{color: darkmode ? 'white': '',marginTop:20, transform: 'scaleX(-1)'}}
+              size={20}
               color={showCommentBox ? "#0a66c2" : "#212121"}
             />
           }

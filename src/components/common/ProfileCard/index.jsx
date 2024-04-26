@@ -57,7 +57,7 @@ console.log(currentUser)
               {searchedUser !== null ? (
                 <div className="profile-card" >
                   <div>
-                 
+                  <div className="backimg"></div>
                   {searchedUser?.profileImage ? (
                     <img
                       className="profile-image"
@@ -105,6 +105,7 @@ console.log(currentUser)
               ) : (
                 <div className="profile-card" >
                   <div>
+                  <div className="backimg"></div>
                     {currentUser?.data?.profileImage ? (
                       <img
                         className="profile-image"
@@ -124,6 +125,7 @@ console.log(currentUser)
                         {currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ""}
                       </h2>
                     )}
+
                     <h3 className="userName" style={{color: darkmode ? 'white': ''}}>
                       {currentUser?.data?.user?._id !== id ? id : currentUser?.data?.user?.name}
                     </h3>
@@ -133,14 +135,14 @@ console.log(currentUser)
                   </div>
                   <div >
                   <div className="lang"  style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
-                    <div style={{color: darkmode ? 'white': ''}}>
-                      <h1>Profile Language</h1>
-                      <p>English</p>
+                    <div style={{color: darkmode ? 'white': '', marginTop:-30}}>
+                      <h1 className="profilelang" >Profile Language</h1>
+                      <p className="english">English</p>
                     </div>
                    <hr></hr>
-                    <div className="">
-                      <h1 style={{color: darkmode ? 'white': ''}}>Public profile & URL </h1>
-                      <p style={{color: darkmode ? 'white': ''}}>www.linkedin.com/{currentUser?.data?.user?.email}</p>
+                    <div >
+                      <h1  className="profile-url"style={{color: darkmode ? 'white': ''}}>Public profile & URL </h1>
+                      <p className= 'url ' style={{color: darkmode ? 'white': ''}}>www.linkedin.com/{currentUser?.data?.user?.email}</p>
                     </div>
                   </div>
                   <div className="sideprofile"  style={{ backgroundColor: darkmode ? 'black' : '',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>

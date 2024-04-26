@@ -129,12 +129,12 @@ const ModalComponent = ({
               className="modal-input"
                 defaultValue={posts.content}
                 placeholder="What do you want to talk about?"
-                style={{ backgroundColor: darkmode ? 'black' : '', height: 400,color : darkmode ? 'white': ''  }}
+                style={{ backgroundColor: darkmode ? 'black' : '', height: 300,color : darkmode ? 'white': ''  }}
               />
             ) : (
               <TextArea className="modal-input"
              
-               style={{ backgroundColor: darkmode ? 'black' : '', height: 400, color : darkmode ? 'white': ''  }}
+               style={{ backgroundColor: darkmode ? 'black' : '', height: 300, color : darkmode ? 'white': ''  }}
                placeholder="What do you want to talk about?" />
             )} 
 

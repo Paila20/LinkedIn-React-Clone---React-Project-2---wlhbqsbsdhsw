@@ -121,7 +121,7 @@ export default function Topbar() {
         </div>
         <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')}>
           <AiOutlineBell size={30} className="react-icon" style={{color: darkmode ? 'white': ''}}/>
-          <span className="icon-name" style={{color: darkmode ? 'white': ''}} >Notifications</span>
+          <span className="icon-name-notification" style={{color: darkmode ? 'white': ''}} >Notifications</span>
         </div>
        
       <div className="icon-container">

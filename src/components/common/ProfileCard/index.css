@@ -9,22 +9,23 @@
 }
 .cards{
   margin-top: 85px;
- margin-left: 330px;
+ margin-left: 315px;
 
   
 }
 
 .profile-card {
 
-  width: 691px;
+  width: 680px;
     height: 300px;
-    background-color: lightblue;
-    border-radius: 5px;
-    padding: 5px;
+   
+    border-radius: 10px;
+    padding: -5px;
     position: relative;
     display: flex;
     flex-direction: row;
-    /* margin: 200px -123px -300px 139px; */
+    background-color: white;
+
     top: 80px;
     left: 143px;
    
@@ -48,8 +49,10 @@
     justify-content: center;
     align-items: center;
     font-size: 75px;
-    margin-top: 50px;
-   /* margin: 50px 0 0 20px; */
+    margin-top: -107px;
+    margin-left: 22px;
+    z-index: 1;
+  
   }
   
   .profile-card .profile-info .right-info {
@@ -103,11 +106,18 @@
     color: rgba(0, 0, 0, 0.9);
     font-weight: 600;
     font-size: 24px;
-    
-    margin-left: 232px;
+    margin-left: 51px;
+    margin-top: 9px;
+  }
+  .backimg{
+    /* border-radius: 10px; */
+    height: 145px;
+    width: 680px;
+background-image: url('https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png');
+background-size: cover;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
 
-    margin-top: -83px;
-    /* margin: -104px 0 0 212px; */
   }
   
   .heading {
@@ -159,13 +169,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 390px;
+  width: 300px;
   
-  height: 300px;
+  height: 280px;
   background-color: whitesmoke;
 
-  right: -390px;
-  left: 715px;
+  right: -420px;
+  left: 700px;
 
   top: 2px;
   border-radius: 5px;
@@ -277,12 +287,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 357px;
   
   height: 230px;
   background-color: whitesmoke;
 
-  right: -431px;
+  right: -390px;
   top: 257px;
   border-radius: 5px;
   padding: 5px;
@@ -294,12 +304,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 357px;
   
   height: 230px;
   background-color: whitesmoke;
  
-  right: -429px;
+  right: -390px;
   
   border-radius: 5px;
   padding: 5px;
@@ -316,9 +326,24 @@
 .line hr {
   border-top: 1px solid rgb(181, 181, 181);
 }
+.profilelang{
+  margin-top: -10px;
+  margin-left: -84px;
+}
+.profile-url{
+  
+  margin-left: -40px;
+}
+.english{
+  margin-left: -84px;
+    margin-bottom: 32px;
+}
+.url{
+  margin-left: -40px;
+}
 
 
- @media (max-width: 1200px) {
+ /* @media (max-width: 1200px) {
 
   .advert{
     display: none;
@@ -401,4 +426,4 @@ min-width: 500px;
 
   }
  }
-  
+   */
