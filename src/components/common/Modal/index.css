@@ -9,6 +9,10 @@
     resize: none;
     height: 300px;
   }
+  .modal-createpost{
+  background-color: white;
+    height: 578px;
+  }
   .modalin{
     border: none !important;
     background-color: white;

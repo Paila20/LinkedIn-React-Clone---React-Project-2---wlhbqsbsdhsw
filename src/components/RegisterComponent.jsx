@@ -10,7 +10,7 @@ import { UseAuthContext } from "../helpers/AuthContext";
 
 export default function RegisterComponent() {
 
-  const {logintoken, setLoginToken} =UseAuthContext();
+  const {logintoken, setLoginToken, darkmode} =UseAuthContext();
   let navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -45,10 +45,12 @@ export default function RegisterComponent() {
   };
 
   return (
-    <div className="login-wrapper">
+    <div className="login-wrapper"   style={{ backgroundColor: darkmode ? 'black' : '' ,
+    color : darkmode ? 'white' :  ''}}>
       <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
-      <div className="login-wrapper-inner">
-        <h1 className="head">Make the most of your professional life</h1>
+      <div className="login-wrapper-inner"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+     color : darkmode ? 'white' :  ''}}>
+        <h1 className="head" style={{color : darkmode ? 'white' : ''}}>Make the most of your professional life</h1>
         <Form
           form={form}
           name="register"
@@ -59,7 +61,9 @@ export default function RegisterComponent() {
             name="name"
             rules={[{ required: true, message: "Please input your name!" }]}
           >
-            <Input placeholder="Your Name"   className="common-input"/>
+            <Input placeholder="Your Name" 
+            
+            className={darkmode ? "input-dark-mode " : "common-input"}/>
           </Form.Item>
           <Form.Item
             name="email"
@@ -68,7 +72,9 @@ export default function RegisterComponent() {
               { type: "email", message: "Please enter a valid email address!" },
             ]}
           >
-            <Input placeholder="Email or phone number"  className="common-input" />
+            <Input placeholder="Email "
+            
+            className={darkmode ? "input-dark-mode " : "common-input"} />
           </Form.Item>
           <Form.Item
             name="password"
@@ -77,7 +83,9 @@ export default function RegisterComponent() {
               { min: 6, message: "Password must be at least 6 characters!" },
             ]}
           >
-            <Input.Password placeholder="Password (6 or more characters)"  className="common-input"/>
+            <Input placeholder="Password (6 or more characters)" 
+            
+            className={darkmode ? "input-dark-mode " : "common-input"}/>
           </Form.Item>
           <Form.Item>
             <Button
@@ -92,7 +100,8 @@ export default function RegisterComponent() {
         </Form>
       </div>
       <hr className="hr-text" data-content="or" />
-      <div className="google-btn-container">
+      <div className="google-btn-container"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+     color : darkmode ? 'white' :  ''}}>
         <p className="go-to-signup">
           Already on LinkedIn?{" "}
           <span className="join-now" onClick={() => navigate("/login")}>

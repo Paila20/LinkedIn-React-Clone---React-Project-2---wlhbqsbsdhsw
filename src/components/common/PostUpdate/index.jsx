@@ -121,10 +121,12 @@ export default function PostUpdate({
               )}
               <button
                 className="open-post-modal"
+                style={{ backgroundColor: darkmode ? 'black' : '' }}
                 onClick={() => {
                   setModalOpen(true);
                   setSinglePost(null);
                   setIsEdit(false);
+                  
                 }}
               >
                 Start a Post

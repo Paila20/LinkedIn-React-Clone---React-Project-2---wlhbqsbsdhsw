@@ -13,7 +13,9 @@ export const searchItem = async (item) => {
   };
   try {
     const res = await ReusableAxios(url, "get", headers, item);
+   
     return res;
+   
   } catch (error) {
     console.log(error);
     return error;

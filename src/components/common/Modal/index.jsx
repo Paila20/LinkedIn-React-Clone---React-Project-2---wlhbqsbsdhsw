@@ -70,10 +70,11 @@ const ModalComponent = ({
     <div   style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Modal
         title="Create a post"
+        className="modal-createpost"
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}
-        style={{ backgroundColor: darkmode ? 'black' : '' }}
+        style={{ backgroundColor: darkmode ? 'black' : 'grey' }}
       >
         <Form
           form={form}

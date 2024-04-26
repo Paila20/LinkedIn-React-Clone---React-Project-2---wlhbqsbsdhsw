@@ -158,7 +158,9 @@ export default function LikeButton({
                 >
                   <Input
                     placeholder="Add a Comment"
-                    className="comment-input"
+                  
+                    className={darkmode ? "input-dark-mode " : "comment-input"}
+         
                   />
                 </Form.Item>
                 <Col span={5}>
@@ -176,7 +178,8 @@ export default function LikeButton({
           {comments.length > 0
             ? comments.map((comment) => {
                 return (
-                  <div className="all-comments" key={comment._id}>
+                  <div className="all-comments" key={comment._id}
+                   style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
                     <div className="user">
                       <h2
                         className="image"
@@ -193,12 +196,14 @@ export default function LikeButton({
                           ? comment?.author_details?.name.charAt(0)
                           : ""}
                       </h2>
-                      <p className="namecom">
+                      <p className="namecom"
+                      style= {{color : darkmode ? 'white' : ''}}>
                         {" "}
                         {comment?.author_details?.name}
                       </p>
 
-                      <p className="stamp">
+                      <p className="stamp"
+                           style= {{color : darkmode ? 'white' : ''}}>
                         {timeStampConversionToDateAndTime(comment.createdAt)}
                       </p>
                       {currentUser?.data?.user?.name ===
@@ -219,7 +224,9 @@ export default function LikeButton({
                         </div>
                       )}
                     </div>
-                    <p className="comment">{comment.content}</p>
+                    <p className="comment"
+                         style= {{color : darkmode ? 'white' : ''}}
+                    >{comment.content}</p>
                   </div>
                 );
               })
