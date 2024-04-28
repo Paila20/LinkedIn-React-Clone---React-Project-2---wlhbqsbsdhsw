@@ -16,7 +16,8 @@ import Maintenance from "../helpers/Maintenance";
 import { HomeComponent } from "../components/HomeComponent";
 import RegisterComponent from "../components/RegisterComponent";
 import LoginComponent from "../components/LoginComponent";
-import ProfileCard from "../components/common/ProfileCard";
+import SearchedUser from "../components/common/SearchedUser";
+import Profile from "../components/common/Profile";
 
 
 function App() {
@@ -39,6 +40,11 @@ function App() {
             path="/posts/:id"
 
             element={<SearchedUser/>}
+          />
+           <Route
+            path="/profile/:id"
+
+            element={<Profile/>}
           />
            <Route path="/group" element={<Groups />} />
            <Route path="/trypremium" element={<Premium/>} />

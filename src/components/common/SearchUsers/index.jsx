@@ -107,7 +107,7 @@ export default function SearchUsers({ setIsSearch }) {
       {searchValue.length !== 0 && (
         <div className="search-result" style={{ backgroundColor: darkmode ? "black" : "" }}>
           {searchValue.map((d, i) => (
-            <Link to={`/profile/${d.id}`} key={i} onClick={handleProfileClick}>
+            <Link to={`/posts/${d.id}`} key={i} onClick={handleProfileClick}>
               <div className="searchinput">
                 <p><FaSearch style={{ color: darkmode ? "white" : "" }}/></p>
                 {d.userName.profileImage ? (
