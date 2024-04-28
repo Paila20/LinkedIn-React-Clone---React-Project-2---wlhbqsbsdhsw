@@ -7,8 +7,9 @@ import { BACKGROUND_COLORS } from "../../../utils/user/login";
 import { UseAuthContext } from "../../../helpers/AuthContext";
 
 export default function SearchUsers({ setIsSearch }) {
-   const [searchvalue, setSearchValue] = useState([]);
+   const [searchValue, setSearchValue] = useState([]);
     const [postsData, setPostsData] = useState([]);
+    const [isInputFocused, setIsInputFocused] = useState(false);
 
     const {darkmode} =UseAuthContext();
 
@@ -57,6 +58,18 @@ export default function SearchUsers({ setIsSearch }) {
 
     setSearchValue(uniqueArray);
   };
+  const handleProfileClick = () => {
+    setIsSearch(false);
+    setSearchValue([]); 
+  };
+
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
+  };
 
   return (
     <div className="search-users" >
@@ -75,41 +88,50 @@ export default function SearchUsers({ setIsSearch }) {
       className="searchInput"
         placeholder="Search Users.."
         onChange={(event) => handleSearch(event.target.value)}
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
       />
       </div>
+      {isInputFocused && searchValue.length === 0 && (
+        <div className="search-result" style={{ backgroundColor: darkmode ? "black" : "" }}>
+          <p>No results matches...</p>
+        </div>
+      )}
 
-      {searchvalue.length === 0 ? (
-        <div className="search-result" style={{ backgroundColor: darkmode ? 'black' : '' }}>
+      {!isInputFocused && searchValue.length === 0 && (
+        <div className="search-result" style={{ backgroundColor: darkmode ? "black" : "" }}>
           <p></p>
         </div>
-      ) : (
-        <div className="search-result" style={{ backgroundColor: darkmode ? 'black' : '' }} >
-          {searchvalue.map((d, i) => (
-            <Link to={`/profile/${d.id}`} key={i}>
-              <div className="searchinput" >
-              <p><FaSearch style={{ color: darkmode ? 'white' : '' }}/></p>
-              {
-                d.userName.profileImage ? (<img src={d.userName.profileImage}/>) : ( <h2
-                  className="searchimg"
-                  style={{
-                    backgroundColor:
-                      BACKGROUND_COLORS[
-                        (d?.userName
-                          ? d?.userName.charCodeAt(0)
-                          : 0) % 20
-                      ],
-                  }}
-                >
-                  {d?.userName ? d?.userName.charAt(0) : ""}
-                </h2>)
-              }
-              <p style={{ color: darkmode ? 'white' : '' }}>{d.userName}</p>
+      )}
+
+      {searchValue.length !== 0 && (
+        <div className="search-result" style={{ backgroundColor: darkmode ? "black" : "" }}>
+          {searchValue.map((d, i) => (
+            <Link to={`/profile/${d.id}`} key={i} onClick={handleProfileClick}>
+              <div className="searchinput">
+                <p><FaSearch style={{ color: darkmode ? "white" : "" }}/></p>
+                {d.userName.profileImage ? (
+                  <img src={d.userName.profileImage} alt={d.userName} />
+                ) : (
+                  <h2
+                    className="searchimg"
+                    style={{
+                      backgroundColor:
+                        BACKGROUND_COLORS[(d?.userName ? d?.userName.charCodeAt(0) : 0) % 20],
+                    }}
+                  >
+                    {d?.userName ? d?.userName.charAt(0) : ""}
+                  </h2>
+                )}
+                <p style={{ color: darkmode ? "white" : "" }}>{d.userName}</p>
               </div>
-             
             </Link>
           ))}
         </div>
       )}
-    </div>
-  );
-}
+        
+      </div>
+  )}
+
+
+     
