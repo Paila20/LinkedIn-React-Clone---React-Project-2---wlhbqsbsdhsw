@@ -129,7 +129,7 @@ export default function GroupProfile() {
           </div>
         </div>
        <div  className="interestedgroups" style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
-        <h2 >Groups you might be interested in </h2>
+        <h2 className="groupsname">Groups you might be interested in </h2>
         <div className="groupSide ">
           <ul>
             {getGroup?.data?.length > 5 &&  // Check if there are more than one item
@@ -142,7 +142,7 @@ export default function GroupProfile() {
                     <li className="channelnameside">{item.name}</li>
                     <div><button className="groupsbtn"> Join</button></div>
 
-                   <hr className="hrgroup"></hr>
+                 
                 </div>
               ))}
           </ul>
