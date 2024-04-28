@@ -36,9 +36,9 @@ function App() {
           <Route path="/" element={<HomeComponent />} />
           <Route path="/register" element={<RegisterComponent />} />
           <Route
-            path="/profile/:id"
+            path="/posts/:id"
 
-            element={<ProfileCard  />}
+            element={<SearchedUser/>}
           />
            <Route path="/group" element={<Groups />} />
            <Route path="/trypremium" element={<Premium/>} />
