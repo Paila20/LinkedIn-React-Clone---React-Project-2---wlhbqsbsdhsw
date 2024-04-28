@@ -25,6 +25,7 @@ export default function PostsCard({
  
  const [showActions, setShowActions] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isFollowed, setIsFollowed] = useState(false);
   const {darkmode} = UseAuthContext();
  
   const userData = JSON.parse(localStorage.getItem("userData"));
@@ -41,6 +42,9 @@ export default function PostsCard({
 
   },[currentUser])
    
+  function ToggleFollow(){
+    setIsFollowed( !isFollowed );
+  }
 
 
 
@@ -115,6 +119,13 @@ export default function PostsCard({
           <p className="timestamp" style={{  color: darkmode ? 'white': '' }} >
             {timeStampConversionToDateAndTime(posts.createdAt)}
           </p>
+          <div>
+          {currentUser?.data?.user?._id !== posts?.author?._id &&  
+          <button  className="followingbtn" onClick={ToggleFollow}>
+                {isFollowed ? 'Unfollow' : 'Follow'}
+          </button>
+          }
+          </div>
         </div>
       </div>
       <p className="stat" style={{  color: darkmode ? 'white': '' }}>{posts.title}</p>

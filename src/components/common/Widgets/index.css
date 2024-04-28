@@ -118,20 +118,21 @@
 .lessbtn{
     width: 100px;
 }
+
+    
 .inlogo{
     
-    width: 100px;
-    height: 23px;
+    width: 80px;
+    height: 20spx;
     margin-bottom: -52px;
-    margin-left: -50px;
+    margin-left: -70px;
 }
 .corp{
    
     margin-top: 25px;
-    margin-left: 70px;
+    margin-left: 20px;
+    font-size: 15px;
 }
-    
-
 
  @media (max-width: 768px) {
     .widgets {

@@ -191,7 +191,9 @@ export default function PostUpdate({
             );
           })
         ) : (
-           <div className="posts">You haven't posted anything yet</div>
+           <div className="posts">
+            <Loader/>
+           </div>
           )} 
       </div>
     </div>
