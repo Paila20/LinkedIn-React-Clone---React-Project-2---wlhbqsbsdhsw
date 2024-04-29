@@ -158,12 +158,29 @@ export default function LikeButton({
                     },
                   ]}
                 >
+                   <div className="comment-box">
+                  <h2
+                        className="comment-image"
+                        style={{
+                          backgroundColor:
+                            BACKGROUND_COLORS[
+                              (currentUser?.data?.user?.name
+                                ? currentUser?.data?.user?.name.charCodeAt(0)
+                                : 0) % 20
+                            ],
+                        }}
+                      >
+                        {currentUser?.data?.user?.name
+                          ? currentUser?.data?.user?.name.charAt(0)
+                          : ""}
+                      </h2>
                   <Input
                     placeholder="Add a Comment"
                   
                     className={darkmode ? "input-dark-mode " : "comment-input"}
          
                   />
+                  </div>
                 </Form.Item>
                 <Col span={5}>
                 <button type="" htmlType="submit" className="add-comment-btn">
