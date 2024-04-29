@@ -22,13 +22,13 @@
     border-radius: 30px;
     border: 1px solid #737373;
     font-family: system-ui;
-    /* color: #4b4b4b; */
+    color: #4b4b4b;
     font-size: 16px;
     font-weight: 600;
     width: 86%; 
     max-width: 480px; 
     box-sizing: border-box; 
-    color: rgba(194, 183, 183, 0.89);
+    /* color: rgba(194, 183, 183, 0.89); */
     margin-left: 60px;
   }
   .comment-image{

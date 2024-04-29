@@ -49,9 +49,7 @@ export default function LikeButton({
 
   function Toggle() {
     setToggle(!toggle);
-    if (like) {
-      setLike(like + 1);
-    } 
+    
   }
 
   const handleLike = async () => {
