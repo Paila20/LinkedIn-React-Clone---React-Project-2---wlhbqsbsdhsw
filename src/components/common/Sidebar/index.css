@@ -1,6 +1,6 @@
 .sidebar{
     width: 900px;
-    top: 80px;
+    top: 68px;
   
     position: sticky;
     flex: 0.2;
@@ -155,7 +155,7 @@
 
 @media (max-width: 900px) {
     .sidebar {
-   left: 32px;
+   left: 20px;
     }
 }
 

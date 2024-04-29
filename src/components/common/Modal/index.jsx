@@ -70,7 +70,8 @@ const ModalComponent = ({
     <div   style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Modal
         title="Create a post"
-        className="modal-createpost"
+        className={darkmode ? "input-dark-mode " : "modal-createpost"}
+        // className="modal-createpost"
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}

@@ -122,9 +122,22 @@
     }
     
     
-    
+    .profile-side1{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-left: 10px;
+    }
    
-    
+     
+    .profile-side{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-left: 20px;
+      list-style-type: none;
+    }
+   
     
     
   
@@ -134,8 +147,9 @@
       color: rgba(0, 0, 0, 0.9);
       font-weight: 600;
       font-size: 24px;
-      margin-left: 51px;
+      margin-left: 24px;
       margin-top: 9px;
+      text-align: center;
     }
     .backimg{
       /* border-radius: 10px; */
@@ -268,10 +282,10 @@
    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+     justify-content: flex-start; 
+    /* align-items: ;  */
     width: 357px;
-    
+    /* text-align: center; */
     height: 230px;
     background-color: whitesmoke;
    
@@ -294,18 +308,19 @@
   }
   .profilelang{
     margin-top: -10px;
-    margin-left: -123px;
+    margin-left: -10px;
   }
   .profile-url{
     
-    margin-left: -40px;
+    margin-left: -10px;
   }
   .english{
-    margin-left: -120px;
+    margin-left: -10px;
       margin-bottom: 32px;
   }
   .url{
-    margin-left: -40px;
+    margin-left: -10px;
+    flex-wrap: wrap;
   }
   
   .hrgroup{
@@ -313,7 +328,7 @@
     margin-bottom: 20px;
   }
   
-  
+  /*
     @media (max-width: 1200px) {
   
     
@@ -433,6 +448,10 @@
     margin: 1px 0 0 -13px;
    }
    }
+   .profile-header{
+    display: flex;
+    flex-direction: column;
+   }
    
   
    @media (max-width:450px){
@@ -457,4 +476,4 @@
    
    }
     
-   
+   */

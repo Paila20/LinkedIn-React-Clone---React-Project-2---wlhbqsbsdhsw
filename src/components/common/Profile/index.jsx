@@ -43,8 +43,9 @@ export default function Profile() {
         <Loader />
       ) : currentUser !== null ? (
         <div className="profile-card">
-          <div>
+          <div className="profile-header">
             <div className="backimg"></div>
+            <div>
             {currentUser?.data?.profileImage ? (
               <img
                 className="profile-image"
@@ -75,6 +76,7 @@ export default function Profile() {
                 ? id
                 : currentUser?.data?.user?.name}
             </h3>
+            </div>
           </div>
           <div>
             <div
@@ -84,20 +86,28 @@ export default function Profile() {
                 border: `1px solid ${darkmode ? "white" : "lightgrey"}`,
               }}
             >
-              <div style={{ color: darkmode ? "white" : "", marginTop: -30 }}>
-                <h2 className="profilelang">Profile Language</h2>
-                <p className="english">English</p>
-              </div>
 
-              <hr className="hrgroup"></hr>
-              <div>
-                <h2 className="profile-url" style={{ color: darkmode ? "white" : "" }}>
+                <ul className= 'profile-side' style={{ color: darkmode ? "white" : "", marginTop: 30 ,marginLeft:30}}>
+                  <li>
+                  <h2 className="profilelang">Profile Language</h2>
+                  </li>
+                  <li>
+                  <p className="english">English</p>
+                  </li>
+                  <hr className="hrgroup"></hr>
+                  <li>
+                  <h2 className="profile-url" style={{ color: darkmode ? "white" : "" }}>
                   Public profile & URL
-                </h2>
-                <p className="url" style={{ color: darkmode ? "white" : "" }}>
+                  </h2>
+                  </li>
+                 <li>
+                  <p className="url" style={{ color: darkmode ? "white" : "" }}>
                   www.linkedin.com/{currentUser?.data?.user?.email}
-                </p>
-              </div>
+                  </p>
+                 </li>
+               
+                </ul>
+          
             </div>
             <div
               className="sideprofile"

@@ -1,74 +1,4 @@
-/* 
 
-.search-users {
- 
-    display: flex;
-    align-items: center;
-    color: gray;
-   
- 
-    height: 20px;
-  
-    margin-top: 15px;
-  }
-
-  
-  .search-users .search-result {
-    position: absolute;
-    top: 58px;
-    left: 120px;
-    background-color: white;
-    border: 0.5px solid lightgray;
-    width: 40%;
-    height: 300px;
-    overflow-y: scroll;
-    border-radius: 6px;
-    z-index: 999 !important;
-    padding: 0px 10px;
-    color: #000000;
-  }
-  
-  .search-users .search-result p {
-    margin: 20px 10px 10px;
-    font-size: 14px;
-  }
-  
-
-    
-  
-
-  .input-field{
-    display: flex;
-   flex-direction: row;
-   
-    align-items: center;
-   width: 400px;
-    height: 35px;
-    padding: 5px;
-    color: gray;
-    background-color:   hsl(208, 40%, 70%);
-    margin-top: 10px;
-    margin-left: 50px; 
- 
-    outline: black;
-    border: black;
-   
-  }
-  .input-field > input{
- 
-    height: 10px;
-    border: black;
-    background-color:  hsl(208, 40%, 70%);;
-  
-    outline: #000000;
-  }
-  
-  .input-field :focus {
-    outline: none; 
-    border: 1px solid black; 
-    height: 50px;
-    width: 400px;
-}  */
 
 .search-users {
   display: flex;
@@ -93,24 +23,24 @@
 }
 
 .search-users .input-field input {
-  flex: 1; /* Take remaining space */
+  flex: 1; 
   height: 100%;
-  border: none; /* Remove default border */
-  background: transparent; /* Transparent background */
+  border: none; 
+  background: transparent; 
   outline: none;
 }
 
 .search-users .search-icon {
-  margin-right: 5px; /* Add margin between icon and input */
+  margin-right: 5px; 
 }
 
 .search-users .search-result {
   position: absolute;
   top: 58px;
-  left: 120px;
+  left: 190px;
   background-color: white;
   border: 0.5px solid lightgray;
-  width: 40%;
+  width: 37%;
   height: 300px;
   overflow-y: scroll;
   border-radius: 6px;
