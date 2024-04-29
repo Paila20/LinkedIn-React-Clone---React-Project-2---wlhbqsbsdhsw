@@ -73,7 +73,11 @@
 }
 
 @media (max-width:500px){
-  .search-users .input-field {
-    width: 100px;
+  .search-users .search-result {
+    left: 55px;
+    
+  }
+  .search-users .input-field{
+    width: 150px;
   }
 }

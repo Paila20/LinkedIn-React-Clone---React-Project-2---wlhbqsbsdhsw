@@ -166,5 +166,15 @@
    width: 100%;
    max-width: 600px;
    }
+  }
    
- }
+   @media (max-width:1000px){
+    .posts-card {
+      
+     width: 100%;
+     max-width: 800px;
+     /* margin-left: 32px; */
+
+     }
+  }  
+ 

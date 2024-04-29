@@ -161,25 +161,29 @@ font-size: 12px;
     background: fixed;
   }
    
-   .react-icons  {
-      display:flex;
-      position:fixed;
-      left: 0;
-      bottom: 0;
-      background: whitesmoke;
-    
-      margin-left: auto;
+    .react-icons  {
+      width: 300px;
 
-    }  
-    .react-search{
-      width: 200px;
-    }
+    }   
+    
     .popup-position {
       position: absolute;
       right: 0px;
-      top: 480px;
+      top: 48px;
 
       z-index: 99;
+    }
+    .linkedin-logo{
+      margin-left: 13px;
+    }
+    .react-search > input{
+      display: none;
+    }
+    .react-search{
+      background-color: whitesmoke;
+    }
+    .user-logo{
+      margin-top: -19px;
     }
   }
   
@@ -190,21 +194,28 @@ font-size: 12px;
       background-color: whitesmoke;
     }
     .react-icons  {
-      display:flex;
-      position:fixed;
-      left: 0;
-      bottom: 0;
-      background: whitesmoke;
-      width: 100%;
-      margin-left: auto;
+    width: 300px;
 
-    } 
+    }  
     .popup-position {
       position: absolute;
       right: 0px;
-      top: 300px;
+      top: 48px;
  
       z-index: 99;
+    }
+    .react-search{
+      background-color: whitesmoke;
+      margin-top: 8px;
+    }
+    .react-search > input{
+      display: none;
+    }
+    .linkedin-logo{
+      margin-left: 10px;
+    }
+    .user-logo{
+      margin-top: -19px;
     }
    
   }
@@ -212,22 +223,27 @@ font-size: 12px;
   @media (max-width: 800px) {
     
     .react-icons  {
-      display:flex;
-      position:fixed;
-      left: 0;
-      bottom: 0;
-      background: whitesmoke;
-      width: 100%;
-     
-      margin-left: auto;
+      width: 470px;
 
-    } 
+    }  
     .popup-position {
       position: absolute;
       right: 0px;
-      top: 300px;
+      top: 48px;
 
       z-index: 99;
+    }
+    .react-search > input{
+      display: none;
+    }
+    .linkedin-logo{
+      margin-left: 15px;
+    }
+    .react-search{
+      background-color: whitesmoke;
+    }
+    .user-logo{
+      margin-top: -19px;
     }
   }
   
@@ -237,7 +253,7 @@ font-size: 12px;
     .react-icons  {
       
      
-      margin-left: auto;
+      margin-left: -2px;
 
     } 
     .icon-name{
@@ -250,7 +266,7 @@ font-size: 12px;
       display: none;
     }
     .user-logo{
-      margin-top: -19px;
+      margin-top: -16px;
     }
    
   }

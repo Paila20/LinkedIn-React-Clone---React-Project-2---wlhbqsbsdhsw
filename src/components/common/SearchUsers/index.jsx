@@ -80,7 +80,7 @@ export default function SearchUsers({ setIsSearch }) {
         className="close-icon"
         size={20}
         onClick={() => {
-          setIsSearch(false);
+          // setIsSearch(false);
           handleSearch("");
         }}
       />
