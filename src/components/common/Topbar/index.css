@@ -192,6 +192,7 @@ font-size: 12px;
    
       background: fixed;
       background-color: whitesmoke;
+      position: fixed;
     }
     .react-icons  {
     width: 300px;

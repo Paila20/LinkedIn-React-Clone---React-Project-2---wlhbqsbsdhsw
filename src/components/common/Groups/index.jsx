@@ -36,7 +36,7 @@ export default function Groups() {
   }, []);
 
   return (
-    <>
+    <div className="group-page">
      <Topbar/>
     <div className="mainContainerGroup" style={{ backgroundColor: darkmode ? 'black' : '' }}>
      
@@ -83,6 +83,6 @@ export default function Groups() {
         </div>
       </Card>
     </div>
-    </>
+    </div>
   );
 }

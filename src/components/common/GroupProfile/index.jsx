@@ -132,8 +132,8 @@ export default function GroupProfile() {
         <h2 className="groupsname">Groups you might be interested in </h2>
         <div className="groupSide ">
           <ul>
-            {getGroup?.data?.length > 5 &&  // Check if there are more than one item
-              getGroup?.data?.slice(2,7).map((item, index) => (  // Slice the array to exclude the first item
+            {getGroup?.data?.length > 5 &&  
+              getGroup?.data?.slice(2,7).map((item, index) => (  
                 <div key={index} className="groupimage">
                   <h2 className='groupimageside' style={{ backgroundColor: BACKGROUND_COLORS[(item?.name ? item?.name.charCodeAt(0) : 0) % 20] }}>
                     {`${item.name.slice(0,1).toUpperCase()}`}
