@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    flex: 0.6;
+    /* flex: 0.6; */
     height: auto;
 
      width: 500px;

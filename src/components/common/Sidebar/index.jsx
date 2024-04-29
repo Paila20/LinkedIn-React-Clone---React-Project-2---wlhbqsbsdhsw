@@ -26,7 +26,7 @@ const {currentUser , setCurrentUser ,darkmode} = UseAuthContext();
     },[currentUser])
     return (
         <div className= 'sidebar'  style={{ backgroundColor: darkmode ? 'black' : '' }} >
-            <div className="sidebar__top" style={{ backgroundColor: darkmode ? 'black' : '' }}>
+            <div className="sidebar__top" style={{ backgroundColor: darkmode ? 'black' : '',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
                 <img src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png" alt="" />
                
                     { 
