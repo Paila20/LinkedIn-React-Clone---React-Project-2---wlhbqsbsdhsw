@@ -76,15 +76,15 @@
   }
   
   .user-logo {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
    
     cursor: pointer;
     margin-left: -15px;
-     margin-top:5px ;
+     margin-top:8px ;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -137,12 +137,16 @@
   }
 
   .icon-name{
-font-size: 13px;
+font-size: 12px;
   }
 
   .icon-name-notification{
-    font-size: 13px;
-margin-left: -15px;
+    font-size: 12px;
+    margin-left: -15px;
+    }
+    .me{
+      margin: 40px -5px 5px -3px ;
+      font-size: 10px;
     }
 
 
@@ -235,6 +239,18 @@ margin-left: -15px;
       margin-left: auto;
 
     } 
+    .icon-name{
+      display: none;
+    }
+    .icon-name-notification{
+      display: none;
+    }
+    .me{
+      display: none;
+    }
+    .user-logo{
+      margin-top: -19px;
+    }
    
   }
   

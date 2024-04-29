@@ -12,6 +12,10 @@
   .modal-createpost{
   background-color: white;
     height: 578px;
+    position: fixed;
+    width: 600px;
+    left: 400px;
+    top: 20px;
   }
   .modalin{
     border: none !important;

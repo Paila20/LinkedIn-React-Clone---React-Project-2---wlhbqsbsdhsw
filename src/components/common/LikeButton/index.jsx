@@ -104,8 +104,8 @@ export default function LikeButton({
     <div className="like-container"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <p style={{color: darkmode ? 'white': ''}}>
         <span>
-          {posts.likeCount}
-          Likes
+          {posts.likeCount}    Likes
+       
         </span>{" "}
         & <span>{posts.commentCount} Comments</span>
       </p>

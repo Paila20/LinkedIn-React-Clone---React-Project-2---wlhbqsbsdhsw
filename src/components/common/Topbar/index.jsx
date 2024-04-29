@@ -141,7 +141,7 @@ export default function Topbar() {
         { currentUser?.data?.user?.name ? currentUser?.data?.user?.name.charAt(0) : ''}
       </h2>
          )}
-       <span style={{marginTop:50,marginRight:-5, marginBottom:5, fontSize: 10, color : darkmode ? 'white': ''}}>Me</span> 
+       <span className="me" style={{ color : darkmode ? 'white': ''}}>Me</span> 
   
         </div>
       </div>
