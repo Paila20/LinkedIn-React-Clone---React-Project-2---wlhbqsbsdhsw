@@ -105,7 +105,7 @@ export default function SearchedUser() {
       ) : null}
       <div className="cards" style={{ backgroundColor: darkmode ? 'black' : '' }}>
         <PostUpdate
-          currentUser={currentUser?.data?.user?._id !== id ? id : currentUser}
+          userId= {id}
           profile={true}
           handleLocalStorageUpdate={handleLocalStorageUpdate}
         />

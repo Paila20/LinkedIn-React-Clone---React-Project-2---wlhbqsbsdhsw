@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function PostUpdate({
-  
+  userId,
   currentUser,
   profile,
   handleLocalStorageUpdate,
@@ -52,34 +52,27 @@ export default function PostUpdate({
   
   useEffect(()=>{
  fetchingPosts();
-  },[currentUser])
+  },[userId])
 
   const fetchingPosts = async () => {
   
     const posts = await fetchPost();
 
     if (posts.status === 200) {
-      let current = "";
+   
       let finalPostData = [];
       if (profile === true) {
-        console.log(currentUser)
-        if (typeof currentUser !== "string") {
-          localStorage.removeItem("searcheduser");
-          current = currentUser?.data?.user?._id;
+      
+        if (userId !== "undefined") {
           finalPostData = posts?.data?.data.filter(
-            (item) => item?.author?._id === current
-          );
-        } else {
-          current = currentUser;
-          finalPostData = posts?.data?.data.filter(
-            (item) => item?.author?._id === current
+            (item) => item?.author?._id === userId
           );
           localStorage.setItem(
             "searcheduser",
             JSON.stringify(finalPostData[0]?.author)
           );
           handleLocalStorageUpdate();
-        }
+        } 
         setAllPosts(finalPostData);
       } else {
         setAllPosts(posts?.data?.data);
