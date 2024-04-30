@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./index.css";
 import Button from "../Button";
-import { InfoCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined, ExclamationCircleOutlined, LeftCircleFilled } from '@ant-design/icons';
 import { UseAuthContext } from '../../../helpers/AuthContext';
 import { FaEllipsisH } from 'react-icons/fa';
 import linkedin from "../../../assets/Linkedin.png";
@@ -46,12 +46,12 @@ function Widgets() {
                 <div className="widgets__article" style={{ backgroundColor: darkmode ? 'black' : '' }}>
                 {newsArray.map((data, i) => {
                   return (
-                    <div key={i}>
-                      <div style={{color: darkmode ? 'white': ''}}>
-                        <p style={{color: darkmode ? 'white': ''}}><FaCircleDot style={{scale: "0.5"}}/> {data.headLine}</p>
-                        <p style={{color: darkmode ? 'white': ''}}>{data.telecastedAt} ago</p>
-                      </div>
-                    </div>
+                    <ul key={i}>
+                    <li style={{color: darkmode ? 'white': '',marginLeft : 15}}>
+                      <p style={{color: darkmode ? 'white': ''}}> {data.headLine}</p>
+                      <p style={{color: darkmode ? 'white': '',fontSize: 12}}>{data.telecastedAt} ago</p>
+                    </li>
+                    </ul>
                   );
                 })}
                 <button  className='lessbtn' onClick={showLess ? handleShowLess : handleShowMore}>
