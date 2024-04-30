@@ -328,7 +328,7 @@
     margin-bottom: 20px;
   }
   
-  /*
+  
     @media (max-width: 1200px) {
   
     
@@ -413,22 +413,22 @@
      width: 100%;
      max-width: 350px;
      flex-direction: column;
-     margin-left: -80px;
+     margin-left: -140px;
    }
    .profile-details{
     max-width: 350px;
     width: 100%;
-    margin-left: -80px;
+    margin-left: -142px;
    }
    .profile-details1{
     max-width: 350px;
     width: 100%;
-    margin-left: -80px;
+    margin-left: -142px;
    }
    .profile-details2{
     max-width: 350px;
     width: 100%;
-    margin-left: -80px;
+    margin-left: -142px;
    }
    .backimg{
     max-width: 350px ;
@@ -442,38 +442,25 @@
   
    }
    .userName{
-     margin : 16px 0 0 -215px
+     margin : 0px 0 0 -224px
    }
    .heading{
     margin: 1px 0 0 -13px;
    }
+   .pen{
+    display: none;
    }
-   .profile-header{
-    display: flex;
-    flex-direction: column;
+   .pen1{
+    display: none;
    }
+
+   .pen2{
+    display: none;
+   }
+
+
+   }
+  
    
   
-   @media (max-width:450px){
-    .profile-card{
-      width: 100%;
-      min-width: 325px;
-      flex-direction: column;
-      margin-left: -145px;
-    }
-    .profile-image{
-     width: 80px;
-     height: 80px;
-     font-size: 30px;
    
-    }
-    .userName{
-     margin:16px 0 0 45px;
-    }
-    .heading{
-     margin: 1px 0 0 27px;
-    }
-   
-   }
-    
-   */

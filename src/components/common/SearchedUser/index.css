@@ -302,7 +302,8 @@
   @media (max-width:950px){
     .cards{
      margin-left: 143px;
-  min-width: 500px;
+  /* min-width: 500px; */
+  box-sizing: border-box;
   
     }
     .searcheduser-card{
@@ -318,6 +319,7 @@
   @media (max-width:600px){
     .cards{
      margin-left: 30px;
+     box-sizing: border-box;
   
     }
     .searcheduser-card{
@@ -356,8 +358,9 @@
     }
    
     .cards{
-      min-width: 500px;
-      margin-left: -56px;
+      /* min-width: 500px; */
+      /* margin-left: -56px; */
+      box-sizing: border-box;
   
     }
    }
