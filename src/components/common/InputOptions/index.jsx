@@ -5,7 +5,7 @@ function InputOptions({ Icon, title, color, onClick, size }) {
   return (
     <div className="inputoption" onClick={onClick}>
       <IconComponent style={{ color: color ,fontSize:size}} />
-      <h4 style={{ fontSize: "1.2rem" }}>{title}</h4>
+      <h4 style={{ fontSize: "0.9rem" }}>{title}</h4>
     </div>
   );
 }

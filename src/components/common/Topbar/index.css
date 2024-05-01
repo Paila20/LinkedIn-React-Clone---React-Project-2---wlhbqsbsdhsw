@@ -181,6 +181,7 @@ font-size: 12px;
     }
     .react-search{
       background-color: whitesmoke;
+      border: none;
     }
     .user-logo{
       margin-top: -19px;
@@ -208,6 +209,7 @@ font-size: 12px;
     .react-search{
       background-color: whitesmoke;
       margin-top: 8px;
+      border: none;
     }
     .react-search > input{
       display: none;

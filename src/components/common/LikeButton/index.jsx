@@ -49,6 +49,7 @@ export default function LikeButton({
 
   function Toggle() {
     setToggle(!toggle);
+    setLike(like + 1)
     
   }
 

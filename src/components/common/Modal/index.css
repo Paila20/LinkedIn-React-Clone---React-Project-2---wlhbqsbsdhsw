@@ -60,9 +60,28 @@
     bottom: 10px;
   
   }
+  @media (max-width: 950px){
+    .modal-createpost{
+      left: 150px;
+    }
+  }
+
+  @media (max-width:650px){
+    .post-btn{
+      left: 250px;
+    }
+    .modal-createpost{
+      left: 10px;
+      width: 100px;
+    }
+  }
   
   @media (max-width:450px){
     .post-btn{
-      left: 200px;
+      left: 250px;
+    }
+    .modal-createpost{
+      left: 10px;
+      width: 100px;
     }
   }

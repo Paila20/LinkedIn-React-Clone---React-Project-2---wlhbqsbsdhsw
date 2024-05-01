@@ -60,7 +60,7 @@ export default function Groups() {
         </div>
         <div className="groupList " style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <ul>
-            {console.log(getGroup)}
+   
             {getGroup?.data?.length>0  &&
               getGroup?.data?.map((item, index) => (
                
