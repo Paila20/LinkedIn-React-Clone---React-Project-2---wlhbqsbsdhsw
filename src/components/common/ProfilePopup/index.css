@@ -68,7 +68,8 @@
 .popup-card .name {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
+  margin-left: 53px;
 }
 
 .popup-card .premium {
@@ -85,4 +86,20 @@
   width: 50px;
   margin-left: 60px;
   color: #000000;
+}
+.user-popup-logo{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+ 
+  cursor: pointer;
+  margin-left: 11px;
+   margin-top:-172px ;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }

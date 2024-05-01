@@ -48,14 +48,20 @@ export default function SearchedUser() {
         <Loader />
       ) : searchedUser ? (
         <div style={{ backgroundColor: darkmode ? 'black' : '' }}>
-          <div className="sidepost">
+          <div className="sidepost" style={{ backgroundColor: darkmode ? 'black' : '' ,
+           color : darkmode ? 'white' : '',
+           border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
             <ul>
               <h2>On this page </h2>
               <li>Profile by {searchedUser?.name ? searchedUser?.name : ''}</li>
               <li>Posts by {searchedUser?.name ? searchedUser?.name : ''}</li>
             </ul>
           </div>
-          <div className="searcheduser-card">
+          <div className="searcheduser-card" style={
+            { backgroundColor: darkmode ? 'black' : '' , 
+          color : darkmode ? 'white' : '',
+          border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}
+          }>
             <div>
               {searchedUser?.profileImage ? (
                 <img

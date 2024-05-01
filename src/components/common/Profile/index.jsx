@@ -42,7 +42,9 @@ export default function Profile() {
       {loading ? (
         <Loader />
       ) : currentUser !== null ? (
-        <div className="profile-card">
+        <div className="profile-card"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+        color : darkmode ? 'white' : '',
+        border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
           <div className="profile-header">
             <div className="backimg"></div>
             <div>
@@ -157,21 +159,27 @@ export default function Profile() {
         <></>
       )}
 
-      <div className="profile-details" style={{ backgroundColor: darkmode ? "black" : "" }}>
+      <div className="profile-details"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+           color : darkmode ? 'white' : '',
+           border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
         <div className="profile-details-top">
           <h3 className="profile-details-info">Experience</h3>
           <HiOutlinePencil className="pen" />
         </div>
       </div>
 
-      <div className="profile-details1" style={{ backgroundColor: darkmode ? "black" : "" }}>
+      <div className="profile-details1"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+           color : darkmode ? 'white' : '',
+           border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
         <div className="profile-details-top">
           <h3 className="profile-details-info">Education</h3>
           <HiOutlinePencil className="pen1" />
         </div>
       </div>
 
-      <div className="profile-details2" style={{ backgroundColor: darkmode ? "black" : "" }}>
+      <div className="profile-details2"  style={{ backgroundColor: darkmode ? 'black' : '' ,
+           color : darkmode ? 'white' : '',
+           border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
         <div className="profile-details-top">
           <h3 className="profile-details-info">Skills</h3>
           <HiOutlinePencil className="pen2" />
