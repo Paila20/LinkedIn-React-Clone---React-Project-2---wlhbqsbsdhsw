@@ -18,8 +18,8 @@
   background-color: hsl(208, 40%, 70%);
   margin-top: 10px;
   margin-left: 50px;
-  border: 1px solid black; /* Add border to the input field */
-  border-radius: 5px; /* Optional: Add border radius for better appearance */
+  border: 1px solid black; 
+  border-radius: 5px; 
 }
 
 .search-users .input-field input {
@@ -74,10 +74,11 @@
 
 @media (max-width:500px){
   .search-users .search-result {
-    left: 55px;
+    left: 5em;
+    width: 20rem;
     
   }
   .search-users .input-field{
-    width: 150px;
+    width: 20em;
   }
 }

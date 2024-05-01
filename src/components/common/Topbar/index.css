@@ -42,7 +42,7 @@
     align-items: center;
     border-radius: 5px;
     height: 20px;
-   
+   width: 15em;
     padding: 5px;
     color: gray;
     background-color:hsl(207, 35%, 81%);
@@ -226,7 +226,7 @@ font-size: 12px;
   @media (max-width: 800px) {
     
     .react-icons  {
-      width: 470px;
+      width: 275em;
 
     }  
     .popup-position {

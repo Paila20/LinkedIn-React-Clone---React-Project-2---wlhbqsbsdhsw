@@ -147,6 +147,21 @@
     justify-content: center;
     align-items: center;
   }
+.sidebar__list{
+    list-style-type: none;
+    color: blue;
+    margin: 10px ;
+    font-size: 0.8em;
+}
+.side__hr{
+    width: 200px;
+}
+.side__more{
+    text-align: center;
+}
+.side__li{
+    margin: 20px 0px;
+}
  @media (max-width: 768px) {
     .sidebar {
         display: none;

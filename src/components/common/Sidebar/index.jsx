@@ -3,17 +3,17 @@ import React, { useEffect } from 'react';
 import './index.css';
 import { BACKGROUND_COLORS } from '../../../utils/user/login';
 import { UseAuthContext } from '../../../helpers/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar({theme}) {
 const {currentUser , setCurrentUser ,darkmode} = UseAuthContext();
+const navigate = useNavigate();
 
-    const recentItem = (topic) => (
-        <div className="sidebar__recentItem">
-            <span className="sidebar__hash">#</span>
-            <p>{topic}</p>
-        </div>
-    )
-    console.log(currentUser) 
+const goToRoute = (route) => {
+    navigate(route);
+  };
+
+  
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem("userData")) || {};
         if (Object.keys(userData).length > 0) {
@@ -57,12 +57,19 @@ const {currentUser , setCurrentUser ,darkmode} = UseAuthContext();
                 </div>
             </div>
             <div className="sidebar__bottom" style={{ backgroundColor: darkmode ? 'black' : '' }}>
-                <p style={{color: darkmode ? 'white': ''}}>Recent</p>
-                {recentItem('Never')}
-                {recentItem('Give')}
-                {recentItem('UP')}
-                {recentItem('Keep')}
-                {recentItem('Learning')}
+                <ul className='sidebar__list'>
+                    <li onClick ={()=>{goToRoute('/group')}} >
+                        Groups
+                    </li>
+                    <li className='side__li'>
+                        Events
+                    </li>
+                    <li>
+                        Followed Hashtags
+                    </li>
+                </ul>
+                 <hr className='side__hr'></hr>
+                 <p className='side__more'>Discover More</p>
             </div>
         </div>
     )
