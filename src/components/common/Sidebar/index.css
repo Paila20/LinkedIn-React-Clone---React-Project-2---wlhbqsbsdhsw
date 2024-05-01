@@ -107,6 +107,7 @@
     background-color: white;
     border-radius: 10px;
     margin-top: 10px;
+
   
 }
 
@@ -152,6 +153,7 @@
     color: blue;
     margin: 10px ;
     font-size: 0.8em;
+  
 }
 .side__hr{
     width: 200px;
@@ -165,12 +167,13 @@
  @media (max-width: 768px) {
     .sidebar {
         display: none;
+       
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .sidebar {
-   left: 20px;
+   left: 1em;
     }
 }
 

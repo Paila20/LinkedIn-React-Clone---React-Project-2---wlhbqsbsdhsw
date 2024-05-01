@@ -27,8 +27,9 @@
     align-items: center;
     border: 1px solid lightgrey;
     border-bottom: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-radius: 10px;
     background-color: white;
     padding-bottom: 10px;
     height: auto;
@@ -103,15 +104,40 @@
       margin-right: 20px;
     }
     .group{
-      color: blue;
+      /* color: blue; */
       margin-right: 140px;
     }
    
-    
+    .midle{
+      text-align: left;
+      /* padding: 10px; */
+      border: 1px solid lightgrey;
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-left: 50px;
+    }
+    .list{
+      list-style-type: none;
+      color: blue;
+      margin: 10px ;
+      font-size: 0.8em;
+    }
+    .group__event{
+      margin: 20px 0;
+    }
    
   
+    .group__side__more{
+      text-align: center;
+      margin: 10px;
+      color: grey;
+    }
+   .group__hr{
+    width: 230px;
     
-   
+  
+   }
     
     .card .profile-info .edit-btn {
       position: absolute;
@@ -355,15 +381,16 @@ color: white;
 }
 
 @media (max-width: 900px) {
-  .card .info {
+   .card .info {
       width: 100%;
-  }
+   } 
  
   .grouppost{
    
         margin-top: 2px;
         margin-left: 50px;
-       max-width: 509px;
+       max-width: 502px;
+       width: 100%;
   }
   .imggg{
     width: 100%;
@@ -387,20 +414,22 @@ color: white;
     margin-top: 2px;
     margin-left: 50px;
     max-width: 442px;
+    width: 100%;
 }
 }
 
-@media (max-width: 450px) {
-  .card .info {
+@media (max-width: 500px) {
+   .card .info {
       width: 100%;
-  }
+  } 
 
 
   .grouppost{
    
     margin-top: 2px;
     margin-left: 50px;
-    max-width: 322px;
+    max-width: 340px;
+    width: 100%;
 }
   .imggg{
     width: 120%;

@@ -62,7 +62,7 @@ export default function GroupProfile() {
     <Topbar/>
       <div className="channel" style={{ backgroundColor: darkmode ? 'black' : '' }}>
         <div className="side" >
-          <div className="top" style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '',border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
+          <div className="top" style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '',border: `1px solid ${darkmode ? 'white' : 'whitesmoke'}` }}>
             <img
               src="https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png"
               alt=""
@@ -94,13 +94,31 @@ export default function GroupProfile() {
             <h2 className="name ">{channelid?.owner?.name}</h2>
             <h4 className="email">{channelid?.owner?.email}</h4>
             <h4 className="email"> Joined At {timeStampConversionToDateAndTime(channelid.createdAt)}</h4>
+            
+      
+    
+          
+          </div>
+          <div className="midle">
+            <ul className="list">
             <Link to={'/group'}>
-            <h4 className="group"> Groups </h4>
-            </Link>
+              <li>
+                Groups
+              </li>
+              </Link>
+              <li className="group__event">
+                Events
+              </li>
+              <li>
+                Followed Hashtags
+              </li>
+              <hr className="group__hr"></hr>
+              <p className="group__side__more">Discover More</p>
+            </ul>
           </div>
         </div>
         <div className="card"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' }}>
-          <div className="info"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,  border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
+          <div className="info"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,  border: `1px solid ${darkmode ? 'white' : 'whitesmoke'}`}}>
            <img src='https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="imggg"/>
           
                   
