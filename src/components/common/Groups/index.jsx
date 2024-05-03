@@ -65,14 +65,15 @@ export default function Groups() {
               getGroup?.data?.map((item, index) => (
                
                   <div key={index} className="listItem">
-                    
-                     
-                        <h2 className='groupProfileImage'  style={{backgroundColor: BACKGROUND_COLORS[( item?.name ? item?.name.charCodeAt(0) : 0) % 20]}}> 
-                        {`${item.name.slice(0,1).toUpperCase()}`}
-                       </h2>
-                
-                    
-                    <Link to={`/groupprofile/${item._id}`}>
+                     {
+                      item?.image? (
+                        <img src={item?.image} className='groupProfileImage'/>
+                   
+                      ):( <h2 className='groupProfileImage'  style={{backgroundColor: BACKGROUND_COLORS[( item?.name ? item?.name.charCodeAt(0) : 0) % 20]}}> 
+                      {`${item.name.slice(0,1).toUpperCase()}`}
+                     </h2>)
+                     }
+                     <Link to={`/groupprofile/${item._id}`}>
                     <li className="channelname">{item.name}</li>
                     </Link>
                   </div>

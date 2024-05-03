@@ -135,6 +135,9 @@
  
   border: none;
  }
+ .biworld{
+  margin-bottom: -2px;
+ }
  
  @media (max-width:350px){
  

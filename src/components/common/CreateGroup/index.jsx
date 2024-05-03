@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, Typography, Input, Upload } from 'antd';
+import { Button, Modal, Typography, Input, Upload, Form } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 // import 'antd/dist/antd.css';
 import './index.css';
@@ -8,30 +8,30 @@ import { UseAuthContext } from '../../../helpers/AuthContext';
 
 export default function CreateGroup({getChannel}) {
   const [open, setOpen] = useState(false);
-  const [channelName, setChannelName] = useState('');
-  const [channelDescription, setChannelDescription] = useState('');
- const {darkmode, currentUser} = UseAuthContext();
- console.log(currentUser)
+  const [form] = Form.useForm();
+  const {darkmode, currentUser} = UseAuthContext();
 
-  const createGroup = async () => {
-    let formData = new FormData();
-    formData.append("name", channelName);
-    formData.append("description", channelDescription);
-     if(currentUser !== undefined){
-      const result = await creatingagroup(formData,  currentUser.token);
-
-      if(result.status === 200){
-  
-      
-        getChannel();
-        setChannelName('');
-        setChannelDescription('');
-       
-      }
-     }
-     
+  const createGroup = () => {
+    form.validateFields().then (async(formValues)=>{
+      let formData = new FormData();
+      formData.append("name", formValues.name);
+      formData.append("description", formValues.description);
     
-  };
+      if(currentUser !== undefined){
+        const result = await creatingagroup(formData,  currentUser.token);
+        console.log(result)
+        if(result.status === 200){
+        
+          form.resetFields();
+      
+          setOpen(false);
+          getChannel();
+
+         
+        }
+      }
+    })
+   };
 
 
   return (
@@ -50,31 +50,47 @@ export default function CreateGroup({getChannel}) {
           </Button>,
         ]}
       >
+        <Form  form={form} onFinish={createGroup} initialValues={{remember:true}}>
         <div className="coverGroup">
           <div className="groupDp">
-            <Upload showUploadList={false}>
-              <Button icon={<EditOutlined />} />
-            </Upload>
+         
           </div>
         
         </div>
+        <Form.Item  name="name"
+            rules={[
+              {
+                required: true,
+                message: "Please write group name to create group!",
+              },
+            ]}>
         <div className="flex flexc groupName">
           <label>Group Name*</label>
           <Input
             placeholder="ENTER YOUR GROUP NAME"
-            value={channelName}
-            onChange={(e) => setChannelName(e.target.value)}
+          
+         
           />
         </div>
+        </Form.Item>
+        <Form.Item  name="description"
+            rules={[
+              {
+                required: true,
+                message: "Please write something to create group!",
+              },
+            ]}>
         <div className="flex flexc description">
           <label>Description*</label>
           <Input.TextArea
             autoSize={{ minRows: 3, maxRows: 5 }}
             placeholder="What do you want to talk about?"
-            value={channelDescription}
-            onChange={(e) => setChannelDescription(e.target.value)}
+  
+
           />
         </div>
+        </Form.Item>
+        </Form>
       </Modal>
     </div>
   );

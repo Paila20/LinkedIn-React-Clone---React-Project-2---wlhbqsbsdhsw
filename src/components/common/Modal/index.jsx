@@ -25,10 +25,10 @@ const ModalComponent = ({
     setImageUpload(event.target.files[0]);
   };
 
-  const handlingPostCreate = async () => {
+  const handlingPostCreate =  () => {
     form.validateFields().then(async (formValues) => {
       const formData = new FormData();
-      // formData.append("title", formValues.content.slice(0, 2));
+   
       formData.append("title", formValues.title);
       formData.append("content", formValues.content);
       formData.append("images", imageUpload);
@@ -71,7 +71,6 @@ const ModalComponent = ({
       <Modal
         title="Create a post"
         className={darkmode ? "input-dark-mode " : "modal-createpost"}
-        // className="modal-createpost"
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}

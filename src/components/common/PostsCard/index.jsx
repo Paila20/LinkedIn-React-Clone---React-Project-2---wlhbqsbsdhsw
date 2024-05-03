@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Modal } from "antd";
 import { BsPencil, BsTrash } from "react-icons/bs";
 import LikeButton from "../LikeButton";
-
+import { BiWorld } from 'react-icons/bi';
 import { timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
 import "./index.css";
 import { deletePost, fetchComments } from "../../../utils/user/post";
@@ -117,8 +117,9 @@ export default function PostsCard({
           <p className="name" style={{  color: darkmode ? 'white': '' }}>{posts?.author?.name}</p>
           <p className="headline" style={{  color: darkmode ? 'white': '' }}>Writer | Developer</p>
           <p className="timestamp" style={{  color: darkmode ? 'white': '' }} >
-            {timeStampConversionToDateAndTime(posts.createdAt)}
+            {timeStampConversionToDateAndTime(posts.createdAt)}  <BiWorld className="biworld"/>
           </p>
+         
           <div>
           {currentUser?.data?.user?._id !== posts?.author?._id &&  
           <button  className="followingbtn" onClick={ToggleFollow}>

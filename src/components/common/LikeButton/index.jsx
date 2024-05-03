@@ -75,8 +75,7 @@ export default function LikeButton({
       if(currentUser !== undefined){
         const postComment = await createComments(posts._id, data, currentUser.token);
         if (postComment.status === 200) {
-         
-          
+          toast.success('comment created successfully');
           handleFetchPostComments();
           fetchingPosts();
           commentForm.resetFields();
@@ -90,6 +89,7 @@ export default function LikeButton({
     if(currentUser !== undefined){
       const deletedComment = await deleteComments(comment_id, currentUser.token);
       if (deletedComment.status === 204) {
+        toast.success('comment deleted successfully');
         handleFetchPostComments();
         fetchingPosts();
       }
@@ -131,13 +131,13 @@ export default function LikeButton({
             setShowCommentBox(!showCommentBox), handleFetchPostComments();
           }}
         >
-          {
+          
             <FaRegCommentDots
             style={{color: darkmode ? 'white': '',marginTop:20, transform: 'scaleX(-1)'}}
               size={20}
               color={showCommentBox ? "#0a66c2" : "#212121"}
             />
-          }
+          
 
           <p className={showCommentBox ? "blue" : "black"} style={{color: darkmode ? 'white':''}}>Comments</p>
         </div>
@@ -145,9 +145,6 @@ export default function LikeButton({
       {showCommentBox ? (
         <>
           <Form form={commentForm} onFinish={createComment}>
-            <Row gutter={24}>
-    
-              <Col span={24}>
                 <Form.Item
                   name="content"
                   rules={[
@@ -175,24 +172,15 @@ export default function LikeButton({
                       </h2>
                   <Input
                     placeholder="Add a Comment"
-                  
                     className={darkmode ? "input-dark-mode " : "comment-input"}
-         
                   />
                   </div>
                 </Form.Item>
-                <Col span={5}>
+              
                 <button type="" htmlType="submit" className="add-comment-btn">
                   Post
                 </button>
-                </Col>
-              </Col>
-             
-            </Row> 
-            
-  
-
-          </Form>
+            </Form>
           {comments.length > 0
             ? comments.map((comment) => {
                 return (
