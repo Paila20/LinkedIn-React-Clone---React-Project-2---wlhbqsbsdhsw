@@ -57,7 +57,7 @@ export default function PostUpdate({
   const fetchingPosts = async () => {
   
     const posts = await fetchPost();
-
+     console.log(posts)
     if (posts.status === 200) {
    
       let finalPostData = [];

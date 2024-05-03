@@ -252,6 +252,19 @@
     
     
   }
+  .followingbtn{
+    height: 30px;
+  
+    color: #0a66c2;
+    margin: 20px -20px 0 100px;
+   
+    border: #0a66c2;
+   }
+   .searcheduser-side{
+    display: flex;
+    flex-direction: column;
+
+   }
   
   .line hr {
     border-top: 1px solid rgb(181, 181, 181);

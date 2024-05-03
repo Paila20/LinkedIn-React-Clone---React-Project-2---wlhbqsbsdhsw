@@ -42,11 +42,7 @@ export default function PostsCard({
 
   },[currentUser])
    
-  function ToggleFollow(){
-    setIsFollowed( !isFollowed );
-  }
-
-
+  
 
  
   const handleDeletePost = async () => {
@@ -120,13 +116,7 @@ export default function PostsCard({
             {timeStampConversionToDateAndTime(posts.createdAt)}  <BiWorld className="biworld"/>
           </p>
          
-          <div>
-          {currentUser?.data?.user?._id !== posts?.author?._id &&  
-          <button  className="followingbtn" onClick={ToggleFollow}>
-                {isFollowed ? 'Unfollow' : 'Follow'}
-          </button>
-          }
-          </div>
+         
         </div>
       </div>
       <p className="stat" style={{  color: darkmode ? 'white': '' }}>{posts.title}</p>

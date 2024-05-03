@@ -16,6 +16,8 @@ export default function SearchedUser() {
   const { currentUser, darkmode } = UseAuthContext();
   const [searchedUser, setSearchedUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isFollowed, setIsFollowed] = useState(false);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -32,6 +34,11 @@ export default function SearchedUser() {
   const goToRoute = (route) => {
     navigate(route);
   };
+  function ToggleFollow(){
+    setIsFollowed( !isFollowed );
+  }
+
+
 
   const handleLocalStorageUpdate = () => {
     const updatedSearchedUser = JSON.parse(localStorage.getItem("searcheduser")) || null;
@@ -62,7 +69,8 @@ export default function SearchedUser() {
           color : darkmode ? 'white' : '',
           border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}
           }>
-            <div>
+            <div className="searcheduser-side">
+                 
               {searchedUser?.profileImage ? (
                 <img
                   className="searcheduser-image"
@@ -82,7 +90,15 @@ export default function SearchedUser() {
                   {searchedUser?.name ? searchedUser?.name.charAt(0) : ""}
                 </h2>
               )}
+              
               <h3 className="searcheduserName" style={{ color: darkmode ? 'white' : '' }}>{searchedUser.name}</h3>
+                < button  className="followingbtn" onClick={ToggleFollow}>
+                        {isFollowed ? 'Unfollow' : 'Follow'}
+              </button>
+                 
+                 
+                  
+              
             </div>
             <div className="advert" style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
               <p className="adc" style={{ color: darkmode ? 'white' : '' }}>
