@@ -62,8 +62,8 @@
 
   .profile-details2{
     width: 680px;
-    height: 200px;
-   
+    height: auto;
+   min-height: 200px;
     border-radius: 10px;
     padding: -5px;
     position: relative;
@@ -81,6 +81,7 @@
         flex-direction: row;
         justify-content: space-around;
         gap: 20px;
+        height:auto;
         /* align-items: center; */
     }
 
@@ -110,13 +111,13 @@
   
       border-radius: 50%;
       border: 2px solid #cacaca;
-     color: white;
+     color: black;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 75px;
-      margin-top: -107px;
+      margin-top: 9px;
       margin-left: 22px;
       z-index: 1;
     
@@ -138,9 +139,13 @@
       margin-left: 20px;
       list-style-type: none;
     }
-   
+   .userEmail{
+    margin-left: 40px;
+   }
     
-    
+  .user-country{
+    margin-left: 40px;
+  }
   
     
   .userName {
@@ -148,12 +153,13 @@
       color: rgba(0, 0, 0, 0.9);
       font-weight: 600;
       font-size: 24px;
-      margin-left: 24px;
+      margin-left: 40px;
       margin-top: 9px;
-      text-align: center;
+      text-align: left;
+
     }
     .backimg{
-      /* border-radius: 10px; */
+     
       height: 145px;
       width: 387%;
   background-image: url('https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png');
@@ -284,13 +290,14 @@
     display: flex;
     flex-direction: column;
      justify-content: flex-start; 
-    /* align-items: ;  */
-    width: 357px;
-    /* text-align: center; */
+ 
+    min-width: 370px;
+    width: auto;
+ 
     height: 230px;
     background-color: whitesmoke;
    
-    right: -390px;
+    right: -404px;
     
     border-radius: 5px;
     padding: 5px;
@@ -328,9 +335,25 @@
     width: 300px;
     margin-bottom: 20px;
   }
-  
-  
-    @media (max-width: 1200px) {
+  .profile-side-1{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .profile-exp{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+ margin-left: -620px;
+ margin-top: 55px;
+  }
+  .profile-exp-head{
+    font-size: 17px;
+  }
+  .skills-ul{
+    list-style-type: none;
+  }
+     @media (max-width: 1200px) {
   
     
     .lang{
@@ -464,4 +487,4 @@
   
    
   
-   
+    
