@@ -140,3 +140,19 @@ export const deleteComments = async (comment_id, token) => {
     return error;
   }
 };
+
+export const gettingUserInfo = async (id, token) => {
+  const url = `https://academics.newtonschool.co/api/v1/linkedin/user/${id}`;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    projectID: "i1dieevrt9g1",
+  };
+  try {
+    const res = await ReusableAxios(url, "get", headers);
+    return res;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};

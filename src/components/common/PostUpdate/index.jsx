@@ -51,7 +51,7 @@ export default function PostUpdate({
   useEffect(() => {}, [currentUser]); 
   
   useEffect(()=>{
- fetchingPosts();
+    fetchingPosts();
   },[userId])
 
   const fetchingPosts = async () => {
@@ -67,11 +67,7 @@ export default function PostUpdate({
           finalPostData = posts?.data?.data.filter(
             (item) => item?.author?._id === userId
           );
-          localStorage.setItem(
-            "searcheduser",
-            JSON.stringify(finalPostData[0]?.author)
-          );
-          handleLocalStorageUpdate();
+        
         } 
         setAllPosts(finalPostData);
       } else {
