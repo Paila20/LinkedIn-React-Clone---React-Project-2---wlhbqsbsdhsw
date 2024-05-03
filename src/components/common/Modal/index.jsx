@@ -69,13 +69,14 @@ const ModalComponent = ({
   return (
     <div   style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <Modal
-        title="Create a post"
+        title=""
         className={darkmode ? "input-dark-mode " : "modal-createpost"}
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}
         style={{ backgroundColor: darkmode ? 'black' : 'grey' }}
       >
+        <p className="modal-email"> {currentUser.data.user.email}</p>
         <Form
           form={form}
           name="basic"
@@ -106,7 +107,8 @@ const ModalComponent = ({
                 style={{ backgroundColor: darkmode ? 'black' : '' ,color : darkmode ? 'white': '' }}
               />
             ) : (
-              <input className="modalin"
+              <input 
+              className="modalin"
               placeholder="title" 
               style={{ backgroundColor: darkmode ? 'black' : '', color : darkmode ? 'white': '' }}/>
             )} 

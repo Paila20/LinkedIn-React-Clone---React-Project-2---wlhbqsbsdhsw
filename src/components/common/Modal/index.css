@@ -1,7 +1,7 @@
 .modal-input {
     border: none !important;
-    background-color: white;
-    outline: none;
+  /*  background-color: white;*/
+   outline: none; 
     color: black;
     font-size: 16px;
     font-family: system-ui;
@@ -18,15 +18,16 @@
     top: 20px;
   }
   .modalin{
-    border: none !important;
-    background-color: white;
+    border: light grey;
+    /* background-color: white; */
     outline: none;
     color: black;
     font-size: 16px;
     font-family: system-ui;
-    width: 100%;
+    width: 98%;
     resize: none;
     height: 30px;
+    padding-left: 10px;
   }
   
   .ql-container.ql-snow,
@@ -59,6 +60,10 @@
     left: 300px;
     bottom: 10px;
   
+  }
+  .modal-email{
+    font-size: 20px;
+    color: black;
   }
   @media (max-width: 950px){
     .modal-createpost{
