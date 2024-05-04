@@ -69,7 +69,7 @@ const goToRoute = (route) => {
                     </li>
                 </ul>
                  <hr className='side__hr'></hr>
-                 <p className='side__more'>Discover More</p>
+                 <p className='side__more' style={{color : darkmode ? "white" : ""}}>Discover More</p>
             </div>
         </div>
     )

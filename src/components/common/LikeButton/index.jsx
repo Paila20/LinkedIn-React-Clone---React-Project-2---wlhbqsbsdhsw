@@ -172,7 +172,7 @@ export default function LikeButton({
                       </h2>
                   <Input
                     placeholder="Add a Comment"
-                    className={darkmode ? "input-dark-mode " : "comment-input"}
+                    className={darkmode ? "comment-dark-mode " : "comment-input"}
                   />
                   </div>
                 </Form.Item>
