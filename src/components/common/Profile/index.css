@@ -22,7 +22,7 @@
       flex-direction: row;
       background-color: white;
   
-      top: 80px;
+      top: 60px;
       left: 143px;
      
     }
@@ -38,7 +38,7 @@
         flex-direction: row;
         background-color: white;
     
-        top: 95px;
+        top: 70px;
         left: 143px;
 
     }
@@ -54,7 +54,7 @@
       flex-direction: row;
       background-color: white;
   
-      top: 110px;
+      top: 78px;
       left: 143px;
 
   }
@@ -71,7 +71,7 @@
     flex-direction: row;
     background-color: white;
 
-    top: 125px;
+    top: 88px;
     left: 143px;
 
 }
@@ -347,6 +347,13 @@
  margin-left: -620px;
  margin-top: 55px;
   }
+  .profile-exp1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+ margin-left: -620px;
+ margin-top: 55px;
+  }
   .profile-exp-head{
     font-size: 17px;
   }
@@ -403,6 +410,15 @@
   }
 
   @media (max-width:700px){
+    .skills-ul{
+      margin-left: 65px;
+    }
+    .profile-exp{
+      margin-left: -99px;
+    }
+    .profile-exp1{
+      margin-left: -90px;
+    }
     
     .profile-card{
       width: 100%;
@@ -428,10 +444,62 @@
       width: 100%;
       margin-left: -80px;
      }
+     .pen{
+      display: none;
+     }
+     .pen1{
+      display: none;
+     }
+  
+     .pen2{
+      display: none;
+     }
+  }
+  @media (max-width:450px){
+    .profile-exp{
+      margin-left: -103px;
+    }
+    .profile-exp1{
+      margin-left: -85px;
+    }
+    .skills-ul{
+      margin-left: 65px;
+    }
+    .profile-card{
+      width: 100%;
+      max-width: 450px;
+      margin-left: -142px;
+    }
+    .profile-details{
+      margin-left: -140px;
+    }
+    .profile-details1{
+      margin-left: -140px;
+    }
+    .profile-details2{
+      margin-left: -140px;
+    }
   }
   
-  
+/*   
   @media (max-width:450px){
+
+    .profile-exp{
+      margin-left: -100px;
+        margin-right: -392px;
+        flex-wrap: wrap;
+      
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile-exp span{
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .profile-exp > div {
+      margin-bottom: 10px; 
+    }
    
     .profile-card{
      width: 100%;
@@ -485,6 +553,6 @@
 
    }
   
-   
+    */
   
     

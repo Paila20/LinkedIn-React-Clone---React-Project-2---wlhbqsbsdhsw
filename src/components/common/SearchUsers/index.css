@@ -40,7 +40,7 @@
   left: 190px;
   background-color: white;
   border: 0.5px solid lightgray;
-  width: 37%;
+  width: 20em;
   height: 300px;
   overflow-y: scroll;
   border-radius: 6px;
@@ -75,10 +75,10 @@
 @media (max-width:500px){
   .search-users .search-result {
     left: 5em;
-    width: 20rem;
+    width: 18em;
     
   }
   .search-users .input-field{
-    width: 20em;
+    width: 18em;
   }
 }

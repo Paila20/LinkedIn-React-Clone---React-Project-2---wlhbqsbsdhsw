@@ -359,13 +359,13 @@
    margin-left: -272px;
  }
  .searcheduser-image{
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 130px;
   font-size: 30px;
 
  }
  .searcheduserName{
-  margin:16px 0 0 -185px;
+  margin:16px 0 0 50px;
  }
  
  }
@@ -378,13 +378,13 @@
     margin-left: -280px;
   }
   .searcheduser-image{
-   width: 80px;
-   height: 80px;
+   width: 130px;
+   height: 130px;
    font-size: 30px;
  
   }
   .searcheduserName{
-    margin: 8px 0 0 -30px
+    margin: 8px 0 0 30px
   }
  
   .cards{

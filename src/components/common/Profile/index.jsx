@@ -225,7 +225,7 @@ export default function Profile() {
           <h3 className="profile-details-info">Education</h3>
           <HiOutlinePencil className="pen1" />
         </div>
-        <div className='profile-exp'>
+        <div className='profile-exp1'>
           <h6 className='profile-exp-head'>{userData.education && userData.education.length > 0 ? userData.education[0].schoolName : ""}</h6>
           <span>{userData.education ? userData.education[0]?.degree : ""}</span>
            <span >{userData.education ? userData.education[0]?.description : ""}</span>
