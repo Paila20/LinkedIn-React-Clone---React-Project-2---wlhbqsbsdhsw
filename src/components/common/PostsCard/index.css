@@ -1,7 +1,8 @@
 
 
 .posts-card {
-    width: 100%;
+    /* width: 100%; */
+    width: 520px;
    height: auto;
    background-color: whitesmoke;
    margin: 10px  auto;

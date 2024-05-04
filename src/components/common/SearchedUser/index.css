@@ -373,9 +373,9 @@
  @media (max-width:450px){
   .searcheduser-card{
     width: 100%;
-    min-width: 325px;
+    min-width: 445px;
     flex-direction: column;
-    margin-left: -280px;
+    margin-left: -298px;
   }
   .searcheduser-image{
    width: 130px;
@@ -388,7 +388,7 @@
   }
  
   .cards{
-    
+    margin-left: -10px;
    
     box-sizing: border-box;
 
