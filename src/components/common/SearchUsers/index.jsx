@@ -7,15 +7,14 @@ import { BACKGROUND_COLORS } from "../../../utils/user/login";
 import { UseAuthContext } from "../../../helpers/AuthContext";
 
 export default function SearchUsers({ setIsSearch }) {
-   const [searchValue, setSearchValue] = useState([]);
+
+    const [searchValue, setSearchValue] = useState([]);
     const [postsData, setPostsData] = useState([]);
     const [isInputFocused, setIsInputFocused] = useState(false);
 
     const {darkmode} =UseAuthContext();
 
   useEffect(() => {
-
-   
    if (postsData.length === 0) {
       fetchingPosts();
     }
@@ -31,10 +30,8 @@ export default function SearchUsers({ setIsSearch }) {
   };
 
   const handleSearch = (value) => {
-    setSearchValue([]);
+   
     if (!postsData?.data) {
-      
-
       return;
     }
 
@@ -80,7 +77,7 @@ export default function SearchUsers({ setIsSearch }) {
         className="close-icon"
         size={20}
         onClick={() => {
-          // setIsSearch(false);
+          
           handleSearch("");
         }}
       />
