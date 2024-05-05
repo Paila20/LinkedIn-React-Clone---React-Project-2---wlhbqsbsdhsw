@@ -9,7 +9,7 @@ import "./index.css";
 import { getChannelID, gettingChannel } from "../../../utils/user/search";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
+import { formatTimestamp, timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
 import Topbar from '../Topbar';
 
 export default function GroupProfile() {
@@ -93,7 +93,7 @@ export default function GroupProfile() {
 
             <h2 className="name ">{channelid?.owner?.name}</h2>
             <h4 className="email">{channelid?.owner?.email}</h4>
-            <h4 className="email"> Joined At {timeStampConversionToDateAndTime(channelid.createdAt)}</h4>
+            <h4 className="email"> Joined on {formatTimestamp(channelid.createdAt)}</h4>
             
       
     

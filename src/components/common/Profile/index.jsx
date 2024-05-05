@@ -13,6 +13,7 @@ import Topbar from "../Topbar";
 import { HiOutlinePencil } from "react-icons/hi";
 import "./index.css";
 import { gettingUserInfo } from "../../../utils/user/post";
+import { formatTimestamp } from "../../../helpers/timeStampConversion";
 
 export default function Profile() {
   const { currentUser, darkmode, setCurrentUser } = UseAuthContext(); 
@@ -96,6 +97,13 @@ export default function Profile() {
                 {userData?.email}
 
               </h3>
+              <h4
+                className="userEmail"
+                style={{ color: darkmode ? "white" : "" }}
+              >
+                joined on {formatTimestamp(userData?.createdAt)}
+
+              </h4>
               {userData.address && userData.address.length > 0 && <p className="user-country">{userData.address[0].city}, {userData.address[0].state}, {userData.address[0].country}</p>}
              
             </div>

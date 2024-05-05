@@ -92,7 +92,7 @@ export default function Topbar() {
           </div>
       ) : (
        
-        <div className='react-search'style={{ backgroundColor: darkmode ? 'black' : '',border: `1px solid ${darkmode ? 'white' : 'whitesmoke'}` }}>
+        <div className='react-search'style={{ backgroundColor: darkmode ? 'black' : '' }}>
         <FaSearch size={20}  onClick={handleInputClick} style={{ backgroundColor: darkmode ? 'black' : '',color :darkmode ? "white": ""}}/>
         <input type='text'
         placeholder="Search Users.."

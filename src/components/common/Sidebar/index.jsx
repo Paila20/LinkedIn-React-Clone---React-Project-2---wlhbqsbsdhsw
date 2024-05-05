@@ -58,7 +58,7 @@ const goToRoute = (route) => {
             </div>
             <div className="sidebar__bottom" style={{ backgroundColor: darkmode ? 'black' : '' }}>
                 <ul className='sidebar__list'>
-                    <li onClick ={()=>{goToRoute('/group')}} >
+                    <li onClick ={()=>goToRoute('/group')} >
                         Groups
                     </li>
                     <li className='side__li'>
