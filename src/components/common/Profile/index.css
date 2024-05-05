@@ -29,8 +29,8 @@
     
     .profile-details{
         width: 680px;
-        height: 200px;
-       
+       min-height: 200px;
+       height: auto;
         border-radius: 10px;
         padding: -5px;
         position: relative;

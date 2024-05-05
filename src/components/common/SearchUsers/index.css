@@ -40,7 +40,7 @@
   left: 190px;
   background-color: white;
   border: 0.5px solid lightgray;
-  width: 20em;
+  width: 25em;
   height: 300px;
   overflow-y: scroll;
   border-radius: 6px;
@@ -72,7 +72,8 @@
   flex-direction: row;
 }
 
-@media (max-width:500px){
+
+@media (max-width:800px){
   .search-users .search-result {
     left: 5em;
     width: 18em;
