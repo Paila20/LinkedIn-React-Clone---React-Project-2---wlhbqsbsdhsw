@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import "./index.css";
-import Button from "../Button";
-import { InfoCircleOutlined, ExclamationCircleOutlined, LeftCircleFilled } from '@ant-design/icons';
+import { InfoCircleOutlined} from '@ant-design/icons';
 import { UseAuthContext } from '../../../helpers/AuthContext';
 import { FaEllipsisH } from 'react-icons/fa';
 import linkedin from "../../../assets/Linkedin.png";
 import { BACKGROUND_COLORS } from '../../../utils/user/login';
 import LinkedinLogo from "../../../assets/linkedinLogo.png";
-import { FaCircleDot } from "react-icons/fa6";
 import { IoChevronDown } from "react-icons/io5";
 import { IoChevronUp } from "react-icons/io5";
-import { MdMargin } from 'react-icons/md';
 import { getNewsList } from '../../../assets/news';
-
+import "./index.css";
 
 function Widgets() {
     const{currentUser, darkmode} =UseAuthContext();
@@ -84,7 +80,8 @@ function Widgets() {
             <img className="linklogo" src={LinkedinLogo} style={{color: darkmode ? 'white': ''}}/>
           </div>
           <p className='data'style={{color: darkmode ? 'white': ''}}>See who's viewed your profile in the last 90 days</p>
-          <button className='bt'> Try for free! </button>
+          <button className='bt'> Try for free! </button> 
+         
         </div>
        <div >
         <img  className = "inlogo" src={linkedin}/>

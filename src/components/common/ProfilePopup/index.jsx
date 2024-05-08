@@ -1,10 +1,9 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, {  useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Switch } from "antd";
-import Button from "../Button";
-import "./index.css";
 import { UseAuthContext } from "../../../helpers/AuthContext";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
+import "./index.css";
 
 export default function ProfilePopup() {
   let navigate = useNavigate();
@@ -49,14 +48,14 @@ export default function ProfilePopup() {
         )}
       <p className="name"  style={{ color: darkmode ? 'white' : '' }}>{currentUser?.data?.user?.name}</p>
 
-      <Button
-        title="View Profile"
+      <button
+      className="popup-bt"
         onClick={() => navigate(`/profile/${currentUser?.data?.user?._id}`)}
-      />
+      > View Profile</button>
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
 
        <Switch   className = 'togglethemebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
-      <Button title="Log out"  onClick={handleLogout} disabled={false} />
+      <button className="popup-bt"  onClick={handleLogout} disabled={false} >Log out</button>
     </div>
   );
 }

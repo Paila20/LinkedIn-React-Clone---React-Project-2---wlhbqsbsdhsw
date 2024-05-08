@@ -1,16 +1,12 @@
 import { UseAuthContext } from "../../../helpers/AuthContext";
-import { BACKGROUND_COLORS, CoverPic } from "../../../utils/user/login";
-import { FaEllipsisH, GroupsIcon } from "react-icons/fa";
-import { FaUsers, FaGroup } from "react-icons/fa";
-import LinkedinLogo from "../../../assets/linkedinLogo.png";
-import Button from "../Button";
-
-import "./index.css";
+import { BACKGROUND_COLORS } from "../../../utils/user/login";
+import { FaUsers } from "react-icons/fa";
 import { getChannelID, gettingChannel } from "../../../utils/user/search";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { formatTimestamp, timeStampConversionToDateAndTime } from "../../../helpers/timeStampConversion";
+import { formatTimestamp} from "../../../helpers/timeStampConversion";
 import Topbar from '../Topbar';
+import "./index.css";
 
 export default function GroupProfile() {
   const { currentUser } = UseAuthContext();

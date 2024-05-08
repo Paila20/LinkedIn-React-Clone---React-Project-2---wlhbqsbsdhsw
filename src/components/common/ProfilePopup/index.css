@@ -96,10 +96,24 @@
  
   cursor: pointer;
   margin-left: 11px;
-   margin-top:-172px ;
+   margin-top:-152px ;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
+}
+.popup-bt{
+  margin-left: 20px;
+  margin-top: 5px;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  border: 2px solid #003365;
+  color: #014488;
+  border-radius: 30px;
+  font-family: system-ui;
+  font-weight: 600;
+  font-size: 14px;
 }

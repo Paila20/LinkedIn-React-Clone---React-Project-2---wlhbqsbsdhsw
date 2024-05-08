@@ -1,19 +1,15 @@
-
-
 import React, { useEffect, useState } from "react";
 import { UseAuthContext } from "../../../helpers/AuthContext"; 
 import { useParams, useNavigate } from "react-router-dom";
-import Button from "../Button";
 import { FaEllipsisH } from "react-icons/fa";
 import LinkedinLogo from "../../../assets/linkedinLogo.png";
-
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
 import Loader from "../Loader";
 import Topbar from "../Topbar";
 import { HiOutlinePencil } from "react-icons/hi";
-import "./index.css";
 import { gettingUserInfo } from "../../../utils/user/post";
 import { formatTimestamp } from "../../../helpers/timeStampConversion";
+import "./index.css";
 
 export default function Profile() {
   const { currentUser, darkmode, setCurrentUser } = UseAuthContext(); 
@@ -190,7 +186,8 @@ export default function Profile() {
                 <p style={{ color: darkmode ? "white" : "" }}>
                   See who's viewed your profile in the last 90 days
                 </p>
-                <Button title="Try for free!" />
+        
+                <button className='btn'> Try for free! </button> 
               </div>
             )}
           </div>

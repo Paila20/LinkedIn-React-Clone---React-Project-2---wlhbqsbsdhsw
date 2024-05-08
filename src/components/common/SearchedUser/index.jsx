@@ -1,17 +1,14 @@
-
 import React, { useEffect, useState } from "react";
 import { UseAuthContext } from "../../../helpers/AuthContext";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import Button from "../Button";
 import { FaEllipsisH } from "react-icons/fa";
 import LinkedinLogo from "../../../assets/linkedinLogo.png";
 import { BACKGROUND_COLORS } from "../../../utils/user/login";
-
 import Loader from '../Loader';
 import Topbar from "../Topbar";
 import PostUpdate from "../PostUpdate";
-import "./index.css";
 import { gettingUserInfo } from "../../../utils/user/post";
+import "./index.css";
 
 export default function SearchedUser() {
   const { currentUser, darkmode } = UseAuthContext();
@@ -54,9 +51,10 @@ export default function SearchedUser() {
         <div style={{ backgroundColor: darkmode ? 'black' : '' }}>
           <div className="sidepost" style={{ backgroundColor: darkmode ? 'black' : '', color: darkmode ? 'white' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
             <ul>
-              <h2>On this page </h2>
-              <li>Profile by {userData?.name ? userData.name : ''}</li>
+              <h2 className="onthis">On this page </h2>
               <li>Posts by {userData?.name ? userData.name : ''}</li>
+              <li>Posts  mentioning {userData?.name ? userData.name : ''}</li>
+              <li> People</li>
             </ul>
           </div>
           <div className="searcheduser-card" style={{ backgroundColor: darkmode ? 'black' : '', color: darkmode ? 'white' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
@@ -116,7 +114,9 @@ export default function SearchedUser() {
                 <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" style={{ color: darkmode ? 'white' : '' }} />
               </div>
               <p style={{ color: darkmode ? 'white' : '' }}>See who's viewed your profile in the last 90 days</p>
-              <Button title="Try for free!" />
+
+              <button className='searcheduser-bt'> Try for free! </button> 
+
             </div>
           </div>
         </div>

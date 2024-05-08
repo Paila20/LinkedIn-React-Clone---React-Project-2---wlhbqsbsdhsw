@@ -254,7 +254,22 @@
     z-index: 999;
     width: 100%;
   }
-  
+  .btn{
+   
+    margin: 5px 30px;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: 2px solid #003365;
+    color: #014488;
+    border-radius: 30px;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 0 5px 40px;
+  }
   
  
  

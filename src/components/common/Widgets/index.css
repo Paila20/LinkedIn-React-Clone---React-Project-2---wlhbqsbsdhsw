@@ -103,15 +103,19 @@
 }
 .bt{
     
-    margin-left: 100px;
-    border: 2px solid blue; 
-    padding: 10px 5px 20px 5px;
-    background-color: white; 
-    border-radius: 40px;
-    color: blue; 
-    height: 5px;
-    text-align: center;
-    margin-top: -5px;
+    margin-left: 90px;
+    margin-top: 5px;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: 2px solid #003365;
+    color: #014488;
+    border-radius: 30px;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 14px;
+  
 
 
 }
