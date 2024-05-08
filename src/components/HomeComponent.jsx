@@ -11,16 +11,6 @@ export const HomeComponent = () => {
   let navigate = useNavigate();
   const {currentUser, darkmode, logintoken} = UseAuthContext();
 
-  useEffect(() => {
-    localStorage.removeItem("searcheduser");
-  });
-
-  useEffect(() => {
-
-  },[currentUser] )
-  
- 
-
   return (
     <>
     <Topbar/>

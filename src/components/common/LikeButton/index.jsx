@@ -100,7 +100,7 @@ export default function LikeButton({
    
     setActiveCommentActions(activeCommentActions === commentId ? null : commentId);
   };
-
+ 
   return (
     <div className="like-container"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
       <p style={{color: darkmode ? 'white': ''}}>

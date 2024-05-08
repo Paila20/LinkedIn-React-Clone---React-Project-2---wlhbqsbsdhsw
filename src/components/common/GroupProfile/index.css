@@ -95,7 +95,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: -82px 0 1px 20px;
+      margin: -100px 0 -5px 20px;
       color: white;
     }
     
@@ -163,7 +163,8 @@
       color: rgba(0, 0, 0, 0.9);
       font-weight: 600;
       font-size: 24px;
-      margin: 0 0 0 20px;
+      margin:  0 0 -5px 20px ;
+   
     }
     
     .card .head {
@@ -255,7 +256,7 @@
  height: 30px;
  background-color: #0a66c2;
 color: white;
-  margin: 73px -268px 0 168px;
+  margin: 100px -268px 0 168px;
     width: 100px;
     border-radius: 10px;
     outline: #0a66c2;
@@ -264,13 +265,15 @@ color: white;
 .imggg{
   
 
-    height: 160px;
+    height: 190px;
     width: 570px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin: 0 0 -20px 0;
 }
 .public{
-  margin-left: 20px;
+  margin: 0 0 0 20px;
+ 
 }
 .groupSide{
   
@@ -340,6 +343,9 @@ color: white;
 @media (max-width: 1200px) {
     .side {
         display: none;
+    }
+    .followbtn{
+      margin-top: 140px;
     }
 }
 
@@ -437,7 +443,7 @@ color: white;
     max-width: 313px;
   }
   .followbtn{
-    margin: 84px -224px 0 119px;
+    margin: 140px -224px 0 119px;
   }
   .card .Name{
     margin-left: 14px;
