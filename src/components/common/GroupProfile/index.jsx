@@ -113,8 +113,8 @@ export default function GroupProfile() {
             </ul>
           </div>
         </div>
-        <div className="card"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' }}>
-          <div className="info"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' ,  border: `1px solid ${darkmode ? 'white' : 'whitesmoke'}`}}>
+        <div className="card"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '', border: `1px solid ${darkmode ? 'white' : 'whitesmoke'}` }}>
+          <div className="info"  style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': ''}}>
            <img src='https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="imggg"/>
           
                   
