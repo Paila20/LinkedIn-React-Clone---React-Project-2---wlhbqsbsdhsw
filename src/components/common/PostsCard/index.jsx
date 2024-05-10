@@ -69,19 +69,14 @@ export default function PostsCard({
             <FaEllipsisH onClick={() => setShowActions(!showActions)}/>
             {showActions && (
               <div className="container">
-                <p
-                  className="btn"
-                  onClick={() => {
+            
+                  <BsPencil size={20} className="action-icon" style={{  color: darkmode ? 'white': '' }}    onClick={() => {
                     setModalOpen(true), setIsEdit(true), setSinglePost(posts), setShowActions(!showActions)
-                  }}
-                >
-                  <BsPencil size={20} className="action-icon" style={{  color: darkmode ? 'white': '' }} />
-             
-                </p>
-                <p className="btn" onClick={handleDeletePost}>
-                  <BsTrash size={20} className="action-icon" style={{  color: darkmode ? 'white': '' }} />
+                  }}/>
+                  
+                  <BsTrash size={20} className="action-icon"  onClick={handleDeletePost}style={{  color: darkmode ? 'white': '' }} />
 
-                </p>
+              
               </div>
             )}
           </div>
