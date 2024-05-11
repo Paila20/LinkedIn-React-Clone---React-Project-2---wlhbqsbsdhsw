@@ -186,7 +186,7 @@ export default function LikeButton({
                 return (
                   <div className="all-comments" key={comment._id}
                    style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}`}}>
-                    <div className="user">
+                  
                       <h2
                         className="image"
                         style={{
@@ -229,7 +229,7 @@ export default function LikeButton({
                           )}
                         </div>
                       )}
-                    </div>
+                
                     <p className="comment"
                          style= {{color : darkmode ? 'white' : ''}}
                     >{comment.content}</p>

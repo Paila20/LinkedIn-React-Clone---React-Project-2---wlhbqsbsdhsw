@@ -69,6 +69,8 @@
     border-radius: 10px;
     position: relative;
     margin: 6px 1px 10px 55px; 
+    max-width: 420px;
+    width: 100%;
   }
   
   .all-comments .image {
@@ -93,7 +95,8 @@
   
   .all-comments .comment {
    
-    margin: -36px 20px 44px 27px;
+    margin: -36px 20px 10px 27px;
+    word-wrap: break-word;
   }
   
   .stamp {
@@ -181,7 +184,12 @@
     .all-comments .action-icon{
       top: 40px;
     }
-  }
+      .all-comments {
+        max-width: 420px;
+        margin: -4px -76px 0 47px;
+    } 
+    }
+  
   
   @media (max-width: 450px) {
     .stamp{
@@ -191,6 +199,22 @@
         top: 14px;
     }
     .all-comments .action-icon{
-      top: 40px;
+      top: 34px;
+        right: 15px;
+    
+    }
+    .all-comments {
+      max-width: 306px;
+      margin: -4px -76px 0 47px;
+  } 
+  .all-comments .comment{
+    margin-right: 50px;
+  }
+  .icon{
+    top: 64px;
+    right: 13px;
     }
   }
+      
+    
+  
