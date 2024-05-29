@@ -11,7 +11,7 @@ export const timeStampConversionToDateAndTime = (timestamp) => {
 
     if (weeks > 0) {
       return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
-    } else if (days > 0) {
+    } else if (days > 0) { 
       return `${days} day${days > 1 ? 's' : ''} ago`;
     } else if (hours > 0) {
       return `${hours} hour${hours > 1 ? 's' : ''} ago`;

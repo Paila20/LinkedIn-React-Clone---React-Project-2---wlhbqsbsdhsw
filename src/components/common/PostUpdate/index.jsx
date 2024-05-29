@@ -22,7 +22,7 @@ export default function PostUpdate({
   userId,
   currentUser,
   profile,
-  handleLocalStorageUpdate,
+
 }) {
   console.log(currentUser)
   const [modalOpen, setModalOpen] = useState(false);

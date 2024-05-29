@@ -23,7 +23,7 @@ export const  AuthContextProvider = ({children}) => {
     }, [])
     
     useEffect(()=>{
-
+ 
      },[currentUser])
 
     useEffect(()=>{
