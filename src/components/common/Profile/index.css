@@ -307,7 +307,7 @@
      justify-content: flex-start; 
  
     min-width: 370px;
-    width: auto;
+    /* width: auto; */
  
     height: 230px;
     background-color: whitesmoke;
@@ -343,7 +343,7 @@
   }
   .url{
     margin-left: -10px;
-    flex-wrap: wrap;
+    word-wrap: wrap;
   }
   
   .hrgroup{

@@ -54,7 +54,7 @@ export default function ProfilePopup() {
       > View Profile</button>
       <p className="premium" onClick={() => navigate("/trypremium")}>Try Premium</p>
 
-       <Switch   className = 'togglethemebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
+       <span style={{ color: darkmode ? 'gray' : '' }}>Dark Mode</span><Switch   className = 'togglethemebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
       <button className="popup-bt"  onClick={handleLogout} disabled={false} >Log out</button>
     </div>
   );
