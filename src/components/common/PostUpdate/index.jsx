@@ -36,6 +36,7 @@ export default function PostUpdate({
   const {darkmode} = UseAuthContext();
   const userData = JSON.parse(localStorage.getItem("userData"));
 
+
   let navigate = useNavigate();
   const goToRoute = (route) => {
     navigate(route);
@@ -74,6 +75,13 @@ export default function PostUpdate({
     }
   
   };
+
+  const sortByLikes = () => {
+    const sortedPosts = [...allPosts].sort((a, b) =>  b.likeCount - a.likeCount)
+        setAllPosts(sortedPosts);
+    }
+  
+
 
   return loading? (
     <Loader/>
@@ -144,6 +152,10 @@ export default function PostUpdate({
               />
             </div>
            
+          </div>
+          <div className="sorting">
+          
+            <button  onClick={sortByLikes}>sort by likes</button>
           </div>
          
 

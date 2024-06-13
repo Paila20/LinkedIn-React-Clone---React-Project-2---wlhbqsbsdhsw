@@ -20,7 +20,7 @@ export default function SearchedUser() {
  
 
   console.log(currentUser);
-
+ 
   useEffect(()=>{
  handleProfile();
  setLoading(false);

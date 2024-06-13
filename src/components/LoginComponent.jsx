@@ -26,7 +26,7 @@ const LoginComponent = () => {
  
     const res = await getUsers(body);
 
-    if (res.status === 200) {
+    if (res.status === 200) { 
       message.success("Signed In to LinkedIn!");
       localStorage.setItem("userData", JSON.stringify(res.data));
       localStorage.setItem("token", JSON.stringify(res.data.token));

@@ -118,6 +118,13 @@
   .hrline{
     margin: 5px 0 10px 0;
   }
+   .sorting{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+   }
+  
   
   @media  (max-width: 350px) {
     .post-status-main .feed__inputcontainer {
