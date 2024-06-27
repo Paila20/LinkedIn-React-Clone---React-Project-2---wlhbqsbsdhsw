@@ -50,3 +50,13 @@ export const getNewsList = () => {
     },
   ];
 };
+
+export const skillslist = 
+   [
+    {skill:"HtML"},
+    {skill:"CSS"},
+    {skill:"JavaScript"},
+    {skill:"React"},
+    {skill:"Node"},
+    {skill:"MongoDB"},
+  ]

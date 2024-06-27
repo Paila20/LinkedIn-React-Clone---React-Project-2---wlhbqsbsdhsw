@@ -9,6 +9,7 @@ import Topbar from "../Topbar";
 import { HiOutlinePencil } from "react-icons/hi";
 import { gettingUserInfo } from "../../../utils/user/post";
 import {userCoverPic} from "../../../assets/Icons";
+import { skillslist } from '../../../assets/news';
 import { formatTimestamp } from "../../../helpers/timeStampConversion";
 import "./index.css";
 
@@ -52,9 +53,9 @@ export default function Profile() {
             border: `1px solid ${darkmode ? "white" : "lightgrey"}`,
           }}
         >
-    
+           
           <div className="">
-    
+          <div className="headercover">{userCoverPic}</div>
             <div className="profile-side-1">
             <div className="backimage"></div> 
               {userData?.profileImage ? (
@@ -96,7 +97,8 @@ export default function Profile() {
                 {userData?.email}
 
               </p>
-              <p className='userEmail'>{userData.workExperience ? userData.workExperience[0].designation : ""}</p>
+              <p className='userEmail'>{userData.workExperience ? userData.workExperience[0].designation : "Frontend  Developer"}</p>
+
               <p
                 className="userEmail"
                 style={{ color: darkmode ? "white" : "" }}
@@ -110,7 +112,7 @@ export default function Profile() {
                 style={{ color: darkmode ? "white" : "" }}
               >
          
-         {userData.address && userData.address.length > 0 && <p className="">{userData.address[0].city}, {userData.address[0].state}, {userData.address[0].country}</p>}
+         {userData.address && userData.address.length > 0 && <p className="">{userData.address[0].city}, {userData.address[0].state? userData.address[0].state:"Andhra Pradhesh"}, {userData.address[0].country?userData.address[0].country:"India" }</p>}
               </p>
 
              
@@ -221,11 +223,13 @@ export default function Profile() {
         </div>
         <div className='profile-exp'>
 
-          <h6 className=' profile-exp-head'>{userData.workExperience ? userData.workExperience[0].designation : ""}</h6>
-          <span>{userData.workExperience && userData.workExperience[0].companyName}</span>
+          <h6 className=' profile-exp-head'>{userData.workExperience ? userData.workExperience[0].designation : "Frontend Developer"}</h6>
+          <span>{userData.workExperience && userData.workExperience[0].companyName ?userData.workExperience && userData.workExperience[0].companyName : "Google"}</span>
+
         
-          <span >{userData.workExperience && userData.workExperience[0].location}</span>
-          <span >{userData.workExperience && userData.workExperience[0].description}</span>
+          <span >{userData.workExperience && userData.workExperience[0].location ? userData.workExperience && userData.workExperience[0].location:"Bangalore"}</span>
+
+          <span >{userData.workExperience && userData.workExperience[0].description ? userData.workExperience && userData.workExperience[0].description: ""}</span>
           </div>
       </div>
 
@@ -242,9 +246,9 @@ export default function Profile() {
           <HiOutlinePencil className="pen1" />
         </div>
         <div className='profile-exp1'>
-          <h6 className='profile-exp-head'>{userData.education && userData.education.length > 0 ? userData.education[0].schoolName : ""}</h6>
-          <span>{userData.education ? userData.education[0]?.degree : ""}</span>
-           <span >{userData.education ? userData.education[0]?.description : ""}</span>
+          <h6 className='profile-exp-head'>{userData.education && userData.education.length > 0 ? userData.education[0].schoolName : "Govt High School, Polavaram"}</h6>
+          <span>{userData.education && userData.education.length > 0 ? userData.education[0]?.degree : "Btech(Electronics and Communication) in , Bhimavaram"}</span>
+           <span >{userData.education && userData.education.length > 0 ? userData.education[0]?.description : "Electronics and Communication"}</span>
         </div>    
        </div>                    
     
@@ -263,9 +267,13 @@ export default function Profile() {
           </div>
           <div className='profile-exp'>
           <ul className="skills-ul">
-               {userData.skills && userData.skills.map((skills, index) => (
+            {userData.skills && userData.skills.length>0? userData.skills.map((skills, index) => (
                  <li  key={index}>{skills}</li>
-                    ))}
+                    )):
+                    skillslist.map((skill, index) => (
+                      <li  key={index}>{skill.skill}</li>
+                         ))
+                  }
            </ul>
         </div>                          
      </div>

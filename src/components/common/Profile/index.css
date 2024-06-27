@@ -27,7 +27,7 @@
      
     }
     .headercover{
-      width: 284%;
+      width: 113%;
     }
     .profile-details{
    
@@ -340,7 +340,7 @@
 
     gap: 10px;
     margin: 20px 15px;
-    margin-top: 50px;
+    margin-top: -100px;
    
   }
   .profile-exp{
@@ -362,6 +362,7 @@
   }
   .skills-ul{
     list-style-type: none;
+    margin-left: 10px;
   }
 
   .lang {
@@ -454,9 +455,9 @@
       max-width: 680px ;
       width: 384%;
      }
+     
      .headercover{
-    
-      width: 265%;
+      width: 133%;
      }
   }
   
@@ -536,7 +537,7 @@
      }
      .headercover{
     
-      width: 177%;
+      width: 140%;
      }
   }
   @media (max-width:450px){
@@ -580,7 +581,7 @@
     }
     .headercover{
     
-      width: 150%;
+      width: 90%;
      }
   } 
 
