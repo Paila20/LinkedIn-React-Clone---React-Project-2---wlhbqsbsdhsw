@@ -52,10 +52,17 @@ body {
   }
   .auth-inputs .common-input {
     z-index: 1;
-    /* height: 30px; */
+    height: 50px;
+    width: 300px;
+  }
+  .login-container-nav{
+    display: flex;
+    justify-content: space-between;
   }
   .linkedinLogo {
-    width: 80px;
+    width: 70px;
+    height: 70px;
+    margin: 30px;
   }
   .hr-text {
     line-height: 1em;
@@ -106,16 +113,31 @@ body {
   }
   .themebtn{
     width: 50px;
-    margin-left: 10px;
+    margin: 40px;
     color: #000000;
   }
   
   /* Define your CSS classes */
 .input-dark-mode {
-  background-color: black;
-  color: white;
+  background-color: white;
+  /* color: white; */
+  color: black;
+
+  height: 50px;
+  width: 300px;
 }
 
 .input-dark-mode::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
+
+
+.common-input::placeholder {
+  color: #a9a9a9; 
+}
+
+
+.input-dark-mode::placeholder {
+  color: #a9a9a9;
+}
+

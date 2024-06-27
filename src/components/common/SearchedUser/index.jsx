@@ -82,7 +82,8 @@ export default function SearchedUser() {
               )}
 
               <h3 className="searcheduserName" style={{ color: darkmode ? 'white' : '' }}>{userData.name}</h3>
-              </div>
+              </div >
+              <div className="btns-in-search">
               <Link to={`/profile/${userData._id}`}>
                 <button className="profile-btn">
                   View Profile
@@ -92,15 +93,16 @@ export default function SearchedUser() {
               <button className="followingbtn" onClick={ToggleFollow}>
                 {isFollowed ? 'Unfollow' : 'Follow'}
               </button>
+              </div>
 
             </div>
             <div className="advert" style={{ backgroundColor: darkmode ? 'black' : '', border: `1px solid ${darkmode ? 'white' : 'lightgrey'}` }}>
-              <p className="adc" style={{ color: darkmode ? 'white' : '' }}>
+              <p className="advertcard-ellipse" style={{ color: darkmode ? 'white' : '' }}>
                 Ad <FaEllipsisH style={{ color: darkmode ? 'white' : '' }} />
               </p>
-              <p style={{ color: darkmode ? 'white' : '' }}>{currentUser?.data?.user?.name}, boost your job search with premium</p>
+              <p style={{ color: darkmode ? 'white' : '' ,marginTop:-20}}>{currentUser?.data?.user?.name}, boost your job search with premium</p>
               <div className="images" style={{ color: darkmode ? 'white' : '' }}>
-                <h2
+                {/* <h2
                   className="logoo"
                   style={{
                     backgroundColor:
@@ -110,7 +112,7 @@ export default function SearchedUser() {
                   }}
                 >
                   {currentUser?.data?.user?.name ? currentUser.data.user.name.charAt(0) : ""}
-                </h2>
+                </h2> */}
                 <img className="linklogo" src={LinkedinLogo} alt="linkedin-logo" style={{ color: darkmode ? 'white' : '' }} />
               </div>
               <p style={{ color: darkmode ? 'white' : '' }}>See who's viewed your profile in the last 90 days</p>

@@ -5,16 +5,16 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    /* flex: 0.6; */
+   
     height: auto;
 
-     width: 500px;
+
 
   }
   
   .post-status-main .user-details {
     width: 600px;
-    height: auto;
+   
     background-color: whitesmoke;
     margin-top: 100px;
     border: 1px solid #b7b7b7;
@@ -46,49 +46,54 @@
     margin-top: -15px;
   }
   .post-status-main .feed__inputcontainer{
-    background-color: whitesmoke;
-    padding: 8px;
+    background-color: white;
+
     padding-bottom: 5px;
     border-radius: 5px;
- 
+    height: 120px;
     margin-top: 15px;
     border: 1px solid #b7b7b7;
-    width: 505px;
-    /* width: 97%; */
+    /* width: 570px; */
+    width: 42vw;
+    
   
   }
   
   .post-status-main .feed__inputcontainer .post-status {
-    width: 75%;
+    width: 100%;
     
     border-radius: 7px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
+    margin: 15px;
+    margin-bottom: 20px;
+    gap: 15px;
     
   }
   
   .post-status-main .feed__inputcontainer .post-status .post-image {
-    width: 60px;
-    height: 60px;
+    width: 10%;
+    height: 13%;
     object-fit: cover;
     border-radius: 50%;
-    margin:24px 61px 0 -8px;
+    /* margin:10px 120px 0 -5px; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .post-status-main .feed__inputcontainer .post-status .open-post-modal {
-    width: 400px;
+    /* width: 450px; */
+    width: 80%;
     height: 50px;
     text-align: left;
-    color: rgba(194, 183, 183, 0.89);
-    background-color: whitesmoke;
+    color: #0a0909e3;
+    background-color: white;
     outline: none;
     border: 1px solid #b7b7b7;
     border-radius: 30px;
-    margin: 34px -137px 10px -103px;
+    /* margin: 10px -160px 0px -160px; */
     cursor: pointer;
     padding: 15px;
     font-weight: 600;
@@ -101,7 +106,7 @@
   }
   .post-status-main .feed__inputcontainer .feed__inputoptions{
     display: flex;
-   
+   margin-top: -20px;
     justify-content: space-evenly;
   }
   .loading{
@@ -138,58 +143,51 @@
       
       
   }
-  .post-status-main .feed__inputcontainer .post-status .open-post-modal {
+  /* .post-status-main .feed__inputcontainer .post-status .open-post-modal {
    
      margin:36px -84px 10px -55px; 
     
-  }
+  } */
   
 
   
   }
   
-  @media  (max-width: 560px) {
+  
+  @media  (max-width: 650px) {
     .post-status-main .feed__inputcontainer {
-      width: 100%;
-      max-width: 700px;
+      width: 90%;
+     
       flex-basis: 100%;
       box-sizing: border-box;
-      margin-top: 60px;
-      margin-left: 0px;
+      margin-top: 50px;
+     
     
     }
-    .post-status-main .feed__inputcontainer .post-status .open-post-modal {
+     .post-status-main .feed__inputcontainer .post-status .open-post-modal {
    
-      margin:36px -84px 10px -55px; 
-      max-width: 230px;
+      /* margin:21px -84px 10px -55px;  */
+      width: 72%;
      
-   }
+     
+   } 
    .post-status-main .feed__inputcontainer .post-status .post-image {
    margin-left: 10px;
    }
   }
   
-  @media  (max-width: 600px) {
-    .post-status-main .feed__inputcontainer {
-     
-      max-width: 800px;
-      flex-basis: 100%;
-      margin-left: 0;
-   
-  }
- 
-  }
   
-  @media  (max-width: 800px) {
+  
+ @media  (max-width: 800px) {
     .post-status-main .feed__inputcontainer {
     
- max-width: 800px;
+
       width: 100%;
-      /* margin-left: 10px; */
+     
      
 }
 
-.post-status-main .feed__inputcontainer .post-status .open-post-modal {
+/* .post-status-main .feed__inputcontainer .post-status .open-post-modal {
    
   margin:36px -84px 10px -55px;
   max-width: 350px; 
@@ -198,21 +196,22 @@
 .post-status-main .feed__inputcontainer .post-status .post-image {
   margin-left: 10px;
   }
-  
+   */
   }
-   
+  
 
-  @media  (max-width: 1000px) {
+  @media  (max-width: 1200px) {
     .post-status-main .feed__inputcontainer {
     
-      max-width: 800px;
-      width: 100%;
-      /* margin-left: 66px; */
-      padding: 0;
+     
+      width: 98%;
+      max-width: 650px;
+    
+   
      
 }
 
-.post-status-main .feed__inputcontainer .post-status .open-post-modal {
+/* .post-status-main .feed__inputcontainer .post-status .open-post-modal {
    
   margin:36px -84px 10px -55px;
   max-width: 350px; 
@@ -220,7 +219,7 @@
 }
 .post-status-main .feed__inputcontainer .post-status .post-image {
   margin-left: 10px;
-  }
+  } */
   
   }
    

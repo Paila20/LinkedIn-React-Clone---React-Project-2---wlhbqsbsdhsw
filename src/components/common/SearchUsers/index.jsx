@@ -83,7 +83,7 @@ export default function SearchUsers({ setIsSearch }) {
       />
       <input
       className="searchInput"
-        placeholder="Search Users.."
+        placeholder="Search .."
         onChange={(event) => handleSearch(event.target.value)}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
@@ -105,10 +105,17 @@ export default function SearchUsers({ setIsSearch }) {
         <div className="search-result" style={{ backgroundColor: darkmode ? "black" : "" }}>
           {searchValue.map((d, i) => (
             <Link to={`/posts/${d.id}`} key={i} onClick={handleProfileClick}>
+
               <div className="searchinput">
+              <div className="left-content">
                 <p><FaSearch style={{ color: darkmode ? "white" : "" }}/></p>
+               
+               <p style={{ color: darkmode ? "white" : "" }}>{d.userName}</p>
+                </div>
+               
+              <div className="searchimg-profile">
                 {d.userName.profileImage ? (
-                  <img src={d.userName.profileImage} alt={d.userName} />
+                  <img src={d.userName.profileImage} alt={d.userName}  className="searchimg"/>
                 ) : (
                   <h2
                     className="searchimg"
@@ -120,8 +127,8 @@ export default function SearchUsers({ setIsSearch }) {
                     {d?.userName ? d?.userName.charAt(0) : ""}
                   </h2>
                 )}
-                <p style={{ color: darkmode ? "white" : "" }}>{d.userName}</p>
               </div>
+            </div>
             </Link>
           ))}
         </div>

@@ -69,8 +69,8 @@
     border-radius: 10px;
     position: relative;
     margin: 6px 1px 10px 55px; 
-    max-width: 420px;
-    width: 100%;
+    /* max-width: 420px; */
+    width: 90%;
   }
   
   .all-comments .image {
@@ -185,8 +185,7 @@
       top: 40px;
     }
       .all-comments {
-        max-width: 420px;
-        margin: -4px -76px 0 47px;
+       width: 80%;
     } 
     }
   
@@ -203,10 +202,10 @@
         right: 15px;
     
     }
-    .all-comments {
+    /* .all-comments {
       max-width: 306px;
       margin: -4px -76px 0 47px;
-  } 
+  }  */
   .all-comments .comment{
     margin-right: 50px;
   }

@@ -116,7 +116,7 @@ export default function PostUpdate({
               )}
               <button
                 className="open-post-modal"
-                style={{ backgroundColor: darkmode ? 'black' : '' }}
+                style={{ backgroundColor: darkmode ? 'grey' : '' }}
                 onClick={() => {
                   setModalOpen(true);
                   setSinglePost(null);
@@ -132,7 +132,7 @@ export default function PostUpdate({
                 Icon={MdImage}
                 title="Media"
                 color="#70B5F9"
-                size={30}
+                size={25}
                 onClick={() => goToRoute("/maintenance")}
               />
              
@@ -140,23 +140,23 @@ export default function PostUpdate({
                 Icon={MdEventNote}
                 title="Event"
                 color="#FFA500"
-                size={30}
+                size={25}
                 onClick={() => goToRoute("/maintenance")}
               />
               <InputOptions
                 Icon={MdViewDay}
                 title="Write Article"
                 color="#FFA500"
-                size={30}
+                size={25}
                 onClick={() => goToRoute("/maintenance")}
               />
             </div>
            
           </div>
-          <div className="sorting">
-          
+          {/* <div className="sorting">
+          <hr className='side__hr'></hr>
             <button  onClick={sortByLikes}>sort by likes</button>
-          </div>
+          </div> */}
          
 
           {modalOpen ? (

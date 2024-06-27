@@ -6,11 +6,12 @@ import { useNavigate } from "react-router-dom";
 import LinkedinLogo from "../assets/linkedinLogo.png";
 import { registerAPI } from "../utils/user/login";
 import "../css/LoginComponent.css";
+import { Switch } from "antd";
 import { UseAuthContext } from "../helpers/AuthContext";
 
 export default function RegisterComponent() {
 
-  const {logintoken, setLoginToken, darkmode} =UseAuthContext();
+  const { setLoginToken,darkmode ,toggleDarkMode} =UseAuthContext();
   let navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -45,9 +46,15 @@ export default function RegisterComponent() {
   };
 
   return (
-    <div className="login-wrapper"   style={{ backgroundColor: darkmode ? 'black' : '' ,
+    <div className="login-wrapper"   style={{ backgroundColor: darkmode ? 'black' : 'white' ,
     color : darkmode ? 'white' :  ''}}>
-      <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
+        <div className="login-container-nav">
+        <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
+        <Switch   className = 'themebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
+        </div>
+        
+
+
       <div className="login-wrapper-inner"  style={{ backgroundColor: darkmode ? 'black' : '' ,
      color : darkmode ? 'white' :  ''}}>
         <h1 className="head" style={{color : darkmode ? 'white' : ''}}>Make the most of your professional life</h1>
@@ -83,7 +90,7 @@ export default function RegisterComponent() {
               { min: 6, message: "Password must be at least 6 characters!" },
             ]}
           >
-            <Input placeholder="Password (6 or more characters)" 
+            <Input.Password placeholder="Password (6 or more characters)" 
             
             className={darkmode ? "input-dark-mode " : "common-input"}/>
           </Form.Item>

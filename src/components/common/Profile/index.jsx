@@ -8,6 +8,7 @@ import Loader from "../Loader";
 import Topbar from "../Topbar";
 import { HiOutlinePencil } from "react-icons/hi";
 import { gettingUserInfo } from "../../../utils/user/post";
+import {userCoverPic} from "../../../assets/Icons";
 import { formatTimestamp } from "../../../helpers/timeStampConversion";
 import "./index.css";
 
@@ -51,9 +52,11 @@ export default function Profile() {
             border: `1px solid ${darkmode ? "white" : "lightgrey"}`,
           }}
         >
-          <div className="profile-header">
-      
+    
+          <div className="">
+    
             <div className="profile-side-1">
+            <div className="backimage"></div> 
               {userData?.profileImage ? (
                 <img
                   className="profile-image"
@@ -83,28 +86,37 @@ export default function Profile() {
                 className="userName"
                 style={{ color: darkmode ? "white" : "" }}
               >
-                {userData?.name}
+                {userData?.name}({userData?.email})
 
               </h3>
-              <h3
+              <p
                 className="userEmail"
                 style={{ color: darkmode ? "white" : "" }}
               >
                 {userData?.email}
 
-              </h3>
-              <h4
+              </p>
+              <p className='userEmail'>{userData.workExperience ? userData.workExperience[0].designation : ""}</p>
+              <p
                 className="userEmail"
                 style={{ color: darkmode ? "white" : "" }}
               >
                 joined on {formatTimestamp(userData?.createdAt)}
 
-              </h4>
-              {userData.address && userData.address.length > 0 && <p className="user-country">{userData.address[0].city}, {userData.address[0].state}, {userData.address[0].country}</p>}
+              </p>
+
+              <p
+                className="userEmail"
+                style={{ color: darkmode ? "white" : "" }}
+              >
+         
+         {userData.address && userData.address.length > 0 && <p className="">{userData.address[0].city}, {userData.address[0].state}, {userData.address[0].country}</p>}
+              </p>
+
              
             </div>
           </div>
-          <div>
+          <div className="">
             <div
               className="lang"
               style={{
@@ -116,24 +128,32 @@ export default function Profile() {
                 className="profile-side"
                 style={{
                   color: darkmode ? "white" : "",
-                  marginTop: 30,
-                  marginLeft: 30,
+                 
                 }}
               >
                 <li>
-                  <h2 className="profilelang">Profile Language</h2>
+                  <div className="lang-top">
+                  <h3 className="profilelang">Profile Language</h3>
+                  <HiOutlinePencil  />
+                  </div>
+                 
                 </li>
                 <li>
+                 
                   <p className="english">English</p>
                 </li>
                 <hr className="hrgroup"></hr>
                 <li>
-                  <h2
+                  <div className="lang-bottom">
+                  <h3
                     className="profile-url"
                     style={{ color: darkmode ? "white" : "" }}
                   >
                     Public profile & URL
-                  </h2>
+                  </h3>
+                  <HiOutlinePencil  />
+                  </div>
+                 
                 </li>
                 <li>
                   <p
@@ -145,6 +165,9 @@ export default function Profile() {
                 </li>
               </ul>
             </div>
+            <div       
+            //  className="sideprofile"
+             >
             {currentUser && (
               <div
                 className="sideprofile"
@@ -156,26 +179,12 @@ export default function Profile() {
                 <p className="ad" style={{ color: darkmode ? "white" : "" }}>
                   Ad <FaEllipsisH style={{ color: darkmode ? "white" : "" }} />
                 </p>
-                <p style={{ color: darkmode ? "white" : "" }}>
+                <p style={{ color: darkmode ? "white" : "" ,color:'gray'}} className="sideprofile-info">
                   {currentUser?.data?.user?.name}, boost your job search with
                   premium
                 </p>
                 <div className="images" style={{ color: darkmode ? "white" : "" }}>
-                  <h2
-                    className="logoo"
-                    style={{
-                      backgroundColor:
-                        BACKGROUND_COLORS[(
-                          currentUser?.data?.user?.name
-                            ? currentUser?.data?.user?.name.charCodeAt(0)
-                            : 0
-                        ) %20]
-                    }}
-                  >
-                    {currentUser?.data?.user?.name
-                      ? currentUser?.data?.user?.name.charAt(0)
-                      : ""}
-                  </h2>
+                 
                   <img
                     className="linklogo"
                     src={LinkedinLogo}
@@ -183,7 +192,7 @@ export default function Profile() {
                     style={{ color: darkmode ? "white" : "" }}
                   />
                 </div>
-                <p style={{ color: darkmode ? "white" : "" }}>
+                <p style={{ color: darkmode ? "white" : "" ,color:'gray'}}>
                   See who's viewed your profile in the last 90 days
                 </p>
         
@@ -191,6 +200,8 @@ export default function Profile() {
               </div>
             )}
           </div>
+         
+        </div>
         </div>
       ) : (
         <></>
@@ -261,3 +272,5 @@ export default function Profile() {
      </div>
    );
  }
+
+

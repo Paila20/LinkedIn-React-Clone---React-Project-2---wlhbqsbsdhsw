@@ -43,10 +43,14 @@ const LoginComponent = () => {
 
   return (
     <div className="login-wrapper" 
-     style={{ backgroundColor: darkmode ? 'black' : '' ,
+     style={{ backgroundColor: darkmode ? 'black' : 'white' ,
      color : darkmode ? 'white' :  ''}}>
       <div className="login-container"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
+        <div className="login-container-nav">
         <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
+        <Switch   className = 'themebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
+        </div>
+        
         <div className="login-wrapper-inner">
           <h1 className="head" style ={{color : darkmode ? 'white' : ''}}>Sign in</h1>
           <p className="sub-heading">Stay updated on your professional world</p>
@@ -73,7 +77,7 @@ const LoginComponent = () => {
                      { min: 6, message: "Password must be at least 6 characters!" },
             ]}
             >
-              <Input
+              <Input.Password
                 
                 placeholder="Password"
                 // className="common-input"
@@ -99,7 +103,7 @@ const LoginComponent = () => {
             Join now
           </span>
         </p>
-        <Switch   className = 'themebtn' style={{ color: darkmode ? 'black' : '' }} onClick={toggleDarkMode} />
+     
       </div>
     </div>
   );

@@ -16,8 +16,7 @@
   padding: 5px;
   color: gray;
   background-color: hsl(208, 40%, 70%);
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-left: 40px;
   border: 1px solid black; 
   border-radius: 5px; 
 }
@@ -28,6 +27,8 @@
   border: none; 
   background: transparent; 
   outline: none;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 .search-users .search-icon {
@@ -47,39 +48,61 @@
   z-index: 999 !important;
   padding: 0px 10px;
   color: #000000;
-
-
 }
 
 .search-users .search-result p {
-  margin: 20px 10px 10px;
+  margin: 10px 10px 10px;
   font-size: 14px;
 }
-.searchimg{
+
+.search-users .search-result a {
+  text-decoration: none; 
+  outline: none; 
+  color: inherit; 
+  display: flex;
+  align-items: center; 
+  padding: 10px; 
+  width: 100%;
+  justify-content: space-between; 
+}
+
+.searchimg {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   font-size: 12px;
   object-fit: cover;
-  margin: 16px 2px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.searchinput{
+
+.searchinput {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  width: 100%; 
+  justify-content: space-between;
 }
 
+/* .searchinput p {
+  flex-grow: 1; 
+  margin-right: 10px; 
+} */
+.left-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 @media (max-width:800px){
   .search-users .search-result {
     left: 5em;
     width: 18em;
-    
   }
-  .search-users .input-field{
+  .search-users .input-field {
     width: 18em;
   }
 }

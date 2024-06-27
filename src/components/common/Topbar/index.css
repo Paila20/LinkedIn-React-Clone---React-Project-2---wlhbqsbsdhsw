@@ -4,10 +4,10 @@
     width: 100%;
     /* height: fit-content; */
 
-    background-color: rgba(255, 255, 255, 0.87);
+    background-color: white;
     display: flex;
     position: sticky;
-    background: whitesmoke;
+    background: white;
     z-index: 999;
     top: 0;
     right: 0;
@@ -40,21 +40,39 @@
    flex-direction: row;
    
     align-items: center;
-    border-radius: 5px;
-    height: 20px;
+    border-radius: 3px;
+    height: 35px;
    width: 15em;
     padding: 5px;
-    color: gray;
-    background-color:hsl(207, 35%, 81%);
-    margin-top: 11px;
+    color: black;
+    background-color:hsl(207, 17%, 87%);
+    margin-top: 9px;
     margin-left: 35px;
+  }
+  .react-search-dark{
+    background-color: black;
+    /* color: white; */
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    
+     align-items: center;
+     border-radius: 3px;
+     height: 35px;
+    width: 15em;
+     padding: 5px;
+     color: black;
+     /* background-color:hsl(207, 17%, 87%); */
+     margin-top: 9px;
+     margin-left: 35px;
   }
   .react-search > input{
     outline: none;
     border: none;
     width: 300px;
     border-radius: 100px;
-    background-color: hsl(207, 35%, 81%);
+
+    background-color:hsl(207, 17%, 87%);
     
   }
 
@@ -96,7 +114,7 @@
   
   .popup-position {
     position: absolute;
-    right: 140px;
+    right: 320px;
     top: 65px;
     z-index: 99;
   }
@@ -110,6 +128,10 @@
     background-color: white;
     border-radius: 10px;
     border: 1px solid #bbbbbb;
+    
+  }
+  .search-results input{
+    margin-left: 50px;
   }
   
   .search-results .search-inner {
@@ -145,6 +167,10 @@ font-size: 12px;
     font-size: 12px;
     margin-left: -15px;
     }
+    .icon-name-network{
+      font-size: 12px;
+    margin-left: -15px;
+    }
     .me{
       margin: 34px -5px 5px -3px ;
       font-size: 10px;
@@ -159,6 +185,7 @@ font-size: 12px;
 
     width: auto;
     background: fixed;
+    position: inherit;
   }
    
     .react-icons  {
@@ -178,9 +205,16 @@ font-size: 12px;
     }
     .react-search > input{
       display: none;
+
+    }
+    .react-search-dark {
+      /* display: none;
+       */
+       border: none;
+
     }
     .react-search{
-      background-color: whitesmoke;
+      background-color: white;
       border: none;
     }
     .user-logo{
@@ -192,7 +226,7 @@ font-size: 12px;
     .topbar-main{
    
       background: fixed;
-      background-color: whitesmoke;
+      background-color: white;
       position: fixed;
     }
     .react-icons  {
@@ -207,11 +241,15 @@ font-size: 12px;
       z-index: 99;
     }
     .react-search{
-      background-color: whitesmoke;
+      background-color: white;
       margin-top: 8px;
       border: none;
     }
     .react-search > input{
+      display: none;
+    }
+
+    .react-search-dark > input{
       display: none;
     }
     .linkedin-logo{
@@ -244,7 +282,7 @@ font-size: 12px;
       margin-left: 15px;
     }
     .react-search{
-      background-color: whitesmoke;
+      background-color: white;
     }
     .user-logo{
       margin-top: -19px;
@@ -267,12 +305,20 @@ font-size: 12px;
     .icon-name-notification{
       display: none;
     }
+    .icon-name-network{
+      display: none;
+    }
     .me{
       display: none;
     }
     .user-logo{
       margin-top: -16px;
     }
+    .react-search-dark {
+      /* display: none; */
+      border: none;
+  }
+
    
   }
   

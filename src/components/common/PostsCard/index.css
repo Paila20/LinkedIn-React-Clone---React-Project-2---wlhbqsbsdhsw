@@ -1,10 +1,11 @@
 
 
 .posts-card {
-    /* width: 100%; */
-    width: 520px;
+    width: 100%;
+    /* width: 570px; */
+    width: 42vw;
    height: auto;
-   background-color: whitesmoke;
+   background-color: white;
    margin: 10px  auto;
    border: 1px solid #b7b7b7;
    border-radius: 7px;
@@ -22,12 +23,12 @@
  }
  
  .posts-card .profile-image {
-   width: 60px;
-   height: 60px;
+   width: 55px;
+   height: 55px;
    border-radius: 50%;
    font-size: 20px;
    object-fit: cover;
-   margin: 5px 10px;
+   margin: 5px 7px;
    position: relative;
    display: flex;
    justify-content: center;
@@ -36,7 +37,7 @@
  
  .posts-card .name {
    font-family: system-ui, sans-serif;
-   font-size: 18px;
+   font-size: 16px;
    color: #212121;
    font-weight: 600;
    margin: 0px 0 0 0px;
@@ -45,7 +46,7 @@
  
  .posts-card .headline {
    font-family: system-ui, sans-serif;
-   font-size: 15px;
+   font-size: 11px;
    color: rgba(0, 0, 0, 0.6);
    font-weight: 500;
    margin: 0px 0 0 0px;
@@ -63,7 +64,7 @@
    text-align: left;
    margin: 0px 0 0 15px;
    font-family: Inter, sans-serif;
-   font-size: 18px;
+   font-size: 15px;
    font-weight: 400;
    color: rgba(0, 0, 0, 0.9);
  }
@@ -72,7 +73,7 @@
   text-align: left;
   margin: 0px 0 0 15px;
   font-family: Inter, sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: black;
 }
@@ -132,6 +133,7 @@
  .biworld{
   margin-bottom: -2px;
  }
+ /*
  
  @media (max-width:350px){
  
@@ -156,22 +158,23 @@
     max-width: 600px;
   } 
  }
+  */
  
- @media (max-width:880px){
+ /* @media (max-width:880px){
   .posts-card {
     
    width: 100%;
-   max-width: 600px;
+
    }
-  }
+  } */
    
-   @media (max-width:1000px){
+   @media (max-width:1200px){
     .posts-card {
       
-     width: 100%;
-     max-width: 800px;
-     /* margin-left: 32px; */
+     width: 97%;
+     max-width: 650px;
+   
+   
 
      }
   }  
- 

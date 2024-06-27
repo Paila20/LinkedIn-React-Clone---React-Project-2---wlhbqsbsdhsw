@@ -2,19 +2,17 @@
 
 import React, { useEffect, useState ,useRef} from "react";
 import LinkedinLogo from "../../../assets/linklogo.png";
+import {home, job, network,notification} from "../../../assets/Icons";
 import SearchUsers from "../SearchUsers";
-import {
-  AiOutlineHome,
-  AiOutlineUserSwitch,
-  AiOutlineBell,
-} from "react-icons/ai";
+
 import { useNavigate } from "react-router-dom";
-import { BsBriefcase } from "react-icons/bs";
+
 import ProfilePopup from "../ProfilePopup";
 import "./index.css";
 import { FaSearch } from "react-icons/fa"; 
 import { UseAuthContext } from "../../../helpers/AuthContext";
 import { BACKGROUND_COLORS } from '../../../utils/user/login';
+
 
 export default function Topbar() {
 
@@ -92,36 +90,35 @@ export default function Topbar() {
           </div>
       ) : (
        
-        <div className='react-search'style={{ backgroundColor: darkmode ? 'black' : '' }}>
-        <FaSearch size={20}  onClick={handleInputClick} style={{ backgroundColor: darkmode ? 'black' : '',color :darkmode ? "white": ""}}/>
+        <div className={darkmode ? "react-search-dark ":'react-search'}>
+        <FaSearch size={20}  onClick={handleInputClick} style={{ backgroundColor: darkmode ? '' : '',color :darkmode ? "white": ""}}/>
         <input type='text'
-        placeholder="Search Users.."
-        onClick={handleInputClick} style={{ backgroundColor: darkmode ? 'black' : '',color :darkmode ? "white": ""}}/>
+        placeholder="Search .."
+        onClick={handleInputClick} style={{ backgroundColor: darkmode ? 'black' : '',color :darkmode ? "white": "", border: 'none'}}/>
         </div>
       )}
       
       
       <div className="react-icons"  style={{ backgroundColor: darkmode ? 'black' : '' }}>
-        <div className="icon-container">
-          <AiOutlineHome
-            size={30}
-            className="react-icon"
-            onClick={()=>goToRoute('/')}
-            style={{color: darkmode ? 'white': ''}}
-          />
-          <span className="icon-name" style={{color: darkmode ? 'white': ''}}>Home</span>
+        <div className="icon-container" onClick={()=>goToRoute('/')} style={{color: darkmode ? 'white': ''}}>
+         
+          {home}
+          <span className="icon-name" >Home</span>
         </div>
-        <div className="icon-container" style={{color: darkmode ? 'white': ''}}>
-          <AiOutlineUserSwitch size={30} className="react-icon"  onClick= {()=>goToRoute('/group')} style={{color: darkmode ? 'white': ''}}/>
-          <span className="icon-name">Network</span>
+        <div className="icon-container" style={{color: darkmode ? 'white': ''}}  onClick= {()=>goToRoute('/group')}  >
+
+          {network}
+          <span className="icon-name-network">My Network</span>
         </div>
         <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')} style={{color: darkmode ? 'white': ''}}>
-          <BsBriefcase size={30} className="react-icon" style={{color: darkmode ? 'white': ''}}/>
+
+          {job}
           <span className="icon-name">Jobs</span>
         </div>
-        <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')}>
-          <AiOutlineBell size={30} className="react-icon" style={{color: darkmode ? 'white': ''}}/>
-          <span className="icon-name-notification" style={{color: darkmode ? 'white': ''}} >Notifications</span>
+        <div className="icon-container" onClick= {()=>goToRoute('/maintenance ')} style={{color: darkmode ? 'white': ''}}>
+       
+          {notification}
+          <span className="icon-name-notification"  >Notifications</span>
         </div>
        
       <div className="icon-container">

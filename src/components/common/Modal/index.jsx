@@ -67,16 +67,18 @@ const ModalComponent = ({
   };
 
   return (
-    <div   style={{ backgroundColor: darkmode ? 'black' : '' }}>
+    <div   style={{ backgroundColor: darkmode ? 'black' : '',  color: darkmode ? 'white' : '' }}>
+      <p></p>
       <Modal
-        title=""
-        className={darkmode ? "input-dark-mode " : "modal-createpost"}
+        title="Create a Post"
+        className={darkmode ? "modal-dark-mode " : "modal-createpost"}
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={null}
         style={{ backgroundColor: darkmode ? 'black' : 'grey' }}
+        bodyStyle={{ backgroundColor: darkmode ? 'black' : 'white' }}
       >
-        <p className="modal-email"> {currentUser.data.user.email}</p>
+        <p className={darkmode ?"darkmode-email" : "modal-email" }style={{ backgroundColor: darkmode ? 'black' : 'white' }}> {currentUser.data.user.email}</p>
         <Form
           form={form}
           name="basic"
@@ -116,7 +118,7 @@ const ModalComponent = ({
           </Form.Item>
 
         <Form.Item
-            name="content"
+            name="What do you want to talk about?"
             rules={[
               {
                 required: true,
@@ -128,7 +130,7 @@ const ModalComponent = ({
            {posts?.content ? (
               <TextArea 
            
-              className="modal-input"
+              className={darkmode? "modal-input-dark":"modal-input"}
                 defaultValue={posts.content}
                 placeholder="What do you want to talk about?"
                 style={{ backgroundColor: darkmode ? 'black' : '', height: 300,color : darkmode ? 'white': ''  }}

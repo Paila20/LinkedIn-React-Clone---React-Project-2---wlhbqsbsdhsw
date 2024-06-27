@@ -14,7 +14,7 @@ export const HomeComponent = () => {
   return (
     <>
     <Topbar/>
-    <div className="home-component" style={{ backgroundColor: darkmode ? 'black' : '' }}>
+    <div className="home-component" style={{ backgroundColor: darkmode ? 'black' : 'whitesmoke' }}>
       <Sidebar  />
       <PostUpdate profile={false} currentUser={currentUser}/>
       <Widgets />
