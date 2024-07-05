@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState, useEffect,useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Switch } from "antd";
 import { UseAuthContext } from "../../../helpers/AuthContext";
@@ -7,7 +7,21 @@ import "./index.css";
 
 export default function ProfilePopup() {
   let navigate = useNavigate();
+  const dropdownRef = useRef(null);
+
   const {currentUser, setLoginToken, darkmode, toggleDarkMode} = UseAuthContext();
+  useEffect(() => {
+  
+    document.addEventListener("mousedown", handleClickOutside);
+   
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    
+      setIsSearch(false);
+    }
+  };
 
   useEffect(()=>{
     if(typeof (localStorage.getItem('token')) !==  'string'){

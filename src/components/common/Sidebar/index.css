@@ -1,6 +1,6 @@
 .sidebar{
     width: 900px;
-    top: 68px;
+    top: 15px;
   
     position: sticky;
     flex: 0.2;
@@ -9,8 +9,11 @@
     height: fit-content;
     height: 400px;
     left: 108px;
+   
 }
-
+/* .sidebar::-webkit-scrollbar{
+display: none;
+} */
 .sidebar__avatar{
       margin-top: 60px; 
     margin-bottom: 20px; 

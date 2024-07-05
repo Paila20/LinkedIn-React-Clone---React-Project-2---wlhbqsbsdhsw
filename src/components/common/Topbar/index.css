@@ -14,6 +14,7 @@
     left: 0;
   }
   
+  
   .linkedin-logo {
     
 
@@ -79,7 +80,14 @@
   .icon-container{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    /* padding: 10px; */
   }
+  .icon-container.active {
+    border-bottom: 2px solid black; /* Add black bottom border when active */
+}
+
+ 
   .react-icon {
     color: #787878;
     cursor: pointer;

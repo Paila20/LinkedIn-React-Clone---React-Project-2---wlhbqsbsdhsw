@@ -25,7 +25,9 @@
     right: 90px;
    
 }
-
+/* .wid::-webkit-scrollbar {
+    display: none;
+} */
 .widgets__header{
     display: flex;
     align-items: center;
