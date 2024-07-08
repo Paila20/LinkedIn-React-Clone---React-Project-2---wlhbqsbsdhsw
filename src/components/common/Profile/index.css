@@ -4,6 +4,7 @@
     box-sizing: border-box;
     
   }
+ 
   .profile{
     display: flex;
     flex-direction: row;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-bottom: 100px;
   }
   
   .profile-card {
@@ -176,16 +178,7 @@
       text-align: left;
 
     }
-    .backimg{
-     
-      /* height: 145px;
-      width: 387%;
-  background-image: url('https://www.geeklawblog.com/wp-content/uploads/sites/528/2018/12/liprofile-656x369.png');
-  background-size: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px; */
-  
-    }
+   
     .backimage{
       width: 53vw;
       background-color: #014488;
@@ -373,14 +366,14 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
- margin-left: -620px;
+ margin-left: -600px;
  margin-top: 55px;
   }
   .profile-exp1{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
- margin-left: -620px;
+ margin-left: -600px;
  margin-top: 55px;
   }
   .profile-exp-head{
@@ -389,6 +382,7 @@
   .skills-ul{
     list-style-type: none;
     margin-left: 10px;
+  
   }
 
   .lang {

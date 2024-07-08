@@ -69,7 +69,12 @@
   }
 .group-page{
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+  /* margin-bottom: -1000px; */
+}
+.group-page-container{
+  width: 100vw;
+  height: 130vh;
 }
 
   @media (max-width:900px){

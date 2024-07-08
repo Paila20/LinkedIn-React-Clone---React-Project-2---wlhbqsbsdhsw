@@ -13,7 +13,7 @@ function Maintenance() {
   }
 
   return (
-    <>
+    <div style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' }}>
 
      <Topbar/>
      <div style={{ backgroundColor: darkmode ? 'black' : '',color: darkmode ? 'white': '' }} className='container'>
@@ -24,7 +24,7 @@ function Maintenance() {
       <button className='back-to-home-btn' onClick={()=>{goToRoute('/')}}>Back to home</button>
     </div>
     </div>
-    </>
+    </div>
   )
 }
 
